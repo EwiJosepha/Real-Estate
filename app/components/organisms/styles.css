@@ -1,0 +1,16 @@
+.wrapper {
+  display: "flex";
+  flex-wrap: "wrap";
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+.innerDiv {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
