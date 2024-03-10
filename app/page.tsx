@@ -1,11 +1,11 @@
 import Image from "next/image";
-import infoSection from "./components/organisms/infoSection";
+import InfoSection from "./components/organisms/infoSection";
 
 export default function Home() {
   return (
     <main>
   <div>
-    <h1>hello</h1>
+    <InfoSection />
   </div>
     </main>
   );
