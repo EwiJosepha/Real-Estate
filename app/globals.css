@@ -143,7 +143,7 @@
 .line3 {
   margin-bottom: 20px;
   height: 5px;
-  width: 80px;
+  width: 100px;
   border-bottom:  1px solid #fffdec;
 }
 
@@ -159,6 +159,7 @@
 .footerLogo {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   padding: 20px;
 }
 
@@ -191,4 +192,60 @@
 
 .fcbFooter {
   margin-top: 30px;
+}
+
+.footerLog {
+  display: flex;
+  flex-direction: column;
+  line-height: 3;
+}
+
+#lineheight {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.footerLogoo {
+  display: flex;
+  flex-direction: column;
+  line-height: 3;
+}
+
+.djFooter {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.channel,
+.channel1,
+.channel2,
+.channel3,
+.channel4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-right: 1px solid #c2bbbd;
+}
+
+.channel,.channel2, .channel1, .channel4, .channel3 p {
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.report {
+  display: flex;
+}
+
+.copyright p {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+#copy {
+  color: #ffffff;
+  font-size: 10px;
 }
