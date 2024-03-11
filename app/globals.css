@@ -2,32 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.wrapper {
+  display: "flex";
+  flex-wrap: "wrap";
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  background-color:darkblue;
+  height: 100vh;
+  width: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.innerDiv {
+  width: 60%;
+  margin: 10px;
+  padding: 20px;
+  background-color:darkblue;
+  color: #ffffff;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.innerDiv2 {
+  display: flex;
+  width: 50%;
+  margin: 10px;
+  padding: 20px;
+  background-color: #ffffff;
+  color: #ffffff;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+#descriptionInfo {
+  font-size: 14px;
+  padding-top: 30px;
+}
+
+#headertext {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+#line {
+  margin-bottom: 20px;
+  height: 5px;
+  width: 70px;
+  border-bottom:  1px solid #fffdec;
+}
+
+.agenciesDescription {
+  display: flex;
+  padding-top: 70px;
+}
+
+.agencies,
+.agents,
+.sales,
+.luxury {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-right: 1px solid #c2bbbd;
 }
