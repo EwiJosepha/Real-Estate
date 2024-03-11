@@ -4,9 +4,9 @@ import InfoSection from "./components/organisms/infoSection";
 export default function Home() {
   return (
     <main>
-  <div>
-    <InfoSection />
-  </div>
+      <div>
+        <InfoSection />
+      </div>
     </main>
   );
 }
