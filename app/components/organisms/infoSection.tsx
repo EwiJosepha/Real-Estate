@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import avatar1 from "../../../public/assets/images/collection_banner_ovf_0.webp"
 import Link from 'next/link'
 
 function InfoSection() {
@@ -34,8 +35,7 @@ function InfoSection() {
           </div>
         </div>
         <div className="innerDiv2">
-          <h1>hello</h1>
-          <Image src="" alt="avatar" width={200} height={200}/>
+          <Image src={avatar1} alt="avatar" layout="responsive" width={100} height={100}/>
 
        
           
