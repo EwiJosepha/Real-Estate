@@ -5,10 +5,17 @@ function DetailsHero() {
   return (
     <div>
       <div className="detailspageWrapper">
-        <FooterLogo/>
+        <div className="villa">
+          <FooterLogo />
 
-        <div className="propertyname">
-          <h1>Villa Ultra Lucxieu</h1>
+          <div className="propertyname">
+            <i className="fa-solid fa-location-dot"></i>
+            <h1 id="villa">Villa Ultra Lucxieu</h1>
+          </div>
+        </div>
+        <div className="heart">
+        <i className="fa-regular fa-heart"></i>
+        <i className="fa-solid fa-code-merge"></i>
         </div>
       </div>
     </div>

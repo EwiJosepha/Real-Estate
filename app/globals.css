@@ -275,3 +275,53 @@
   color: #ffffff;
   font-size: 10px;
 }
+
+/* Details page */
+
+.detailspageWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #252b42;
+  height: 100px;
+  padding: 30px;
+  width: 100%;
+}
+
+#villa {
+  font-size: 30px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.villa {
+  display: flex;
+  gap: 40px;
+}
+
+.fa-solid {
+  color: #fff;
+}
+
+.propertyname {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.heart {
+  display: flex;
+  gap: 30px;
+  cursor: pointer;
+}
+
+.fa-heart:hover {
+  color: red;
+  font-size: 14px;
+}
+
+
+.fa-heart {
+  color: #fff;
+}
