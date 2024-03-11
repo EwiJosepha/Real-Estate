@@ -8,7 +8,7 @@ function Luxury() {
       <div className="luxurySection">
         <div className="houseTextWrapper">
         <div className="luxuryHouse">
-        <Image id="imagedes" src={houseAvatar} alt="image" layout="responsive" width={100} height={100}/>
+        <Image id="imagedes" src={houseAvatar} alt="image" layout="responsive" width={80} height={100}/>
         </div>
         <div className="luxuryText">
           <h1 id="segment">SPECIALIST IN THE LUXURY SEGMENT</h1>

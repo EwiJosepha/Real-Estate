@@ -25,8 +25,11 @@ function InfoSection() {
               <span>Real Estate Agents</span>
             </div>
             <div className="sales">
+              <div className="subdiv">
               <h1>+$1,5B</h1>
               <span>Annual Sales</span>
+              </div>
+           
             </div>
             <div className="luxury">
               <h1>180</h1>
