@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import heroImage from "../../../public/assets/images/9addc10f-e20a-4671-b78d-9d44c8847311.jpg"
 import subimage1 from "../../../public/assets/images/8c133be6-307d-4ff9-8c16-05bc9bd7f78b.jpg"
@@ -13,71 +13,56 @@ import subimage7 from "../../../public/assets/images/0451cb1c-4114-46fe-83ea-fdc
 
 
 function DetailAvatar() {
+  const [currentSlide, setCurrentSlide] = useState(0)
   const images = [
     subimage1, subimage2, subimage3, subimage4, subimage5, subimage6, subimage7
   ]
 
-  let index = 0
-  const imagesLength = images.length
-  const interval = setInterval(() => {
-    index++
-    slideImages()
-  }, 2000)
-
-  function slideImages() {
-    if (index > imagesLength - 1) {
-      index = 0
-    }
-
+  const prevSlide = () => {
+    setCurrentSlide((prev) => prev === 0 ? images.length - 1 : prev - 1)
   }
 
-  const incrementIndex = () => {
-    // tenary operator
-    index === images.length - 1 ? (index = 0) : index++;
-    // if (images.length - 1 === index) {
-    //   index = 0;
-    // } else {
-    //   index++;
-    // }
-  };
+  const nextSlide = () => {
+    setCurrentSlide((prev) => prev === images.length - 1 ? 0 : prev + 1)
+  }
 
-  const decrementIndex = () => {
-    // tenary operator
-    index === 0 ? (index = images.length - 1) : index--;
-  
-    // if (index === 0) {
-    //   index = images.length - 1;
-    // } else {
-    //   index--;
-    // }
-  };
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     nextSlide();
+  //   }, 3000);
 
-  (function updateIndexAutomatically() {
-    const intervalId = setInterval(() => {
-      incrementIndex();
-    }, 5000);
-  })();
+  //   return () => clearInterval(interval);
+  // }, [currentSlide]);
 
   return (
     <div>
       <div className="avatarWrapper">
         <div className="subWrapperAvatar">
           <div className="leftavatar">
+          
             <Image src={heroImage} alt="Hero image" id="sliderAvatar" layout='responsive' width={100} height={100} />
           </div>
           <div className="rightAvatar">
+            <h1>A villa style house is traditionally a more secluded house, often single-level, designed to be a home for a single family, usually on spacious property that puts it at a distance from other houses or at least come with a private courtyard or other areas that solely belongs to the property owner</h1>
 
+            <p>$2500 Monthly</p>
           </div>
         </div>
 
         <div className="carousel">
-          <button id="decrement" onClick={() => decrementIndex}>&lt;</button>
+          <button id="decrement" onClick={prevSlide}>&lt;</button>
           <div className="imagess">
-            {images.map((img, index) => (
-              <Image src={img} key={index} alt="Sub-Images" width={100} height={50} id="objectfit" />
-            ))}
+
+            <Image
+              src={images[currentSlide]}
+              alt={`image ${currentSlide + 1}`}
+              width={100}
+              height={50}
+            />
+
+
           </div>
-          <button id="increment" onClick={() => incrementIndex}>&gt;</button>
+          <button id="increment" onClick={nextSlide}>&gt;</button>
         </div>
       </div>
     </div>
