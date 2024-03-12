@@ -6,6 +6,7 @@ import { Roboto } from '@next/font/google'
 import DetailsHero from "./components/organisms/detailsHero";
 import DetailAvatar from "./components/organisms/detailAvatar";
 import Description from "./components/organisms/description";
+import ContactPage from "./components/organisms/contactAgent";
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -22,6 +23,7 @@ export default function Home() {
         <DetailsHero />
         <DetailAvatar />
         <Description/>
+        <ContactPage/>
       </div>
     </main>
   );
