@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: space-around;
   padding: 20px;
-  background-color: #252b42;
+  background-color: #2d3556;
   width: 100%;
 }
 
@@ -17,16 +17,19 @@
   width: 60%;
   margin: 10px;
   padding: 20px;
-  background-color: #252b42;
+  background-color: #2d3556;
   color: #ffffff;
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
 .innerDiv2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 50%;
   margin: 10px;
   padding: 20px;
-  background-color: #252b42;
+  background-color: #2d3556;
   color: #ffffff;
 }
 
@@ -62,6 +65,7 @@
   justify-content: center;
   padding: 5px;
   border-right: 1px solid #c2bbbd;
+  font-size: 14px;
 }
 
 .subdiv {
@@ -78,20 +82,20 @@
   align-items: center;
   justify-content: space-around;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #2d3556;
   width: 100%;
 }
 
 .houseTextWrapper {
   display: flex;
-  background-color: #252b42;
+  background-color: #2d3556;
   height: 300px;
 }
 
 .luxuryHouse {
   width: 60%;
   padding: 20px;
-  background-color: #252b42;
+  background-color: #2d3556;
   color: #ffffff;
   height: 250px;
 }
@@ -111,7 +115,7 @@
   width: 40%;
   margin: 10px;
   padding: 20px;
-  background-color: #252b42;
+  background-color: #2d3556;
   color: #ffffff;
   height: 200px;
 }
@@ -128,10 +132,9 @@
   align-items: center;
   justify-content: space-around;
   padding: 20px;
-  background-color: #252b42;
+  background-color: #2d3556;
   width: 100%;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-top: 120px;
 }
 
 .footerlogoWrappe {
@@ -168,6 +171,10 @@
   align-items: center;
   justify-content: space-around;
   padding: 20px;
+}
+
+.forlogo {
+  display: flex;
 }
 
 #personaliseLogo {
@@ -283,7 +290,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #252b42;
+  background-color: #2d3556;
   height: 100px;
   padding: 30px;
   width: 100%;
@@ -335,7 +342,7 @@
   align-items: center;
   justify-content: space-around;
   padding: 20px;
-  background-color: #252b42;
+  background-color: #2d3556;
   width: 100%;
 }
 
@@ -347,7 +354,7 @@
   width: 70%;
   margin: 10px;
   padding: 20px;
-  background-color: #252b42;
+  background-color: #2d3556;
   color: #ffffff;
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
@@ -356,7 +363,7 @@
   width: 50%;
   margin: 10px;
   padding: 20px;
-  background-color: #252b42;
+  background-color: #2d3556;
   color: #ffffff;
 }
 
@@ -505,7 +512,7 @@
   justify-content: center;
   border: none;
   border-radius: 10px;
-  background-color: #252b42;
+  background-color: #2d3556;
   padding: 15px;
   color: #fff;
   transition: transform 0.3s ease;
@@ -517,7 +524,7 @@
   transform: scale(1.1);
 }
 
-.characteristics:hover{
+.characteristics:hover {
   transform: scale(1.1);
 }
 
@@ -531,7 +538,7 @@
   justify-content: center;
   border: none;
   border-radius: 10px;
-  background-color: #252b42;
+  background-color: #2d3556;
   padding: 15px;
   color: #fff;
   transition: transform 0.3s ease;
@@ -545,7 +552,7 @@
   justify-content: center;
   border: none;
   border-radius: 10px;
-  background-color: #252b42;
+  background-color: #2d3556;
   padding: 15px;
   color: #fff;
   transition: transform 0.3s ease;
@@ -567,7 +574,7 @@
   border-radius: 10px;
 }
 
-#imgdetails:hover{
+#imgdetails:hover {
   transform: scale(1.1);
 }
 
@@ -576,42 +583,46 @@
   align-items: center;
   justify-content: space-around;
   height: 80px;
-  background-color:#252b42;
+  background-color: #2d3556;
   color: #fff;
 }
 
-.beautytext  {
+.beautytext {
   display: flex;
   flex-direction: column;
 }
 
 /* contactAgent */
 
+.aget {
+  background-color: #2d3556;
+}
+
 .contact-page {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  gap: 30px;
   align-items: center;
-  background-color:#252b42;
   padding: 20px;
   color: white;
 }
 
 .contact-avatar {
-  width: 200px;
-  height: 200px;
-  margin-bottom: 20px;
+  width: 50%;
+  margin-top: 20px;
 }
 
 .contact-avatar img {
   width: 100%;
-  height: 100%;
-  border-radius: 50%;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 .contact-form {
-  width: 100%;
-  max-width: 400px;
+  width: 50%;
+  height: 350px;
+  /* max-width: 400px; */
   background-color: white;
   padding: 20px;
   border-radius: 5px;
@@ -620,7 +631,6 @@
 
 .contact-form h2 {
   margin-top: 0;
-  color: #fff;
 }
 
 .contact-form form {
@@ -641,7 +651,7 @@
 }
 
 .contact-form button {
-  background-color: #252b42;
+  background-color: #2d3556;
   color: white;
   padding: 10px;
   border: none;
@@ -664,8 +674,10 @@
   height: 30px;
 }
 
-#contactCard {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+#contactText {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 500;
+  padding: 20px;
+  text-align: center;
 }

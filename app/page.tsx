@@ -7,6 +7,8 @@ import DetailsHero from "./components/organisms/detailsHero";
 import DetailAvatar from "./components/organisms/detailAvatar";
 import Description from "./components/organisms/description";
 import ContactPage from "./components/organisms/contactAgent";
+import Navbar from "./components/organisms/navbar";
+import HeroSection from "./components/organisms/hero";
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -17,6 +19,8 @@ export default function Home() {
   return (
     <main className={roboto.className}>
       <div>
+        <Navbar/>
+        <HeroSection/>
         <InfoSection />
         <Luxury />
         <Footer />
