@@ -69,7 +69,7 @@ function DetailAvatar() {
             <div className="facilities">
               <div className="bathrooms">
             {icons.map((icons, index)=>(
-              <Image src={icons} alt='Icons' key={index} width={30} height={20}/>
+              <Image src={icons} alt='Icons' key={index} width={30} height={10}/>
             ))}
               </div>
             </div>

@@ -200,6 +200,7 @@
 #collection {
   color: #ffffff;
   font-size: 8px;
+  text-align: center;
 }
 
 .fcbFooter {
@@ -375,7 +376,8 @@
   width: 80%;
 }
 
-#increment, #decrement {
+#increment,
+#decrement {
   color: #fff;
   font-size: 20px;
 }
@@ -392,7 +394,6 @@
 .rightAvatar {
   display: flex;
   flex-direction: column;
-
 }
 
 .rightAvatar h1 {
@@ -463,10 +464,123 @@
   /* gap: 45px; */
   height: 80px;
   background-color: #fff;
-  
 }
 
 .bathrooms:hover {
   background-color: #1a259e;
 }
 
+/* Description */
+
+.descriptionwrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #fff;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.subdescription {
+  display: flex;
+  padding: 20px;
+  background-color: #fff;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.cardes {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.descard {
+  width: 40%;
+}
+
+.nameofhouse {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  background-color: #252b42;
+  padding: 15px;
+  color: #fff;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  height: 200px;
+}
+
+.nameofhouse:hover {
+  transform: scale(1.1);
+}
+
+.characteristics:hover{
+  transform: scale(1.1);
+}
+
+.shortdescript:hover {
+  transform: scale(1.1);
+}
+
+.characteristics {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  background-color: #252b42;
+  padding: 15px;
+  color: #fff;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  height: 200px;
+}
+
+.shortdescript {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  background-color: #252b42;
+  padding: 15px;
+  color: #fff;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  height: 200px;
+}
+
+#propertyD {
+  color: #252b42;
+  font-size: 25px;
+  font-weight: 600;
+  padding: 20px;
+}
+
+#imgdetails {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+}
+
+#imgdetails:hover{
+  transform: scale(1.1);
+}
+
+.smallcard {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 80px;
+  background-color:#252b42;
+  color: #fff;
+}
+
+.beautytext  {
+  display: flex;
+  flex-direction: column;
+}
