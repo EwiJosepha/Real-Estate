@@ -9,6 +9,12 @@ import subimage4 from "../../../public/assets/images/0451cb1c-4114-46fe-83ea-fdc
 import subimage5 from "../../../public/assets/images/0451cb1c-4114-46fe-83ea-fdcc08bbb40d.jpg"
 import subimage6 from "../../../public/assets/images/0451cb1c-4114-46fe-83ea-fdcc08bbb40d.jpg"
 import subimage7 from "../../../public/assets/images/0451cb1c-4114-46fe-83ea-fdcc08bbb40d.jpg"
+import bath from "../../../public/assets/images/10673479_bathroom_wc_washroom_toilet_seat_icon.png"
+import sofa from "../../../public/assets/images/10673488_sofa_armchair_furniture_living_room_icon (1).png"
+import healthcare from "../../../public/assets/images/10673473_healthcare_first_aid_kit_emergency_icon.png"
+import garage from "../../../public/assets/images/10673461_garage_car_parking_vehicle_transportation_icon.png"
+import wifi from "../../../public/assets/images/10673460_router_modem_wifi_computer_access_icon.png"
+
 
 
 
@@ -34,18 +40,39 @@ function DetailAvatar() {
   //   return () => clearInterval(interval);
   // }, [currentSlide]);
 
+  const icons = [
+    bath, sofa, wifi, healthcare, garage
+  ]
+
   return (
     <div>
       <div className="avatarWrapper">
         <div className="subWrapperAvatar">
           <div className="leftavatar">
-          
+
             <Image src={heroImage} alt="Hero image" id="sliderAvatar" layout='responsive' width={100} height={100} />
           </div>
           <div className="rightAvatar">
-            <h1>A villa style house is traditionally a more secluded house, often single-level, designed to be a home for a single family, usually on spacious property that puts it at a distance from other houses or at least come with a private courtyard or other areas that solely belongs to the property owner</h1>
+            <div className="comfort">
+              <p id="apartment">Apartment</p>
+              <div className="comfortable">
+                <p id="comfort">Comfort</p>
+              </div>
+            </div>
+            <h3 id="stylish">Stylish city apartement with gym, pool and harbour views</h3>
 
-            <p>$2500 Monthly</p>
+            <div className="houselocation">
+              <i className="fa-solid fa-location-dot"></i>
+              <p id="exactlpcation">Exact Location</p>
+            </div>
+            <p id="price"><i>$2500 Monthly</i></p>
+            <div className="facilities">
+              <div className="bathrooms">
+            {icons.map((icons, index)=>(
+              <Image src={icons} alt='Icons' key={index} width={30} height={20}/>
+            ))}
+              </div>
+            </div>
           </div>
         </div>
 

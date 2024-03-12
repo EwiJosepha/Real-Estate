@@ -392,8 +392,7 @@
 .rightAvatar {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
 }
 
 .rightAvatar h1 {
@@ -403,3 +402,71 @@
 .rightAvatar p {
   color: #fff;
 }
+
+.comfort {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 40px;
+}
+
+#apartment {
+  background-color: #c2bbbd;
+  border-radius: 1px;
+  padding: 8px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+#comfort {
+  background-color: #1a259e;
+  border-radius: 2px;
+  padding: 8px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+#stylish {
+  font-size: 25px;
+  font-weight: 600;
+  padding: 5px;
+  color: #fff;
+  padding-bottom: 30px;
+}
+
+.houselocation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 10px;
+}
+
+.exactlpcation {
+  color: red;
+}
+
+#price {
+  padding: 8px;
+  font-size: 14px;
+}
+
+.facilities {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bathrooms {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+  /* gap: 45px; */
+  height: 80px;
+  background-color: #fff;
+  
+}
+
+.bathrooms:hover {
+  background-color: #1a259e;
+}
+
