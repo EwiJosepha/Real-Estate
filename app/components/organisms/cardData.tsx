@@ -29,7 +29,6 @@ const properties = [
         agent: 'Jane Smith',
         avater: 'img1.webp',
     },
-    // Add more property objects as needed
 ];
 
 const CardData: React.FC = () => {
