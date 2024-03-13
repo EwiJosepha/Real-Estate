@@ -28,7 +28,7 @@ const properties = [
 const CardData: React.FC = () => {
     return (
         <div className="container mx-auto py-8">
-            <h1 className="text-3xl font-bold mb-4">Properties</h1>
+            <h1 className="text-3xl font-bold mb-4">Latest Properties</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {properties.map((property) => (
                     (<Link href={`/property/${property.id}`} key={property.id}>
