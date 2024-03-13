@@ -10,7 +10,7 @@ const ContactPage = () => {
     <h2 id="contactText">Contact Real Estate Agent</h2>
     <div className="contact-page">
       <div className="contact-avatar">
-        <Image  src={agentAvatar} id="contactCard" alt="Agent Avatar"  width={100} height={100}/>
+        <Image  src={agentAvatar} id="contactCard" alt="Agent Avatar" layout="responsive"  width={100} height={100}/>
       </div>
       <div className="contact-form">
         <form>
