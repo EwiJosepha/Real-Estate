@@ -31,17 +31,17 @@ const CardData: React.FC = () => {
             <h1 className="text-3xl font-bold mb-4">Properties</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {properties.map((property) => (
-                    <Link href={`/property/${property.id}`} key={property.id}>
-                        <a>
-                            <Card
-                                image={property.image}
-                                purpose={property.purpose}
-                                price={property.price}
-                                ownerName={property.ownerName}
-                                ownerAvatar={property.ownerAvatar}
-                            />
-                        </a>
-                    </Link>
+                    (<Link href={`/property/${property.id}`} key={property.id}>
+
+                        <Card
+                            image={property.image}
+                            purpose={property.purpose}
+                            price={property.price}
+                            ownerName={property.ownerName}
+                            ownerAvatar={property.ownerAvatar}
+                        />
+
+                    </Link>)
                 ))}
             </div>
         </div>
