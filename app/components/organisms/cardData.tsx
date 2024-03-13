@@ -2,33 +2,32 @@
 
 import React from 'react';
 import Link from 'next/link';
-// import Card from '../components/Card';
 import Card from './card';
 
 const properties = [
     {
         id: 1,
         image: 'card1.webp',
-        purpose: 'Rent',
-        price: '$1000',
-        ownerName: 'John Doe',
-        ownerAvatar: 'av1.jpg',
+        purpose: 'Apartment/Rent',
+        price: '$2000',
+        agent: 'John Doe',
+        avater: 'av1.jpg',
     },
     {
         id: 2,
         image: 'card2.webp',
-        purpose: 'Sell',
+        purpose: 'House/Sell',
         price: '$500000',
-        ownerName: 'Jane Smith',
-        ownerAvatar: 'av2.jpg',
+        agent: 'Jane Smith',
+        avater: 'av2.jpg',
     },
     {
         id: 2,
         image: 'card3.webp',
-        purpose: 'Sell',
-        price: '$500000',
-        ownerName: 'Jane Smith',
-        ownerAvatar: 'img1.webp',
+        purpose: 'Studio/Sell',
+        price: '$50000',
+        agent: 'Jane Smith',
+        avater: 'img1.webp',
     },
     // Add more property objects as needed
 ];
@@ -45,8 +44,8 @@ const CardData: React.FC = () => {
                             image={property.image}
                             purpose={property.purpose}
                             price={property.price}
-                            ownerName={property.ownerName}
-                            ownerAvatar={property.ownerAvatar}
+                            agent={property.agent}
+                            avater={property.avater}
                         />
 
                     </Link>)
