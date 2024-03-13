@@ -22,7 +22,7 @@ const HeroSection: React.FC = () => {
     }, []);
 
     return (
-        <section>
+        <section className='w-full max-w-full'>
             <img
                 src={images[currentImageIndex]}
                 alt="Hero Image"
