@@ -3,35 +3,13 @@
 @tailwind utilities;
 
 /* info Sector */
-.wrapper {
-  /* display: "flex";
-  flex-wrap: "wrap";
-  align-items: center;
-  justify-content: space-around; */
-  /* padding: 20px; */
-  /* background-color: #003866; */
-  /* width: 100%; */
-}
-
 .innerDiv {
   width: 100%;
   padding-right: 30px;
-  /* margin: 10px; */
-  /* background-color: yellow; */
-  /* padding: 20px; */
-  /* background-color: #2d3556; */
-  /* color: #ffffff; */
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
 .innerDiv2 {
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
   width: 90%;
-  /* margin: 10px; */
-  /* padding: 20px; */
-  /* color: #ffffff; */
 }
 
 #descriptionInfo {
@@ -57,7 +35,6 @@
 .agenciesDescription {
   display: flex;
   justify-content: space-between;
-  /* flex-wrap: wrap; */
   padding-top: 70px;
 }
 
@@ -69,24 +46,24 @@
 .agents,
 .sales,
 .luxury {
-  flex-basis: calc(25% - 10px);
+  flex-basis: calc(20% - 10px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .agencies::after,
 .agents::after,
 .sales::after,
 .luxury::after {
-  flex-basis: 100%;
+  flex-basis: 50%;
   content: "";
   position: absolute;
   top: 0;
-  right: 10px;
-  height: 40%;
+  right: 0px;
+  height: 30%;
   width: 1px;
   background-color: #e8e7e7;
 }
@@ -99,37 +76,18 @@
 }
 
 /* luxury sector */
-.luxurySection {
-  display: "flex";
-  flex-wrap: "wrap";
-  align-items: center;
-  justify-content: space-around;
-  padding: 20px;
-  /* background-color: #2d3556; */
-  width: 100%;
-}
-
 .houseTextWrapper {
   display: flex;
-  /* background-color: #2d3556; */
-  height: 300px;
+  height: 400px;
 }
 
 .luxuryHouse {
-  width: 55%;
-  /* padding: 20px; */
-  /* background-color: #2d3556; */
-  color: #ffffff;
-  /* height: 250px; */
-  height: 500px;
-}
-
-#imagedes {
-  /* width: 50%; */
+  width: 60%;
+  padding-right: 30px;
 }
 
 #segment {
-  font-size: 25px;
+  font-size: 30px;
   padding-bottom: 30px;
   font-weight: 600;
 }
@@ -137,9 +95,7 @@
 .luxuryText {
   display: flex;
   flex-direction: column;
-  width: 40%;
-  margin: 10px;
-  padding: 20px;
+  width: 45%;
   font-size: 20px;
   font-family: serif;
 }

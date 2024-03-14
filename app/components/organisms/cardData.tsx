@@ -33,7 +33,7 @@ const properties = [
 
 const CardData: React.FC = () => {
     return (
-        <div className="container mx-auto py-8">
+        <div className="container mx-auto py-8 mt-28 items-center justify-center md:mx-auto md:w-3/4 lg:w-2/3">
             <h1 className="text-3xl font-bold mb-6">Latest Properties</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {properties.map((property) => (
