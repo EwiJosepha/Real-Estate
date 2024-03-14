@@ -26,7 +26,7 @@ const HeroSection: React.FC = () => {
             <img
                 src={images[currentImageIndex]}
                 alt="Hero Image"
-                style={{ width: '100%', height: '800px' }}
+                style={{ width: '100%', height: '700px' }}
             />
         </section>
     );
