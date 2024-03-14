@@ -13,8 +13,8 @@ const Navbar: React.FC = () => {
                     <FooterLogo />
                     <div className="flex items-center space-x-20">
                         <div className="relative">
-                            <Link href="/properties">
-                                <a className="text-white hover:text-gray-300">Properties</a>
+                            <Link href="/properties" className="text-white hover:text-gray-300">
+                                Properties
                             </Link>
                         </div>
 
@@ -22,13 +22,13 @@ const Navbar: React.FC = () => {
                             <button className="text-white hover:text-gray-300">Other Services</button>
                             <ul className="absolute hidden group-hover:block bg-gray-800 text-white py-2 mt-2 rounded-md">
                                 <li>
-                                    <Link href="/help">
-                                        <a className="block px-4 py-2 hover:bg-gray-700">Help</a>
+                                    <Link href="/help" className="block px-4 py-2 hover:bg-gray-700">
+                                        Help
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/contact">
-                                        <a className="block px-4 py-2 hover:bg-gray-700">Contact</a>
+                                    <Link href="/contact" className="block px-4 py-2 hover:bg-gray-700">
+                                        Contact
                                     </Link>
                                 </li>
                             </ul>
