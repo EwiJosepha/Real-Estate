@@ -7,10 +7,10 @@ import FooterLogo from './footerLogo'
 function Footer() {
   return (
     <div>
-      <div className="footerWrapper bg-blue">
+      <div className="footerWrapper bg-blue text-white">
         <div className="footerlogoWrapper">
           <div className="footerLogo">
-            <div className="flexWrapper">
+            <div className="flexWrapper ml-12">
               <FooterLogo />
               <div className="fcbFooter">
                 <Image src={facebook} alt="facebookLogo" width={20} height={20} />
@@ -31,7 +31,7 @@ function Footer() {
             </div>
           </div>
 
-          <div className="djFooter">
+          <div className="djFooter flex items-center justify-between md:mx-auto md:w-3/4 lg:w-2/3">
             <div className="copyright">
               <p><span id="copy">@</span> D&J 20024 Reservered Rights</p>
             </div>

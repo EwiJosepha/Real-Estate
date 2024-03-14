@@ -211,7 +211,6 @@
 .channel1,
 .channel4,
 .channel3 p {
-  color: #ffffff;
   font-size: 8px;
 }
 
@@ -220,12 +219,10 @@
 }
 
 .copyright p {
-  color: #ffffff;
   font-size: 14px;
 }
 
 #copy {
-  color: #ffffff;
   font-size: 10px;
 }
 

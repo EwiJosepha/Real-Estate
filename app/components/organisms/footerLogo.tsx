@@ -20,7 +20,6 @@ function FooterLogo() {
               <Image src={logo} alt='Logo' width={45} height={50} />
             </div>
 
-
             <div>
               <h2 className='font-extrabold font-serif text-xl'>D&J</h2>
               <p id="collection">COLLECTION</p>
