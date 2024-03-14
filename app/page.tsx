@@ -2,7 +2,7 @@ import Image from "next/image";
 import InfoSection from "./components/organisms/infoSection";
 import Luxury from "./components/organisms/luxury";
 import Footer from "./components/organisms/footer";
-import { Roboto } from '@next/font/google';
+import { Roboto } from "next/font/google";
 import DetailsHero from "./components/organisms/detailsHero";
 import DetailAvatar from "./components/organisms/detailAvatar";
 import Description from "./components/organisms/description";
