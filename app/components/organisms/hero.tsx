@@ -22,11 +22,11 @@ const HeroSection: React.FC = () => {
     }, []);
 
     return (
-        <section className=' w-100%'>
+        <section className='w-full max-w-full'>
             <img
                 src={images[currentImageIndex]}
                 alt="Hero Image"
-                // style={{ width: '100%', height: '800px' }}
+                style={{ width: '100%', height: '800px' }}
             />
         </section>
     );
