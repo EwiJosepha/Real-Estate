@@ -1,16 +1,13 @@
-import React from 'react'
-import Image from 'next/image'
-import avatar1 from "../../../public/assets/images/collection_banner_ovf_0.webp"
-import Link from 'next/link'
-import Luxury from './luxury'
+import React from 'react';
+import Image from 'next/image';
+import avatar1 from "../../../public/assets/images/collection_banner_ovf_0.webp";
+import Link from 'next/link';
+import Luxury from './luxury';
 
 function InfoSection() {
-
-
   return (
-
-    <div className="wrapper pt-10">
-      <div className="dwrapperr flex">
+    <div className="wrapper pt-10 bg-blue text-white">
+      <div className="flex items-center justify-center md:mx-auto md:w-3/4 lg:w-2/3">
         <div className="innerDiv">
           <div id="line"></div>
           <h1 id="headertext">D&J COLLECTION</h1>
@@ -18,37 +15,30 @@ function InfoSection() {
 
           <div className="agenciesDescription">
             <div className="agencies">
-              <h1>12</h1>
+              <strong className="numberFont">12</strong>
               <span>Agencies</span>
             </div>
             <div className="agents">
-              <h1>+20</h1>
+              <strong className="numberFont">+20</strong>
               <span>Real Estate Agents</span>
             </div>
-            <div className="sales">
-              <div className="subdiv">
-                <h1>+$1,5B</h1>
-                <span>Annual Sales</span>
-              </div>
-
+            <div className="sales subdiv">
+              <strong className="numberFont">+$1,5B</strong>
+              <span>Annual Sales</span>
             </div>
             <div className="luxury">
-              <h1>180</h1>
-              <span>Number of luxury property sold in 2023</span>
+              <strong className="numberFont">180</strong>
+              <span>Number of luxury <br />properties sold in 2023</span>
             </div>
           </div>
         </div>
         <div className="innerDiv2">
-          <Image src={avatar1} alt="avatar" layout="responsive" width={100} height={100} />
-
-
-
+          <Image src={avatar1} alt="avatar" layout="responsive" width={200} height={200} />
         </div>
       </div>
       <Luxury />
     </div>
-
-  )
+  );
 }
 
-export default InfoSection
+export default InfoSection;
