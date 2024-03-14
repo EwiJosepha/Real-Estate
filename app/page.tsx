@@ -22,14 +22,15 @@ export default function Home() {
       <div>
         <Navbar />
         <HeroSection />
-        <CardData />
+
         <InfoSection />
         <Luxury />
+        <CardData />
         <Footer />
-        <DetailsHero />
+        {/* <DetailsHero />
         <DetailAvatar />
         <Description />
-        <ContactPage />
+        <ContactPage /> */}
       </div>
     </main>
   );
