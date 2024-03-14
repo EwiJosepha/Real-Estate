@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import { MdGradient } from 'react-icons/md';
 
 const images = [
     'REImg.webp',
