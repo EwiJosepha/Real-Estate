@@ -1,7 +1,3 @@
-import Image from "next/image";
-import InfoSection from "./components/organisms/infoSection";
-import Luxury from "./components/organisms/luxury";
-import Footer from "./components/organisms/footer";
 import { Roboto } from "next/font/google";
 import DetailsHero from "./components/organisms/detailsHero";
 import DetailAvatar from "./components/organisms/detailAvatar";
@@ -10,6 +6,7 @@ import ContactPage from "./components/organisms/contactAgent";
 import Navbar from "./components/organisms/navbar";
 import HeroSection from "./components/organisms/hero";
 import CardData from "./components/organisms/cardData";
+import LandingPage from "./landing/page";
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -20,17 +17,18 @@ export default function Home() {
   return (
     <main className={roboto.className}>
       <div>
-        <Navbar />
+        {/* <LandingPage /> */}
+        {/* <Navbar />
         <HeroSection />
 
         <InfoSection />
         <Luxury />
         <CardData />
-        <Footer />
-        {/* <DetailsHero />
+        <Footer /> */}
+        <DetailsHero />
         <DetailAvatar />
         <Description />
-        <ContactPage /> */}
+        <ContactPage />
       </div>
     </main>
   );
