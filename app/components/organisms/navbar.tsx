@@ -1,13 +1,15 @@
 import React from 'react';
+import FooterLogo from './footerLogo';
 
 const Navbar: React.FC = () => {
     return (
         <nav className="bg-blue">
             <div className="container mx-auto px-4">
-                <div className="flex justify-between items-center h-16">
-                    <div className="flex items-center">
+                <div className="flex justify-between items-center h-16 pt-10 pb-10">
+                    {/* <div className="flex items-center">
                         <span className="text-white text-lg font-bold">D&J</span>
-                    </div>
+                    </div> */}
+                    <FooterLogo/>
                     <div className="flex items-center space-x-20">
 
                         <div className="relative">
