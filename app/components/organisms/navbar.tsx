@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -13,7 +15,7 @@ const Navbar: React.FC = () => {
     };
 
     return (
-        <nav className="bg-blue">
+        <nav className="bg-blue ">
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center h-16 py-5">
                     {/* Logo */}
@@ -22,7 +24,7 @@ const Navbar: React.FC = () => {
                     </div>
 
                     {/* Mobile Menu */}
-                    <div className="md:hidden">
+                    <div className="md:hidden lg:hidden">
                         <button
                             onClick={handleMobileMenuToggle}
                             className="text-white hover:text-gray-300"
@@ -34,8 +36,8 @@ const Navbar: React.FC = () => {
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-20">
                         <div className="relative">
-                            <Link href="/properties">
-                                <a className="text-white hover:text-gray-300">Properties</a>
+                            <Link href="/properties" className="text-white hover:text-gray-300">
+                                Properties
                             </Link>
                         </div>
 
@@ -46,13 +48,13 @@ const Navbar: React.FC = () => {
                                     } md:block bg-gray-800 text-white py-2 mt-2 rounded-md`}
                             >
                                 <li>
-                                    <Link href="/help">
-                                        <a className="block px-4 py-2 hover:bg-gray-700">Help</a>
+                                    <Link href="/help" className="hidden px-4 py-2 hover:bg-gray-700">
+                                        Help
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/contact">
-                                        <a className="block px-4 py-2 hover:bg-gray-700">Contact</a>
+                                    <Link href="/contact" className="hidden px-4 py-2 hover:bg-gray-700">
+                                        Contact
                                     </Link>
                                 </li>
                             </ul>
