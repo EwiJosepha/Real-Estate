@@ -2,7 +2,8 @@
 import Slider from "react-slick";
 import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
-import heroImage from "../../../public/assets/images/9addc10f-e20a-4671-b78d-9d44c8847311.jpg"
+import heroImage from "../../../public/assets/images/photo-1506126279646-a697353d3166.avif"
+import gf from "../../../public/assets/images/istockphoto-1319747564-170667a.webp"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SimpleSlider from "../molecules/slider";
@@ -15,14 +16,14 @@ function DetailAvatar() {
   const sliderRef = useRef<HTMLDivElement>();
 
   const images = [
-    "8c133be6-307d-4ff9-8c16-05bc9bd7f78b.jpg",
-    "9addc10f-e20a-4671-b78d-9d44c8847311.jpg",
-    "0451cb1c-4114-46fe-83ea-fdcc08bbb40d.jpg",
-    "0451cb1c-4114-46fe-83ea-fdcc08bbb40d.jpg",
-    "0451cb1c-4114-46fe-83ea-fdcc08bbb40d.jpg",
-    "0451cb1c-4114-46fe-83ea-fdcc08bbb40d.jpg",
-    "0451cb1c-4114-46fe-83ea-fdcc08bbb40d.jpg",
-    // subimage1, subimage2, subimage3, subimage4, subimage5, subimage6, subimage7
+    "photo-1531971589569-0d9370cbe1e5.avif",
+    "photo-1565297032488-90722f09db62.avif",
+    "istockphoto-1182454657-170667a.webp",
+    "istockphoto-1319747564-170667a.webp",
+    "istockphoto-1319747564-170667a.webp",
+    "istockphoto-1319747564-170667a.webp",
+    "istockphoto-1319747564-170667a.webp",
+ 
   ]
 
   const icons = [
