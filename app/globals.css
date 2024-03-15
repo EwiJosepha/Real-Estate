@@ -312,27 +312,23 @@
 .carousel {
   display: flex;
   flex-direction: column;
-  width: 32%;
-  height: 150px;
-  border: 1px solid #ffdeff;
-  border-radius: 6px;
-  gap: 9px;
+  width: 98%;
+  height: 170px;
+  /* border: 1px solid #ffdeff; */
 }
 
 .slider-container {
-  width: 200px;
-  height: 70px;
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 #sliderId {
-  border-radius: 5px;
-  width: 150px;
+  /* border-radius: 5px; */
+  width: 100%;
   height: 130px;
+  border-left: 6px solid white;
   cursor: pointer;
- 
 }
 
 /* .imagess {
@@ -362,7 +358,6 @@
 
 #sliderAvatar {
   object-fit: cover;
-  border-radius: 5px;
 }
 
 .rightAvatar {

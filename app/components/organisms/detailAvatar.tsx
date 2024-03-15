@@ -41,42 +41,7 @@ function DetailAvatar() {
     slidesToScroll: 1
   };
 
-  // const prevSlide = () => {
-  //   setCurrentSlide((prev) => {
-  //     console.log('moving', -300);
-
-  //     if (prev <= 0) return 0;
-
-  //     return -300;
-  //   });
-  // }
-
-
-
-  // const nextSlide = (): void => {
-  //   setCurrentSlide((prev) => {
-  //     const next_slide = prev + 300;
-
-  //     const totalScrollWidth = images.length * 102.5; // 2.5 is the shared gap (5px) divided by 2;
-
-  //     console.log('moving', {next_slide, totalScrollWidth});
-  //     if (next_slide > totalScrollWidth) return -Math.floor(totalScrollWidth);
-
-  //     return next_slide;
-  //   });
-  // }
-
-  // useEffect(() => {
-  //   // const interval = setInterval(() => {
-  //   //   nextSlide();
-  //   // }, 3000);
-
-  //   if (!sliderRef.current) return;
-
-  //   sliderRef.current.scrollBy(currentSlide, 0);
-
-  //   // return () => clearInterval(interval);
-  // }, [currentSlide]);
+  
 
 
 
@@ -113,41 +78,8 @@ function DetailAvatar() {
         </div>
 
         <div className="carousel">
-          {/* <button id="decrement" onClick={prevSlide}>&lt;</button> */}
-          <div className="imagess">
           <SimpleSlider images={images}/>
-
-            {/* <Image
-              src={images[currentSlide]}
-              alt={`image ${currentSlide + 1}`}
-              id="carouselimages"
-              width={100}
-              height={30}
-            /> */}
-
-            {/* <Slider {...settings}>
-              {images.map((img, i) => (
-                <div>
-                  <Image
-                    key={i}
-                    src={`/assets/images/${img}`}
-                    alt={`image ${i}`}
-                    id="carouselimages"
-                    width={100}
-                    height={30}
-                  />
-                </div>
-              ))}
-              <div>
-                <h3>1</h3>
-              </div>
-              <div>
-                <h3>2</h3>
-              </div>
-            </Slider> */}
-
-
-          </div>
+          {/* <button id="decrement" onClick={prevSlide}>&lt;</button> */}
           {/* <button id="increment" onClick={nextSlide}>&gt;</button> */}
         </div>
       </div>
