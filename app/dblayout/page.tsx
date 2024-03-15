@@ -8,7 +8,7 @@ type LayoutProps = {
     children: ReactNode;
 };
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const DbLayout: React.FC<LayoutProps> = ({ children }) => {
     const router = useRouter();
 
     return (
@@ -24,23 +24,23 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <nav className="mt-4">
                     <ul>
                         <li className={router.pathname === '/dashboard' ? 'bg-gray-700' : ''}>
-                            <Link href="/dashboard">
-                                <a className="block py-2 px-4">Dashboard</a>
+                            <Link href="/dashboard" className="block py-2 px-4">
+                                Dashboard
                             </Link>
                         </li>
                         <li className={router.pathname === '/profile' ? 'bg-gray-700' : ''}>
-                            <Link href="/profile">
-                                <a className="block py-2 px-4">Profile</a>
+                            <Link href="/profile" className="block py-2 px-4">
+                                Profile
                             </Link>
                         </li>
                         <li className={router.pathname === '/my-properties' ? 'bg-gray-700' : ''}>
-                            <Link href="/my-properties">
-                                <a className="block py-2 px-4">My Properties</a>
+                            <Link href="/my-properties" className="block py-2 px-4">
+                                My Properties
                             </Link>
                         </li>
                         <li className={router.pathname === '/add-new-property' ? 'bg-gray-700' : ''}>
-                            <Link href="/add-new-property">
-                                <a className="block py-2 px-4">Add New Property</a>
+                            <Link href="/add-new-property" className="block py-2 px-4">
+                                Add New Property
                             </Link>
                         </li>
                     </ul>
@@ -51,4 +51,4 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     );
 };
 
-export default Layout;
+export default DbLayout;
