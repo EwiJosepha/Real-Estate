@@ -10,7 +10,7 @@ function Luxury() {
         </div>
         <div className="luxuryText">
           <h1 id="segment">SPECIALIST IN THE LUXURY SEGMENT</h1>
-          <span>With recognized relevant experience in the development sector, the brand is increasingly identified as a specialist in this high-quality segment. The portfolio has more than 300 luxury developments, which allows developers, builders and other investors to choose the RE/MAX Collection as the option when delivering their project.</span>
+          <span>With recognized relevant experience in the development sector, the brand is increasingly identified as a specialist in this high-quality segment. The portfolio has more than 300 luxury developments, which allows developers, builders and other investors to choose the D&J Collection as the option when delivering their project.</span>
         </div>
       </div>
     </div>
