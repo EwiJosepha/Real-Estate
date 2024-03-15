@@ -36,8 +36,8 @@ const LoginPage: React.FC = () => {
                 </form>
                 <p className="text-sm text-gray-600 mt-4">
                     Don't have an account?{' '}
-                    <Link href="/register">
-                        <a className="text-blue-500 hover:text-blue-600">Register</a>
+                    <Link href="/register" className="text-blue-500 hover:text-blue-600">
+                        Register
                     </Link>
                 </p>
             </div>
