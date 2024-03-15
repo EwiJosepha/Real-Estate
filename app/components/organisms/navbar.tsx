@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaRegUserCircle, FaTimes } from 'react-icons/fa';
 import Link from 'next/link';
 import FooterLogo from './footerLogo';
 
@@ -40,10 +40,20 @@ const Navbar: React.FC = () => {
                                 Properties
                             </Link>
                         </div>
+                        <div className="relative">
+                            <Link href="/properties" className="text-white hover:text-gray-300">
+                                Home
+                            </Link>
+                        </div>
+                        {/* <div className="relative">
+                            <Link href="/properties" className="text-white hover:text-gray-300">
+                                Properties
+                            </Link>
+                        </div> */}
 
                         <div className="relative group">
-                            <button className="text-white hover:text-gray-300">Other Services</button>
-                            <ul
+                            <button className="text-white hover:text-gray-300">Contact Us</button>
+                            {/* <ul
                                 className={`absolute ${isMobileMenuOpen ? 'block' : 'hidden'
                                     } md:block bg-gray-800 text-white py-2 mt-2 rounded-md`}
                             >
@@ -57,11 +67,12 @@ const Navbar: React.FC = () => {
                                         Contact
                                     </Link>
                                 </li>
-                            </ul>
+                            </ul> */}
                         </div>
 
-                        <div className="relative">
-                            <button className="text-white hover:text-gray-300">Sign In / Sign Up</button>
+                        <div className="relative text-white flex items-center justify-center">
+                            <FaRegUserCircle className='mr-2 text-2xl' />
+                            <button className=" hover:text-gray-300">Log In</button>
                         </div>
                     </div>
                 </div>
