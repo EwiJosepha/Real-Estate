@@ -3,43 +3,25 @@
 @tailwind utilities;
 
 /* info Sector */
-.wrapper {
-  display: "flex";
-  flex-wrap: "wrap";
-  align-items: center;
-  justify-content: space-around;
-  padding: 20px;
-  background-color: #2d3556;
-  width: 100%;
-}
-
 .innerDiv {
-  width: 60%;
-  margin: 10px;
-  padding: 20px;
-  background-color: #2d3556;
-  color: #ffffff;
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  width: 100%;
+  padding-right: 30px;
 }
 
 .innerDiv2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  margin: 10px;
-  padding: 20px;
-  background-color: #2d3556;
-  color: #ffffff;
+  width: 90%;
 }
 
 #descriptionInfo {
-  font-size: 14px;
+  font-size: 20px;
+  font-family: serif;
   padding-top: 30px;
+  width: 85%;
 }
 
 #headertext {
-  font-size: 30px;
+  font-size: 40px;
+  font-family: serif;
   font-weight: 600;
 }
 
@@ -52,20 +34,38 @@
 
 .agenciesDescription {
   display: flex;
+  justify-content: space-between;
   padding-top: 70px;
+}
+
+.numberFont {
+  font-size: xx-large;
 }
 
 .agencies,
 .agents,
 .sales,
 .luxury {
+  flex-basis: calc(20% - 10px);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 5px;
-  border-right: 1px solid #c2bbbd;
-  font-size: 14px;
+  position: relative;
+  font-size: 12px;
+}
+
+.agencies::after,
+.agents::after,
+.sales::after,
+.luxury::after {
+  flex-basis: 50%;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0px;
+  height: 30%;
+  width: 1px;
+  background-color: #e8e7e7;
 }
 
 .subdiv {
@@ -76,52 +76,28 @@
 }
 
 /* luxury sector */
-.luxurySection {
-  display: "flex";
-  flex-wrap: "wrap";
-  align-items: center;
-  justify-content: space-around;
-  padding: 20px;
-  background-color: #2d3556;
-  width: 100%;
-}
-
 .houseTextWrapper {
   display: flex;
-  background-color: #2d3556;
-  height: 300px;
+  height: 400px;
 }
 
 .luxuryHouse {
   width: 60%;
-  padding: 20px;
-  background-color: #2d3556;
-  color: #ffffff;
-  height: 250px;
-}
-
-#imagedes {
-  width: 60%;
+  padding-right: 30px;
 }
 
 #segment {
-  font-size: 25px;
+  font-size: 30px;
+  padding-bottom: 30px;
   font-weight: 600;
 }
 
 .luxuryText {
   display: flex;
   flex-direction: column;
-  width: 40%;
-  margin: 10px;
-  padding: 20px;
-  background-color: #2d3556;
-  color: #ffffff;
-  height: 200px;
-}
-
-#luxuryMsg {
-  font-size: 14px;
+  width: 45%;
+  font-size: 20px;
+  font-family: serif;
 }
 
 /* footer */
@@ -132,7 +108,6 @@
   align-items: center;
   justify-content: space-around;
   padding: 20px;
-  background-color: #2d3556;
   width: 100%;
   margin-top: 120px;
 }
@@ -145,25 +120,19 @@
 
 .line1,
 .line2 {
-  height: 5px;
   width: 40px;
   border-bottom: 1px solid #fffdec;
 }
 
 .line3 {
-  margin-bottom: 20px;
-  height: 5px;
   width: 100px;
+  padding-top: 2px;
   border-bottom: 1px solid #fffdec;
 }
 
 #footertext {
   color: #ffffff;
   font-size: 8px;
-}
-
-.lines {
-  display: flex;
 }
 
 .footerLogo {
@@ -173,31 +142,14 @@
   padding: 20px;
 }
 
-.forlogo {
-  display: flex;
-}
-
-#personaliseLogo {
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 500;
-  text-align: center;
-  translate: scale(0.2);
-  cursor: pointer;
-}
-
 #personaliseLogo:hover {
-  background-color: #1a259e;
+  background-color: #003866;
 }
 
 .personaliseLogo {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.imgr {
-  margin-bottom: 22px;
 }
 
 .imgr:hover {
@@ -241,13 +193,6 @@
   line-height: 3;
 }
 
-.djFooter {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-  justify-content: center;
-}
-
 .channel,
 .channel1,
 .channel2,
@@ -266,7 +211,6 @@
 .channel1,
 .channel4,
 .channel3 p {
-  color: #ffffff;
   font-size: 8px;
 }
 
@@ -275,12 +219,10 @@
 }
 
 .copyright p {
-  color: #ffffff;
   font-size: 14px;
 }
 
 #copy {
-  color: #ffffff;
   font-size: 10px;
 }
 

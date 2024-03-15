@@ -1,19 +1,16 @@
 import React from 'react'
 import Image from 'next/image'
-import houseAvatar from "../../../public/assets/images/collection_banner_ovf_1.webp"
 
 function Luxury() {
   return (
-    <div>
-      <div className="luxurySection">
-        <div className="houseTextWrapper">
+    <div className="luxurySection flex items-center justify-center md:mx-auto md:w-3/4 lg:w-2/3 mb-20 mt-16">
+      <div className="houseTextWrapper">
         <div className="luxuryHouse">
-        <Image id="imagedes" src={houseAvatar} alt="image" layout="responsive" width={80} height={100}/>
+          <img id="imagedes" src='banner.webp' alt="image" style={{ width: '90%', height: '500px' }} />
         </div>
         <div className="luxuryText">
           <h1 id="segment">SPECIALIST IN THE LUXURY SEGMENT</h1>
-          <span id="luxuryMsg">With recognized relevant experience in the development sector, the brand is increasingly identified as a specialist in this high-quality segment. The portfolio has more than 300 luxury developments, which allows developers, builders and other investors to choose the RE/MAX Collection as the option when delivering their project.</span>
-        </div>
+          <span>With recognized relevant experience in the development sector, the brand is increasingly identified as a specialist in this high-quality segment. The portfolio has more than 300 luxury developments, which allows developers, builders and other investors to choose the RE/MAX Collection as the option when delivering their project.</span>
         </div>
       </div>
     </div>
