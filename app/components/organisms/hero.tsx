@@ -31,13 +31,13 @@ const HeroSection: React.FC = () => {
                 <img
                     src={images[currentImageIndex]}
                     alt="Hero Image"
-                    style={{ width: '100%', height: '730px', transition: 'filter 0.5s' }}
+                    style={{ width: '100%', height: '500px', transition: 'filter 0.5s' }}
                 />
 
 
             </section>
-            <section className="absolute flex flex-col bottom-1/3 transform translate-x-1/2">
-                <h1 className='text-white font-extrabold text-4xl mb-20'>Find Your Dream Home At D&J. The Best Luxury Selection</h1>
+            <section className="absolute flex flex-col bottom-1/3 transform translate-x-1/4">
+                <h1 className='text-white font-extrabold text-3xl mb-10'>Find Your Dream Home At D&J. The Best Luxury Selection</h1>
 
                 <div className='text-white bg-blue border-0 px-6 py-4 w-40 rounded-lg -mb-2'>
                     <button className='mr-6 items-center'>Rent</button>

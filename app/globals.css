@@ -446,24 +446,96 @@
 
 /* Description */
 
-.descriptionwrapper {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  background-color: #fff;
-  width: 100%;
-  justify-content: space-between;
-}
 
-.subdescription {
+
+.cardes {
   display: flex;
-  padding: 20px;
-  background-color: #fff;
   justify-content: space-between;
   gap: 30px;
 }
 
-.cardes {
+.features {
+  display: flex;
+  flex-direction: column;
+  color: #3f3838;
+  width: 45%;
+
+}
+
+.arealot {
+  display: flex;
+  flex-direction: column;
+  color: #3f3838;
+  width: 95%;
+}
+
+.arminities {
+  display: flex;
+  flex-direction: column;
+  color: #3f3838;
+  width: 45%;
+}
+
+.finincial, .feature {
+  border-top: 1px solid #958686
+}
+
+.lot {
+  border-top: 1px solid #958686 
+}
+
+#propertyD {
+  color: #827676;
+  font-size: 25px;
+  font-weight: 600;
+  padding: 20px;
+  text-align: center;
+}
+
+#int,
+#fin {
+  color: #827676;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 20px;
+  text-align: center;
+}
+
+.tbath  {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  color: #958686;
+  line-height: 3;
+  padding-left: 35px;
+  padding-right: 75px;
+}
+
+.tlot {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: #958686;
+  line-height: 3;
+  padding-left: 35px; 
+}
+
+.finincial  {
+  display: flex;
+  gap: 30px;
+  color: #958686;
+  line-height: 3;
+}
+
+#bnumber {
+  color: #3f3838;
+}
+
+#bname {
+  color: #a99e9e;
+}
+
+/* .cardes {
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -525,8 +597,8 @@
   transition: transform 0.3s ease;
   cursor: pointer;
   height: 200px;
-}
-
+} */
+/* 
 #propertyD {
   color: #252b42;
   font-size: 25px;
@@ -552,7 +624,7 @@
   height: 80px;
   background-color: #2d3556;
   color: #fff;
-}
+} */
 
 .beautytext {
   display: flex;
