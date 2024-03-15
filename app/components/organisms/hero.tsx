@@ -30,8 +30,7 @@ const HeroSection: React.FC = () => {
                 <img
                     src={images[currentImageIndex]}
                     alt="Hero Image"
-                    className="w-full object-cover transition-filter duration-500"
-                    style={{ height: '740px' }}
+                    style={{ width: '100%', height: '730px', transition: 'filter 0.5s' }}
                 />
             </section>
             <section className="absolute bottom-1/3 transform -translate-x-1/2 left-1/2">

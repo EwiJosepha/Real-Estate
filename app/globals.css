@@ -223,7 +223,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #2d3556;
+  background-color: #003866;
   height: 100px;
   padding: 30px;
   width: 100%;
@@ -275,7 +275,7 @@
   align-items: center;
   justify-content: space-around;
   padding: 20px;
-  background-color: #2d3556;
+  background-color: #003866;
   width: 100%;
 }
 
@@ -287,7 +287,7 @@
   width: 70%;
   margin: 10px;
   padding: 20px;
-  background-color: #2d3556;
+  background-color: #003866;
   color: #ffffff;
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
@@ -296,34 +296,30 @@
   width: 50%;
   margin: 10px;
   padding: 20px;
-  background-color: #2d3556;
+  background-color: #003866;
   color: #ffffff;
 }
 
 .carousel {
   display: flex;
   flex-direction: column;
-  width: 32%;
-  height: 150px;
-  border: 1px solid #ffdeff;
-  border-radius: 6px;
-  gap: 9px;
+  width: 98%;
+  height: 170px;
+  /* border: 1px solid #ffdeff; */
 }
 
 .slider-container {
-  width: 200px;
-  height: 70px;
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 #sliderId {
-  border-radius: 5px;
-  width: 150px;
+  /* border-radius: 5px; */
+  width: 100%;
   height: 130px;
+  border-left: 6px solid white;
   cursor: pointer;
- 
 }
 
 /* .imagess {
@@ -353,7 +349,6 @@
 
 #sliderAvatar {
   object-fit: cover;
-  border-radius: 5px;
 }
 
 .rightAvatar {
@@ -437,24 +432,96 @@
 
 /* Description */
 
-.descriptionwrapper {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  background-color: #fff;
-  width: 100%;
-  justify-content: space-between;
-}
 
-.subdescription {
+
+.cardes {
   display: flex;
-  padding: 20px;
-  background-color: #fff;
   justify-content: space-between;
   gap: 30px;
 }
 
-.cardes {
+.features {
+  display: flex;
+  flex-direction: column;
+  color: #3f3838;
+  width: 45%;
+
+}
+
+.arealot {
+  display: flex;
+  flex-direction: column;
+  color: #3f3838;
+  width: 95%;
+}
+
+.arminities {
+  display: flex;
+  flex-direction: column;
+  color: #3f3838;
+  width: 45%;
+}
+
+.finincial, .feature {
+  border-top: 1px solid #958686
+}
+
+.lot {
+  border-top: 1px solid #958686 
+}
+
+#propertyD {
+  color: #827676;
+  font-size: 25px;
+  font-weight: 600;
+  padding: 20px;
+  text-align: center;
+}
+
+#int,
+#fin {
+  color: #827676;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 20px;
+  text-align: center;
+}
+
+.tbath  {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  color: #958686;
+  line-height: 3;
+  padding-left: 35px;
+  padding-right: 75px;
+}
+
+.tlot {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: #958686;
+  line-height: 3;
+  padding-left: 35px; 
+}
+
+.finincial  {
+  display: flex;
+  gap: 30px;
+  color: #958686;
+  line-height: 3;
+}
+
+#bnumber {
+  color: #3f3838;
+}
+
+#bname {
+  color: #a99e9e;
+}
+
+/* .cardes {
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -516,8 +583,8 @@
   transition: transform 0.3s ease;
   cursor: pointer;
   height: 200px;
-}
-
+} */
+/* 
 #propertyD {
   color: #252b42;
   font-size: 25px;
@@ -543,7 +610,7 @@
   height: 80px;
   background-color: #2d3556;
   color: #fff;
-}
+} */
 
 .beautytext {
   display: flex;
@@ -553,7 +620,7 @@
 /* contactAgent */
 
 .aget {
-  background-color: #2d3556;
+  background-color: #003866;
 }
 
 .contact-page {
@@ -608,7 +675,7 @@
 }
 
 .contact-form button {
-  background-color: #2d3556;
+  background-color: #003866;
   color: white;
   padding: 10px;
   border: none;
