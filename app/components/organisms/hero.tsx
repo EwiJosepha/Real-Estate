@@ -22,34 +22,37 @@ const HeroSection: React.FC = () => {
         };
     }, []);
 
-    const handleSearch = () => {
-    };
+    const handleSearch = () => { };
 
     return (
-        <div className='font-serif'>
-            <section className='w-[100%] max-w-full'>
+        <div className="font-serif">
+            <section className="w-full max-w-full">
                 <img
                     src={images[currentImageIndex]}
                     alt="Hero Image"
-                    style={{ width: '100%', height: '500px', transition: 'filter 0.5s' }}
+                    style={{ width: '100%', height: '730px', transition: 'filter 0.5s' }}
                 />
-
-
             </section>
-            <section className="absolute flex flex-col bottom-1/3 transform translate-x-1/4">
-                <h1 className='text-white font-extrabold text-3xl mb-10'>Find Your Dream Home At D&J. The Best Luxury Selection</h1>
+            <section className="absolute bottom-1/3 transform -translate-x-1/2 left-1/2">
+                <div className="container mx-auto px-4">
+                    <h1 className="text-white font-extrabold md:text-4xl mb-20 sm:text-3xl md:text-left xs:text-center">
+                        Find Your Dream Home At D&J. The Best Luxury Selection
+                    </h1>
 
-                <div className='text-white bg-blue border-0 px-6 py-4 w-40 rounded-lg -mb-2'>
-                    <button className='mr-6 items-center'>Rent</button>
-                    <button className='items-center'>Buy</button>
-                </div>
-                <div className="flex items-center px-6 bg-white border py-2 w-[60%] justify-between">
-                    <input
-                        type="text"
-                        className="block bg-none p-2 pl-10 border-0 focus:pl-3 outline-none"
-                        placeholder="Search by No of rooms, bath..."
-                    />
-                    <FaSearch className="text-black" />
+                    <div className="text-white -mb-6 bg-blue border-0 px-6 py-4 w-40 rounded-lg">
+                        <button className="mr-6 items-center">Rent</button>
+                        <button className="items-center">Buy</button>
+                    </div>
+                    <div className="flex items-center bg-white border py-2 px-6 sm:w-[50%] md:w-[100%] justify-between mt-4">
+                        <input
+                            type="text"
+                            className="block bg-none p-2 pl-10 border-0 focus:pl-3 outline-none flex-1"
+                            placeholder="Search by No of rooms, bath..."
+                        />
+                        <div className="p-2 cursor-pointer">
+                            <FaSearch className="text-black" />
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
