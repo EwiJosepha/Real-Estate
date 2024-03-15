@@ -3,15 +3,6 @@
 @tailwind utilities;
 
 /* info Sector */
-.innerDiv {
-  width: 100%;
-  padding-right: 30px;
-}
-
-.innerDiv2 {
-  width: 90%;
-}
-
 #descriptionInfo {
   font-size: 20px;
   font-family: serif;
@@ -35,7 +26,7 @@
 .agenciesDescription {
   display: flex;
   justify-content: space-between;
-  padding-top: 70px;
+  padding-top: 40px;
 }
 
 .numberFont {
@@ -88,14 +79,14 @@
 
 #segment {
   font-size: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   font-weight: 600;
 }
 
 .luxuryText {
   display: flex;
   flex-direction: column;
-  width: 45%;
+  width: 50%;
   font-size: 20px;
   font-family: serif;
 }
