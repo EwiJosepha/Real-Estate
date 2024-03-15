@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <main className={roboto.className}>
       <div>
-        {/* <LandingPage /> */}
+        <LandingPage />
         {/* <Navbar />
         <HeroSection />
 
@@ -25,10 +25,7 @@ export default function Home() {
         <Luxury />
         <CardData />
         <Footer /> */}
-        <DetailsHero />
-        <DetailAvatar />
-        <Description />
-        <ContactPage />
+
       </div>
     </main>
   );
