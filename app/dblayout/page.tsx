@@ -3,6 +3,9 @@
 import React, { ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { FaArrowAltCircleLeft, FaPerbyte, FaPlus, FaRegHeart, FaRegUser } from 'react-icons/fa';
+import { FaHouseFlag } from 'react-icons/fa6';
+import FooterLogo from '../components/organisms/footerLogo';
 
 type LayoutProps = {
     children: ReactNode;
@@ -12,36 +15,81 @@ const DbLayout: React.FC<LayoutProps> = ({ children }) => {
     const router = useRouter();
 
     return (
-        <div className="flex h-screen bg-gray-100">
-            <div className="w-1/4 bg-gray-800 text-white">
-                <div className="flex items-center justify-center h-20 border-b border-gray-700">
-                    <img
-                        src="/assets/avatar.png"
-                        alt="Avatar"
-                        className="w-10 h-10 rounded-full"
-                    />
-                </div>
-                <nav className="mt-4">
-                    <ul>
-                        <li>
-                            <Link href="/dashboard">
-                                Dashboard
-                            </Link>
-                        </li>
+        <div>
+            <div className="flex flex-col md:flex-row h-screen bg-blue">
+                {/* Sidebar */}
+                <div className="w-full md:w-1/4 bg-white ">
+                    {/* Logo */}
+                    <div className="py-2 bg-blue h-36">
+                        <FooterLogo />
+                    </div>
 
-                        <li>
-                            <Link href='/profile'> Profile page of user</Link>
-                        </li>
-                        <li>
-                            <Link href='/myProperties'> My Properties</Link>
-                        </li>
-                        <li>
-                            <Link href='/addNewProperties'> Add New Prop</Link>
-                        </li>
-                    </ul>
-                </nav>
+                    <nav className="mt-4 flex-grow">
+                        <ul className="space-y-2">
+                            <li className="">
+                                <Link href="/dashboard" className="flex items-center">
+                                    <FaPerbyte className="mr-2" />
+                                    Dashboard
+                                </Link>
+                            </li>
+
+                            <li className="">
+                                <Link href="/profile" className="flex items-center">
+                                    <FaRegUser className="mr-2" />
+                                    Profile page of user
+                                </Link>
+                            </li>
+                            <li className="">
+                                <Link href="/myProperties" className="flex items-center">
+                                    <FaHouseFlag className="mr-2" /> My Properties
+                                </Link>
+                            </li>
+                            <li className="">
+                                <Link href="/addNewProperties" className="flex items-center">
+                                    <FaPlus className="mr-2" /> Add New Prop
+                                </Link>
+                            </li>
+                            <li className="">
+                                <Link href="/favorite" className="flex items-center">
+                                    <FaRegHeart className="mr-2" /> Favorite(s)
+                                </Link>
+                            </li>
+                        </ul>
+                        <div className="mt-auto">
+                            <button className="flex items-center">
+                                <FaArrowAltCircleLeft className="mr-2" /> LogOut
+                            </button>
+                        </div>
+                    </nav>
+                </div>
+                {/* end of sidebar content  */}
+
+                {/* navbar content */}
+                <div className="w-full md:w-3/4 text-white p-6 flex items-center justify-between h-36 py-5">
+
+                    {/* Desktop Menu */}
+                    <div className="hidden md:flex items-center space-x-20">
+
+                        <div className="relative group">
+                            <button className=" hover:text-gray-300">Add Listings</button>
+                        </div>
+
+                        {/* Avatar */}
+                        <div className="flex items-center">
+                            <img
+                                src="av2.jpg"
+                                alt="Avatar"
+                                className="w-10 h-10 rounded-full cursor-pointer"
+                            />
+                        </div>
+                    </div>
+                </div>
+                {/* end of navbar content  */}
+
             </div>
-            <div className="w-3/4 bg-white p-6">{children}</div>
+
+            {/* body Content */}
+            {children}
         </div>
     );
 };

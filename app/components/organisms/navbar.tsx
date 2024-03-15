@@ -45,29 +45,8 @@ const Navbar: React.FC = () => {
                                 Home
                             </Link>
                         </div>
-                        {/* <div className="relative">
-                            <Link href="/properties" className="text-white hover:text-gray-300">
-                                Properties
-                            </Link>
-                        </div> */}
-
                         <div className="relative group">
                             <button className="text-white hover:text-gray-300">Contact Us</button>
-                            {/* <ul
-                                className={`absolute ${isMobileMenuOpen ? 'block' : 'hidden'
-                                    } md:block bg-gray-800 text-white py-2 mt-2 rounded-md`}
-                            >
-                                <li>
-                                    <Link href="/help" className="hidden px-4 py-2 hover:bg-gray-700">
-                                        Help
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/contact" className="hidden px-4 py-2 hover:bg-gray-700">
-                                        Contact
-                                    </Link>
-                                </li>
-                            </ul> */}
                         </div>
 
                         <div className="relative text-white flex items-center justify-center">
