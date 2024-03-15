@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react';
+import { FaBath, FaBed } from 'react-icons/fa';
 
 interface CardProps {
     image: string;
@@ -30,7 +31,7 @@ const Card: React.FC<CardProps> = ({
             </div>
             <div className='bg-blue py-2 flex text-white justify-between mt-4 px-6 items-center rounded-xl'>
                 <p className=" text-gray-200 mb-2"> {purpose}</p>
-                <p>2 rooms, 1 bath</p>
+                <p className='flex items-center justify-center '> 2 <FaBed className='ml-1 mr-3' />  1 <FaBath className='ml-1' /></p>
 
             </div>
         </div>

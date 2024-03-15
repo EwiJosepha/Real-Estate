@@ -1,7 +1,7 @@
 'use client'
 
 import React, { ReactNode } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 type LayoutProps = {
@@ -23,25 +23,20 @@ const DbLayout: React.FC<LayoutProps> = ({ children }) => {
                 </div>
                 <nav className="mt-4">
                     <ul>
-                        <li className={router.pathname === '/dashboard' ? 'bg-gray-700' : ''}>
-                            <Link href="/dashboard" className="block py-2 px-4">
+                        <li>
+                            <Link href="/dashboard">
                                 Dashboard
                             </Link>
                         </li>
-                        <li className={router.pathname === '/profile' ? 'bg-gray-700' : ''}>
-                            <Link href="/profile" className="block py-2 px-4">
-                                Profile
-                            </Link>
+
+                        <li>
+                            <Link href='/profile'> Profile page of user</Link>
                         </li>
-                        <li className={router.pathname === '/my-properties' ? 'bg-gray-700' : ''}>
-                            <Link href="/my-properties" className="block py-2 px-4">
-                                My Properties
-                            </Link>
+                        <li>
+                            <Link href='/myProperties'> My Properties</Link>
                         </li>
-                        <li className={router.pathname === '/add-new-property' ? 'bg-gray-700' : ''}>
-                            <Link href="/add-new-property" className="block py-2 px-4">
-                                Add New Property
-                            </Link>
+                        <li>
+                            <Link href='/addNewProperties'> Add New Prop</Link>
                         </li>
                     </ul>
                 </nav>
