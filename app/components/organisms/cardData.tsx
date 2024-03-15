@@ -37,7 +37,7 @@ const CardData: React.FC = () => {
             <h1 className="text-3xl font-bold mb-6">Latest Properties</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {properties.map((property) => (
-                    (<Link href={`/property/${property.id}`} key={property.id}>
+                    (<Link href={`/property/${property.id}`} key={property.id} legacyBehavior>
 
                         <Card
                             image={property.image}
