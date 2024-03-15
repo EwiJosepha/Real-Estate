@@ -17,18 +17,7 @@ export default function Home() {
   return (
     <main className={roboto.className}>
       <div>
-        {/* <LandingPage /> */}
-        {/* <Navbar />
-        <HeroSection />
-
-        <InfoSection />
-        <Luxury />
-        <CardData />
-        <Footer /> */}
-        <DetailsHero />
-        <DetailAvatar />
-        <Description />
-        <ContactPage />
+        <LandingPage />
       </div>
     </main>
   );
