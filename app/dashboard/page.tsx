@@ -1,9 +1,13 @@
-import React from "react";
+import React from 'react';
+import Layout from '../dblayout/page';
 
-const DashboardPage: React.FC = () => {
+const Dashboard: React.FC = () => {
     return (
-        <div></div>
+        <Layout>
+            <h2 className="text-2xl font-bold mb-4">Dashboard</h2>
+            <p>Welcome to the dashboard!</p>
+        </Layout>
     );
 };
 
-export default DashboardPage;
+export default Dashboard;
