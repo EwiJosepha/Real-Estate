@@ -5,7 +5,7 @@ import Luxury from './luxury';
 
 function InfoSection() {
   return (
-    <div className="wrapper pt-14 bg-blue text-white">
+    <div className="wrapper pt-28 bg-blue text-white">
       <div className="flex items-center justify-center md:mx-auto md:w-3/4 lg:w-2/3">
         <div className="innerDiv text-base w-[80%] mr-20 sm:w-full">
           <div id="line"></div>

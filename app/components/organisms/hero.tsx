@@ -31,7 +31,7 @@ const HeroSection: React.FC = () => {
                     src={images[currentImageIndex]}
                     alt="Hero Image"
                     className="w-full object-cover transition-filter duration-500"
-                    style={{ height: '820px' }}
+                    style={{ height: '740px' }}
                 />
             </section>
             <section className="absolute bottom-1/3 transform -translate-x-1/2 left-1/2">
