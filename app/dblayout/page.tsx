@@ -105,8 +105,8 @@ const DbLayout: React.FC<LayoutProps> = ({ submit, header, children }) => {
 
 
                 <div className="mt-10 flex items-center md:mx-auto md:w-[83%]">{submit}
-                    <button className=" text-white w-40 bg-orange-500 px-4 py-2 rounded-md mr-16">Save</button>
-                    <button className=" text-red-700 ">Cancel</button>
+                    <button className=" text-white w-40 bg-black px-4 py-2 rounded-md mr-16">Save</button>
+                    <button className=" text-red-500 ">Cancel</button>
                 </div>
 
             </div>
