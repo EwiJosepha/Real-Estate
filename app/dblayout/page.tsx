@@ -21,80 +21,89 @@ const DbLayout: React.FC<LayoutProps> = ({ children }) => {
     const router = useRouter();
 
     return (
-        <div>
-            <div className="flex flex-col md:flex-row h-screen bg-blue">
-                {/* Sidebar */}
-                {/* <div className="flex justify-between"> */}
-                <div className="w-1/5 bg-white ">
-                    {/* Logo */}
-                    <div className="py-2 bg-blue h-36">
-                        <FooterLogo />
-                    </div>
+        <div className="flex">
 
-                    <nav className="mt-4 flex-grow">
-                        <ul className="space-y-2">
-                            <li className="">
-                                <Link href="/dashboard" className="flex items-center">
-                                    <FaPerbyte className="mr-2" />
-                                    Dashboard
-                                </Link>
-                            </li>
-
-                            <li className="">
-                                <Link href="/profile" className="flex items-center">
-                                    <FaRegUser className="mr-2" />
-                                    Profile page of user
-                                </Link>
-                            </li>
-                            <li className="">
-                                <Link href="/myProperties" className="flex items-center">
-                                    <FaHouseFlag className="mr-2" /> My Properties
-                                </Link>
-                            </li>
-                            <li className="">
-                                <Link href="/addNewProperties" className="flex items-center">
-                                    <FaPlus className="mr-2" /> Add New Prop
-                                </Link>
-                            </li>
-                            <li className="">
-                                <Link href="/favorite" className="flex items-center">
-                                    <FaRegHeart className="mr-2" /> Favorite(s)
-                                </Link>
-                            </li>
-                        </ul>
-                        <div className="mt-auto">
-                            <button className="flex items-center">
-                                <FaArrowAltCircleLeft className="mr-2" /> LogOut
-                            </button>
-                        </div>
-                    </nav>
+            {/* Sidebar */}
+            <div className="w-full md:w-1/5 h-screen">
+                {/* Logo */}
+                <div className=" bg-blue flex items-center pl-10 h-36">
+                    <FooterLogo />
                 </div>
 
-                {/* body Content */}
-                <div className="bg-pink-700 w-full md:w-1/2">{children}</div>
+                <nav className="mt-4 text-lg font-sans bg-white pl-10 flex-grow">
+                    <ul className="space-y-6">
+                        <li className=" border-b-2">
+                            <Link href="/dashboard" className="flex items-center py-6 hover:underline">
+                                <FaPerbyte className="mr-4 text-xl" />
+                                Dashboard
+                            </Link>
+                        </li>
+
+                        <li className=" border-b-2">
+                            <p className="py-4 text-gray-500">Profile</p>
+                            <Link href="/profile" className="flex hover:underline items-center pt-4 pb-8">
+                                <FaRegUser className="mr-4 text-xl" />
+                                Profile
+                            </Link>
+                        </li>
+                        <li>
+                            <p className="py-4 text-gray-500">Listings</p>
+                            <Link href="/myProperties" className="flex hover:underline items-center py-4">
+                                <FaHouseFlag className="mr-4 text-xl" /> My Properties
+                            </Link>
+                        </li>
+                        <li className="">
+                            <Link href="/addNewProperties" className="flex hover:underline items-center">
+                                <FaPlus className="mr-4 text-xl" /> Add New Property
+                            </Link>
+                        </li>
+                        <li className=" border-b-2">
+                            <Link href="/favorite" className="flex hover:underline items-center pt-4 pb-8">
+                                <FaRegHeart className="mr-4 text-xl" /> Favorite(s)
+                            </Link>
+                        </li>
+                    </ul>
+                    <div className="mt-auto">
+                        <button className="flex items-center py-6 hover:text-orange-500">
+                            <FaArrowAltCircleLeft className="mr-3 text-4xl" /> LogOut
+                        </button>
+                    </div>
+                </nav>
+            </div>
+            {/* end Sidebar */}
+
+
+
+            <div className="w-[83.33%] bg-blue h-screen">
+                {/* className="flex flex-col md:flex-row h-screen bg-blue"  */}
+
                 {/* </div> */}
+                <div>
+                    {/* navbar content */}
+                    <div className="text-white h-36 justify-between flex items-center md:mx-auto md:w-[83%]">
+                        <div className="">{/* empty */}</div>
 
-                {/* navbar content */}
-                <div className="text-white p-6 flex items-center justify-between h-36 py-5">
-                    <div className="">{/* empty */}</div>
+                        {/* Desktop Menu */}
+                        <div className="hidden md:flex items-center space-x-20">
+                            <div className="relative group">
+                                <button className=" hover:text-gray-300">Add Listings</button>
+                            </div>
 
-                    {/* Desktop Menu */}
-                    <div className="hidden md:flex items-center space-x-20">
-                        <div className="relative group">
-                            <button className=" hover:text-gray-300">Add Listings</button>
-                        </div>
-
-                        {/* Avatar */}
-                        <div className="flex items-center">
-                            <img
-                                src="av2.jpg"
-                                alt="Avatar"
-                                className="w-10 h-10 rounded-full cursor-pointer"
-                            />
+                            {/* Avatar */}
+                            <div className="flex items-center">
+                                <img
+                                    src="av2.jpg"
+                                    alt="Avatar"
+                                    className="w-10 h-10 rounded-full cursor-pointer"
+                                />
+                            </div>
                         </div>
                     </div>
+                    {/* end of navbar content  */}
+                    {/* body Content */}
+                    <div className="bg-white w-full md:w-[83%] flex-col flex md:mx-auto">{children}</div>
                 </div>
-                {/* end of navbar content  */}
+
             </div>
         </div>
     );
