@@ -3,7 +3,7 @@ import DbLayout from '../dblayout/page';
 
 const MyProperties: React.FC = () => {
     return (
-        <DbLayout>
+        <DbLayout header="My Properties" submit=''>
             <h2 className="text-2xl font-bold mb-4">My Properties</h2>
             <p>Here are your properties.</p>
         </DbLayout>

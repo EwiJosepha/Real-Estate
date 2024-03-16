@@ -14,10 +14,12 @@ import { FaHouseFlag } from "react-icons/fa6";
 import FooterLogo from "../components/organisms/footerLogo";
 
 type LayoutProps = {
+    submit: string;
+    header: string;
     children: ReactNode;
 };
 
-const DbLayout: React.FC<LayoutProps> = ({ children }) => {
+const DbLayout: React.FC<LayoutProps> = ({ submit, header, children }) => {
     const router = useRouter();
 
     return (
@@ -75,13 +77,10 @@ const DbLayout: React.FC<LayoutProps> = ({ children }) => {
 
 
             <div className="w-[83.33%] bg-blue h-screen">
-                {/* className="flex flex-col md:flex-row h-screen bg-blue"  */}
-
-                {/* </div> */}
                 <div>
                     {/* navbar content */}
                     <div className="text-white h-36 justify-between flex items-center md:mx-auto md:w-[83%]">
-                        <div className="">{/* empty */}</div>
+                        <div className="text-3xl font-mono font-bold">{header}</div>
 
                         {/* Desktop Menu */}
                         <div className="hidden md:flex items-center space-x-20">
@@ -101,7 +100,13 @@ const DbLayout: React.FC<LayoutProps> = ({ children }) => {
                     </div>
                     {/* end of navbar content  */}
                     {/* body Content */}
-                    <div className="bg-white w-full md:w-[83%] flex-col flex md:mx-auto">{children}</div>
+                    <div className="bg-white w-full md:w-[83%] flex-col mt-2 flex md:mx-auto">{children}</div>
+                </div>
+
+
+                <div className="mt-10 flex items-center md:mx-auto md:w-[83%]">{submit}
+                    <button className=" text-white w-40 bg-orange-500 px-4 py-2 rounded-md mr-16">Save</button>
+                    <button className=" text-red-700 ">Cancel</button>
                 </div>
 
             </div>
