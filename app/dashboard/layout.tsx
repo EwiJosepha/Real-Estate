@@ -25,16 +25,16 @@ const DbLayout: React.FC<Props> = ({ children }) => {
         <div className="flex">
 
             {/* Sidebar */}
-            <div className="w-full md:w-1/5 h-screen">
+            <div className="w-full md:w-1/5 h-full">
                 {/* Logo */}
                 <div className=" bg-blue flex items-center pl-10 h-36">
                     <FooterLogo />
                 </div>
 
-                <nav className="mt-4 text-lg font-sans bg-white pl-10 flex-grow">
+                <nav className="mt-4 text-lg font-sans bg-white pl-10 h-full">
                     <ul className="space-y-6">
                         <li className=" border-b-2">
-                            <Link href="/dashboard" className="flex items-center py-6 hover:underline">
+                            <Link href="/dashboard" className="flex items-center pt-10 pb-6 hover:underline">
                                 <FaPerbyte className="mr-4 text-xl" />
                                 Dashboard
                             </Link>
@@ -73,9 +73,8 @@ const DbLayout: React.FC<Props> = ({ children }) => {
             </div>
             {/* end Sidebar */}
 
-            <div className="w-[83.33%] bg-blue h-screen">
-                {/* navbar content */}
-
+            {/* body content  */}
+            <div className="w-[83.33%] bg-blue h-screen overscroll-y-none">
                 <>
                     {children}
                 </>

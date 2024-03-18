@@ -3,7 +3,7 @@ import React from "react";
 
 const Favorite: React.FC = () => {
     return (
-        <DdHeaderProvider header="Favorites" submit=''>
+        <DdHeaderProvider header="Favorites" only_header>
             <h1> put your favorites here please</h1>
         </DdHeaderProvider>
     )

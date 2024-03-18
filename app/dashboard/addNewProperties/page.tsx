@@ -32,16 +32,18 @@ const AddNewProperty: React.FC = () => {
 
     return (
         <DdHeaderProvider header="New Properties" submit="">
-            <div className="mx-auto container py-6 px-20">
-                <h2 className="text-2xl font-bold mb-4">Add New Property</h2>
 
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                    {/* Overview Card */}
-                    <div className="bg-white p-4 shadow rounded-lg">
+            {/* Overview Card */}
+
+            <div className="mx-auto container py-6 px-20">
+                {/* <h2 className="text-2xl font-bold mb-4"></h2> */}
+
+                <div className="gap-4 gap-y-8 space-y-11">
+                    <div className="bg-gray-100 mt-4 p-4 shadow rounded-lg">
                         <h3 className="text-xl font-semibold mb-2">Overview</h3>
-                        <div className="mb-4">
-                            <label htmlFor="propertyTitle" className="block font-medium">
-                                Property Title
+                        <div className="my-4">
+                            <label htmlFor="propertyTitle" className="block">
+                                Property Title*
                             </label>
                             <input
                                 type="text"
@@ -49,14 +51,53 @@ const AddNewProperty: React.FC = () => {
                                 className="border border-gray-300 px-4 py-2 rounded-md w-full"
                             />
                         </div>
-                        {/* ... other fields for the overview section */}
+                        <div className="mb-4">
+                            <label htmlFor="propertyDescription" className="block">
+                                Description*
+                            </label>
+                            <textarea
+                                id="propertyDescription"
+                                className="border border-gray-300 px-4 py-2 rounded-md w-full"
+                            ></textarea>
+                        </div>
+                        <div className="mb-4">
+                            <label htmlFor="propertyCategory" className="block">
+                                Category*
+                            </label>
+                            <input
+                                type="text"
+                                id="propertyCategory"
+                                className="border border-gray-300 px-4 py-2 rounded-md w-full"
+                            />
+                        </div>
+                        <div className="mb-4">
+                            <label htmlFor="propertyPrice" className="block">
+                                Price*
+                            </label>
+                            <input
+                                type="text"
+                                id="propertyPrice"
+                                className="border border-gray-300 px-4 py-2 rounded-md w-full"
+                            />
+                        </div>
+                        <div className="mb-4">
+                            <label htmlFor="listedIn" className="block">
+                                Listed in*
+                            </label>
+                            <select id="listedIn" className="border border-gray-300 px-4 py-2 rounded-md w-full">
+                                <option value="">All Listings</option>
+                                <option value="buy">Buy</option>
+                                <option value="sell">Sell</option>
+                                <option value="rent">Rent</option>
+                            </select>
+                        </div>
                     </div>
 
                     {/* Listing Details Card */}
-                    <div className="bg-white p-4 shadow rounded-lg">
+                    <div className="bg-gray-100 p-4 shadow rounded-lg">
                         <h3 className="text-xl font-semibold mb-2">Listing Details</h3>
                         <div className="mb-4">
-                            <label htmlFor="bedrooms" className="block font-medium">
+                            <label htmlFor="bedrooms" className="block">
                                 Number of Bedrooms
                             </label>
                             <input
@@ -69,10 +110,10 @@ const AddNewProperty: React.FC = () => {
                     </div>
 
                     {/* Photo and Video Upload Card */}
-                    <div className="bg-white p-4 shadow rounded-lg">
+                    <div className="bg-gray-100 p-4 shadow rounded-lg">
                         <h3 className="text-xl font-semibold mb-2">Photo and Video Upload</h3>
                         <div className="mb-4">
-                            <label htmlFor="mainImage" className="block font-medium">
+                            <label htmlFor="mainImage" className="block">
                                 Main Image
                             </label>
                             <input
@@ -83,7 +124,7 @@ const AddNewProperty: React.FC = () => {
                             />
                         </div>
                         <div className="mb-4">
-                            <label htmlFor="additionalImages" className="block font-medium">
+                            <label htmlFor="additionalImages" className="block">
                                 Additional Images
                             </label>
                             <input

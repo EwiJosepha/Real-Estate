@@ -36,9 +36,10 @@ export default function DdHeaderProvider({ children, only_header, only_cta_btns,
                 </div>
                 {/* end of navbar content  */}
                 {/* body Content */}
-                <div className="bg-white w-full md:w-[83%] flex-col mt-2 flex md:mx-auto">{children}</div>
+                <div className="bg-white w-full md:w-[83%] flex-col flex md:mx-auto overflow-y-scroll">{children}</div>
             </div>
 
+            {/* dashboard body buttons it should be a function when passing props  */}
             {only_header ? null : (
                 <div className="mt-10 flex items-center md:mx-auto md:w-[83%]">{submit}
                     <button className=" text-white w-40 bg-black px-4 py-2 rounded-md mr-16">Save</button>
