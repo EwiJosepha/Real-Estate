@@ -46,13 +46,13 @@ const MyProperties: React.FC = () => {
                     <tbody>
                         {properties.map((property) => (
                             <tr key={property.id} className='border-b-2'>
-                                <td className="px-4 py-2">
+                                <td className="px-4 py-6">
                                     <div className="flex">
                                         <img src={property.image} alt="Property" className="w-20 h-20  rounded-lg mr-2" />
                                         <div className='flex flex-col space-y-2'>
-                                            <span>{property.title}</span>
-                                            <span className='text-gray-400'>{property.location} </span>
-                                            <span>{property.price}</span>
+                                            <span className='cursor-pointer hover:text-orange-500'>{property.title}</span>
+                                            <span className='text-gray-400 text-sm cursor-pointer'>{property.location} </span>
+                                            <span className='cursor-pointer'>{property.price}</span>
                                         </div>
                                     </div>
                                 </td>
