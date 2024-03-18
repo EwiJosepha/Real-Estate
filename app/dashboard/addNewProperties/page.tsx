@@ -11,7 +11,7 @@ const AddNewProperty: React.FC = () => {
 
     return (
         <DdHeaderProvider header="New Properties" submit="">
-            <div className="mx-auto container py-6 px-20">
+            <div className="mx-auto container py-6 px-4 md:px-20">
 
                 <div className="space-y-16">
                     {/* Overview Card */}

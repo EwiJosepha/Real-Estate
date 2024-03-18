@@ -22,10 +22,10 @@ const DbLayout: React.FC<Props> = ({ children }) => {
     const router = useRouter();
 
     return (
-        <div className="flex">
+        <div className="flex-none md:flex">
 
             {/* Sidebar */}
-            <div className="w-full md:w-1/5 h-full">
+            <div className="w-full md:w-1/5 h-full overflow-y-hidden">
                 {/* Logo */}
                 <div className=" bg-blue flex items-center pl-10 h-36">
                     <FooterLogo />
@@ -74,7 +74,7 @@ const DbLayout: React.FC<Props> = ({ children }) => {
             {/* end Sidebar */}
 
             {/* body content  */}
-            <div className="w-[83.33%] bg-blue h-screen overflow-hidden">
+            <div className="md:w-[83.33%] w-full bg-blue overflow-hidden h-fit">
                 <>
                     {children}
                 </>
