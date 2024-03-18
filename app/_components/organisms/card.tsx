@@ -27,7 +27,7 @@ const Card: React.FC<CardProps> = ({
             </div>
             <div className="flex items-center justify-between px-8">
                 <p className="text-sm">{agent}</p>
-                <img src={avater} alt="Owner Avatar" className="w-9 h-9 rounded-xl mr-2" />
+                <img src={avater} alt="Owner Avatar" className="w-9 h-9 rounded-full mr-2" />
             </div>
             <div className='bg-blue py-2 flex text-white justify-between mt-4 px-6 items-center rounded-xl'>
                 <p className=" text-gray-200 mb-2"> {purpose}</p>

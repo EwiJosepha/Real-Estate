@@ -21,7 +21,7 @@ export default function DdHeaderProvider({ children, only_header, only_cta_btns,
                     {/* Desktop Menu */}
                     <div className="md:flex items-center space-x-20">
                         <div className="relative group">
-                            <button className="hidden hover:text-gray-300">Add Listings</button>
+                            <button className="hidden md:block hover:text-gray-300">Add Listings</button>
                         </div>
 
                         {/* Avatar */}

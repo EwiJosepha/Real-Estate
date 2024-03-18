@@ -1,11 +1,78 @@
+'use client'
+
 import DdHeaderProvider from '@/app/_components/db-header-provider';
 import React from 'react';
+import { FiMoreVertical } from 'react-icons/fi';
 
 const MyProperties: React.FC = () => {
+    const properties = [
+        {
+            id: 1,
+            image: 'card1.webp',
+            title: 'House',
+            location: 'Yaounde',
+            price: '$100,000',
+            date: '2022-01-01',
+            status: 'Active',
+        },
+        {
+            id: 2,
+            image: 'card2.webp',
+            title: 'Villa',
+            location: 'Bamenda',
+            price: '$200,000',
+            date: '2022-02-01',
+            status: 'Pending',
+        },
+    ];
+
+    const handleActionClick = (propertyId: number) => {
+        // Handle the action click, e.g., show a card with edit, delete, and share options
+        console.log(`Action clicked for property with ID: ${propertyId}`);
+    };
+
     return (
-        <DdHeaderProvider header="My Properties" submit=''>
-            <h2 className="text-2xl font-bold mb-4">My Properties</h2>
-            <p>Here are your properties.</p>
+        <DdHeaderProvider header="My Properties" submit="">
+            <div className="mt-4 p-6">
+                <table className="min-w-full">
+                    <thead className='bg-black text-white'>
+                        <tr>
+                            <th className="py-2">Title</th>
+                            <th className="py-2">Date</th>
+                            <th className="py-2">Status</th>
+                            <th className="py-2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {properties.map((property) => (
+                            <tr key={property.id} className='border-b-2'>
+                                <td className="px-4 py-2">
+                                    <div className="flex">
+                                        <img src={property.image} alt="Property" className="w-20 h-20  rounded-lg mr-2" />
+                                        <div className='flex flex-col space-y-2'>
+                                            <span>{property.title}</span>
+                                            <span className='text-gray-400'>{property.location} </span>
+                                            <span>{property.price}</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td className="px-4 py-2">{property.date}</td>
+                                <td className="px-4 py-2">{property.status}</td>
+                                <td className="px-4 py-2">
+                                    <div className="flex items-center">
+                                        <button
+                                            className="text-gray-500 hover:text-gray-700 focus:outline-none"
+                                            onClick={() => handleActionClick(property.id)}
+                                        >
+                                            <FiMoreVertical size={20} />
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </DdHeaderProvider>
     );
 };
