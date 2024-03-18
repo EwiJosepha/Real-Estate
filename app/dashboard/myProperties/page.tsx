@@ -42,16 +42,14 @@ const MyProperties: React.FC = () => {
     ];
 
     const handleActionClick = (propertyId: number) => {
-        setSelectedPropertyId((prevPropertyId) => {
-            if (prevPropertyId === propertyId) {
-                setIsDropdownVisible((prevState) => !prevState);
-                return prevPropertyId;
-            } else {
-                setIsDropdownVisible(true);
-                return propertyId;
-            }
-        });
+        if (selectedPropertyId === propertyId) {
+            setIsDropdownVisible((prevState) => !prevState);
+        } else {
+            setIsDropdownVisible(true);
+            setSelectedPropertyId(propertyId);
+        }
     };
+
 
     return (
         <DdHeaderProvider header="My Properties" submit="">
