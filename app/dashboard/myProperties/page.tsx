@@ -1,5 +1,5 @@
+import DdHeaderProvider from '@/app/_components/db-header-provider';
 import React from 'react';
-import DdHeaderProvider from '@/app/components/db-header-provider';
 
 const MyProperties: React.FC = () => {
     return (

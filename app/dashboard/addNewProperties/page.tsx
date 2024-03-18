@@ -1,7 +1,7 @@
 'use client'
 
+import DdHeaderProvider from '@/app/_components/db-header-provider';
 import React, { useState } from 'react';
-import DdHeaderProvider from '@/app/components/db-header-provider';
 
 const AddNewProperty: React.FC = () => {
     // State to store the uploaded images

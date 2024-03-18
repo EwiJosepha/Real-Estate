@@ -1,6 +1,6 @@
 'use client'
 
-import DdHeaderProvider from '@/app/components/db-header-provider';
+import DdHeaderProvider from '@/app/_components/db-header-provider';
 import { useState } from 'react';
 
 const Profile: React.FC = () => {

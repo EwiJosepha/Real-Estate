@@ -1,5 +1,5 @@
 import React from 'react';
-import DdHeaderProvider from '@/app/components/db-header-provider';
+import DdHeaderProvider from '../_components/db-header-provider';
 
 const Dashboard: React.FC = () => {
     return (
