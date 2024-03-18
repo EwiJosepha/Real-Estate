@@ -1,10 +1,16 @@
 'use client'
 
 import DdHeaderProvider from '@/app/_components/db-header-provider';
+import DropDownCard from '@/app/_components/organisms/dropDownCard';
 import React from 'react';
 import { FiMoreVertical } from 'react-icons/fi';
 
 const MyProperties: React.FC = () => {
+
+    const [isDropdownVisible, setIsDropdownVisible] = React.useState(false);
+    const [selectedPropertyId, setSelectedPropertyId] = React.useState<number | null>(null);
+    const dropdownRef = React.useRef<HTMLDivElement>(null);
+
     const properties = [
         {
             id: 1,
@@ -36,8 +42,15 @@ const MyProperties: React.FC = () => {
     ];
 
     const handleActionClick = (propertyId: number) => {
-        // Handle the action click, e.g., show a card with edit, delete, and share options
-        console.log(`Action clicked for property with ID: ${propertyId}`);
+        setSelectedPropertyId((prevPropertyId) => {
+            if (prevPropertyId === propertyId) {
+                setIsDropdownVisible((prevState) => !prevState);
+                return prevPropertyId;
+            } else {
+                setIsDropdownVisible(true);
+                return propertyId;
+            }
+        });
     };
 
     return (
@@ -75,6 +88,11 @@ const MyProperties: React.FC = () => {
                                         >
                                             <FiMoreVertical size={20} />
                                         </button>
+                                        {selectedPropertyId === property.id && (
+                                            <div className="absolute right-24" ref={dropdownRef}>
+                                                <DropDownCard />
+                                            </div>
+                                        )}
                                     </div>
                                 </td>
                             </tr>
