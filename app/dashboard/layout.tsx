@@ -74,7 +74,7 @@ const DbLayout: React.FC<Props> = ({ children }) => {
             {/* end Sidebar */}
 
             {/* body content  */}
-            <div className="w-[83.33%] bg-blue h-screen overscroll-y-none">
+            <div className="w-[83.33%] bg-blue h-screen overflow-hidden">
                 <>
                     {children}
                 </>

@@ -31,7 +31,7 @@ const Profile: React.FC = () => {
 
     return (
         <DdHeaderProvider header="Profile" submit=''>
-            <div className="mx-auto container py-6 px-20 overflow-scroll">
+            <div className="mx-auto container py-6 px-20">
                 {/* Profile Image */}
                 {imageUrl && (
                     <div className="mb-4 flex items-center">

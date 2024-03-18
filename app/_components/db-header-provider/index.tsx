@@ -36,7 +36,7 @@ export default function DdHeaderProvider({ children, only_header, only_cta_btns,
                 </div>
                 {/* end of navbar content  */}
                 {/* body Content */}
-                <div className="bg-white w-full md:w-[83%] flex-col flex md:mx-auto overflow-y-scroll">{children}</div>
+                <div className="bg-white w-full md:w-[83%] flex-col flex md:mx-auto h-[60%] overflow-y-scroll">{children}</div>
             </div>
 
             {/* dashboard body buttons it should be a function when passing props  */}
