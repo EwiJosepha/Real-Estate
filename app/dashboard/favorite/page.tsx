@@ -1,11 +1,11 @@
 import React from "react";
-import DbLayout from "../dblayout/page";
+import DdHeaderProvider from "@/app/components/db-header-provider";
 
 const Favorite: React.FC = () => {
     return (
-        <DbLayout header="Favorites" submit=''>
+        <DdHeaderProvider header="Favorites" submit=''>
             <h1> put your favorites here please</h1>
-        </DbLayout>
+        </DdHeaderProvider>
     )
 }
 export default Favorite

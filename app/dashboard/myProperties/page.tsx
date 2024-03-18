@@ -1,12 +1,12 @@
 import React from 'react';
-import DbLayout from '../dblayout/page';
+import DdHeaderProvider from '@/app/components/db-header-provider';
 
 const MyProperties: React.FC = () => {
     return (
-        <DbLayout header="My Properties" submit=''>
+        <DdHeaderProvider header="My Properties" submit=''>
             <h2 className="text-2xl font-bold mb-4">My Properties</h2>
             <p>Here are your properties.</p>
-        </DbLayout>
+        </DdHeaderProvider>
     );
 };
 

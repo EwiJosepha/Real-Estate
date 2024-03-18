@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-import logo from "../../../public/assets/images/4373182_earth_logo_logos_icon.png"
 
 function FooterLogo() {
   return (
@@ -17,7 +16,7 @@ function FooterLogo() {
 
           <div className="flex text-white items-center justify-center">
             <div className="imgr">
-              <Image src={logo} alt='Logo' width={45} height={50} />
+              <Image src={'/assets/images/4373182_earth_logo_logos_icon.png'} alt='Logo' width={45} height={50} />
             </div>
 
             <div>

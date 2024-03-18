@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
-import DbLayout from '../dblayout/page';
+import DdHeaderProvider from '@/app/components/db-header-provider';
 
 const AddNewProperty: React.FC = () => {
     // State to store the uploaded images
@@ -31,7 +31,7 @@ const AddNewProperty: React.FC = () => {
     };
 
     return (
-        <DbLayout header="New Properties" submit="">
+        <DdHeaderProvider header="New Properties" submit="">
             <div className="mx-auto container py-6 px-20">
                 <h2 className="text-2xl font-bold mb-4">Add New Property</h2>
 
@@ -112,7 +112,7 @@ const AddNewProperty: React.FC = () => {
                     </div>
                 )}
             </div>
-        </DbLayout>
+        </DdHeaderProvider>
     );
 };
 

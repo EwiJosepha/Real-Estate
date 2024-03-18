@@ -1,15 +1,15 @@
 import React from 'react';
-import DbLayout from '../dblayout/page';
+import DdHeaderProvider from '@/app/components/db-header-provider';
 
 const Dashboard: React.FC = () => {
     return (
-        <DbLayout header="Dashboard" submit=''>
+        <DdHeaderProvider header="Dashboard" submit='' only_header>
             <div>
                 <h2 className="text-2xl font-bold mb-4">Dashboard</h2>
                 <p>Welcome to the dashboard!</p>
             </div>
 
-        </DbLayout>
+        </DdHeaderProvider>
     );
 };
 

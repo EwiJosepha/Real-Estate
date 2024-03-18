@@ -1,7 +1,7 @@
 'use client'
 
+import DdHeaderProvider from '@/app/components/db-header-provider';
 import { useState } from 'react';
-import DbLayout from '../dblayout/page';
 
 const Profile: React.FC = () => {
     const [imageUrl, setImageUrl] = useState('');
@@ -30,7 +30,7 @@ const Profile: React.FC = () => {
     };
 
     return (
-        <DbLayout header="Profile" submit=''>
+        <DdHeaderProvider header="Profile" submit=''>
             <div className="mx-auto container py-6 px-20 overflow-scroll">
                 {/* Profile Image */}
                 {imageUrl && (
@@ -138,7 +138,7 @@ const Profile: React.FC = () => {
                 {/* Submit Button */}
                 {/* have use props to pass the data between components  */}
             </div>
-        </DbLayout>
+        </DdHeaderProvider>
     );
 };
 

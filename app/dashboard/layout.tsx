@@ -1,6 +1,7 @@
 "use client";
 
-import React, { ReactNode } from "react";
+import React from "react";
+import type { ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import {
@@ -13,13 +14,11 @@ import {
 import { FaHouseFlag } from "react-icons/fa6";
 import FooterLogo from "../components/organisms/footerLogo";
 
-type LayoutProps = {
-    submit: string;
-    header: string;
+type Props = {
     children: ReactNode;
 };
 
-const DbLayout: React.FC<LayoutProps> = ({ submit, header, children }) => {
+const DbLayout: React.FC<Props> = ({ children }) => {
     const router = useRouter();
 
     return (
@@ -43,24 +42,24 @@ const DbLayout: React.FC<LayoutProps> = ({ submit, header, children }) => {
 
                         <li className=" border-b-2">
                             <p className="py-4 text-gray-500">Profile</p>
-                            <Link href="/profile" className="flex hover:underline items-center pt-4 pb-8">
+                            <Link href="/dashboard/profile" className="flex hover:underline items-center pt-4 pb-8">
                                 <FaRegUser className="mr-4 text-xl" />
                                 Profile
                             </Link>
                         </li>
                         <li>
                             <p className="py-4 text-gray-500">Listings</p>
-                            <Link href="/myProperties" className="flex hover:underline items-center py-4">
+                            <Link href="/dashboard/myProperties" className="flex hover:underline items-center py-4">
                                 <FaHouseFlag className="mr-4 text-xl" /> My Properties
                             </Link>
                         </li>
                         <li className="">
-                            <Link href="/addNewProperties" className="flex hover:underline items-center">
+                            <Link href="/dashboard/addNewProperties" className="flex hover:underline items-center">
                                 <FaPlus className="mr-4 text-xl" /> Add New Property
                             </Link>
                         </li>
                         <li className=" border-b-2">
-                            <Link href="/favorite" className="flex hover:underline items-center pt-4 pb-8">
+                            <Link href="/dashboard/favorite" className="flex hover:underline items-center pt-4 pb-8">
                                 <FaRegHeart className="mr-4 text-xl" /> Favorite(s)
                             </Link>
                         </li>
@@ -74,41 +73,12 @@ const DbLayout: React.FC<LayoutProps> = ({ submit, header, children }) => {
             </div>
             {/* end Sidebar */}
 
-
-
             <div className="w-[83.33%] bg-blue h-screen">
-                <div>
-                    {/* navbar content */}
-                    <div className="text-white h-36 justify-between flex items-center md:mx-auto md:w-[83%]">
-                        <div className="text-3xl font-mono font-bold">{header}</div>
+                {/* navbar content */}
 
-                        {/* Desktop Menu */}
-                        <div className="hidden md:flex items-center space-x-20">
-                            <div className="relative group">
-                                <button className=" hover:text-gray-300">Add Listings</button>
-                            </div>
-
-                            {/* Avatar */}
-                            <div className="flex items-center">
-                                <img
-                                    src="av2.jpg"
-                                    alt="Avatar"
-                                    className="w-10 h-10 rounded-full cursor-pointer"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    {/* end of navbar content  */}
-                    {/* body Content */}
-                    <div className="bg-white w-full md:w-[83%] flex-col mt-2 flex md:mx-auto">{children}</div>
-                </div>
-
-
-                <div className="mt-10 flex items-center md:mx-auto md:w-[83%]">{submit}
-                    <button className=" text-white w-40 bg-black px-4 py-2 rounded-md mr-16">Save</button>
-                    <button className=" text-red-500 ">Cancel</button>
-                </div>
-
+                <>
+                    {children}
+                </>
             </div>
         </div>
     );
