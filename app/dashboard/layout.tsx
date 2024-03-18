@@ -27,7 +27,7 @@ const DbLayout: React.FC<Props> = ({ children }) => {
             {/* Sidebar */}
             <div className="w-full md:w-1/5 h-full overflow-y-hidden">
                 {/* Logo */}
-                <div className=" bg-blue flex items-center pl-10 h-36">
+                <div className="bg-blue flex items-center pl-10 h-36">
                     <FooterLogo />
                 </div>
 
