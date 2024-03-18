@@ -43,7 +43,7 @@ const AddNewProperty: React.FC = () => {
                         <h3 className="text-xl font-semibold mb-2">Overview</h3>
                         <div className="my-4">
                             <label htmlFor="propertyTitle" className="block">
-                                Property Title*
+                                Property Name*
                             </label>
                             <input
                                 type="text"
@@ -60,16 +60,7 @@ const AddNewProperty: React.FC = () => {
                                 className="border border-gray-300 px-4 py-2 rounded-md w-full"
                             ></textarea>
                         </div>
-                        <div className="mb-4">
-                            <label htmlFor="propertyCategory" className="block">
-                                Category*
-                            </label>
-                            <input
-                                type="text"
-                                id="propertyCategory"
-                                className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                            />
-                        </div>
+
                         <div className="mb-4">
                             <label htmlFor="propertyPrice" className="block">
                                 Price*
@@ -80,11 +71,24 @@ const AddNewProperty: React.FC = () => {
                                 className="border border-gray-300 px-4 py-2 rounded-md w-full"
                             />
                         </div>
+
+                        <div className="mb-4">
+                            <label htmlFor="propertyCategory" className="block">
+                                Property Type*
+                            </label>
+                            <select className="border border-gray-300 px-4 py-2 rounded-md w-full">
+                                <option value='apartment'>Apartment</option>
+                                <option value='studios'>Studios</option>
+                                <option value='house'>House</option>
+                                <option value='villas'>Villas</option>
+                                <option value='self-contain'>Self Contain</option>
+                            </select>
+                        </div>
                         <div className="mb-4">
                             <label htmlFor="listedIn" className="block">
                                 Listed in*
                             </label>
-                            <select id="listedIn" className="border border-gray-300 px-4 py-2 rounded-md w-full">
+                            <select className="border border-gray-300 px-4 py-2 rounded-md w-full">
                                 <option value="">All Listings</option>
                                 <option value="buy">Buy</option>
                                 <option value="sell">Sell</option>
@@ -96,7 +100,7 @@ const AddNewProperty: React.FC = () => {
                     {/* Listing Details Card */}
                     <div className="bg-gray-100 p-4 shadow rounded-lg">
                         <h3 className="text-xl font-semibold mb-2">Listing Details</h3>
-                        <div className="mb-4">
+                        <div className="my-4">
                             <label htmlFor="bedrooms" className="block">
                                 Number of Bedrooms
                             </label>
@@ -106,7 +110,45 @@ const AddNewProperty: React.FC = () => {
                                 className="border border-gray-300 px-4 py-2 rounded-md w-full"
                             />
                         </div>
-                        {/* ... other fields for the listing details section */}
+                        <div className="mb-4">
+                            <label htmlFor="bathrooms" className="block font-medium">
+                                Number of Bathrooms
+                            </label>
+                            <input
+                                type="text"
+                                id="bathrooms"
+                                className="border border-gray-300 px-4 py-2 rounded-md w-full"
+                            />
+                        </div>
+                        <div className="mb-4">
+                            <label htmlFor="kitchenDescription" className="block font-medium">
+                                Kitchen Description
+                            </label>
+                            <textarea
+                                id="kitchenDescription"
+                                className="border border-gray-300 px-4 py-2 rounded-md w-full"
+                            ></textarea>
+                        </div>
+                        <div className="mb-4">
+                            <label htmlFor="propertyLocation" className="block font-medium">
+                                Location
+                            </label>
+                            <input
+                                type="text"
+                                id="propertyLocation"
+                                className="border border-gray-300 px-4 py-2 rounded-md w-full"
+                            />
+                        </div>
+                        <div className="mb-4">
+                            <label htmlFor="propertySize" className="block font-medium">
+                                Size of the Property
+                            </label>
+                            <input
+                                type="text"
+                                id="propertySize"
+                                className="border border-gray-300 px-4 py-2 rounded-md w-full"
+                            />
+                        </div>
                     </div>
 
                     {/* Photo and Video Upload Card */}
