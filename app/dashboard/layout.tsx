@@ -25,48 +25,52 @@ const DbLayout: React.FC<Props> = ({ children }) => {
         <div className="flex-none md:flex">
 
             {/* Sidebar */}
-            <div className="w-full md:w-1/5 h-screen">
+            <div className="md:block w-full md:w-1/5 md:h-screen fixed md:relative">
                 {/* Logo */}
-                <button className="bg-blue ml-[12%] my-14">
+                <button className="bg-blue md:ml-[12%] my-14">
                     <FooterLogo />
                 </button>
 
-                <nav className="mt-4 text-lg font-sans pl-10">
-                    <ul className="space-y-6">
-                        <li className="border-y-2">
+                <nav className="mt-4 text-lg flex md:flex-col font-sans pl-10">
+                    <ul className="space-y-6 flex md:flex-col md:flex-none">
+                        <li className="md:block md:border-y-2">
                             <Link href="/dashboard" className="flex items-center py-10 hover:underline">
-                                <FaPerbyte className="mr-4 text-xl" />
-                                Dashboard
+                                <FaPerbyte className="block mr-4 text-xl" />
+                                <span className="hidden md:inline">Dashboard</span>
                             </Link>
                         </li>
 
-                        <li className=" border-b-2">
-                            <p className="py-4 text-gray-500">Profile</p>
+                        <li className="md:block md:border-b-2">
+                            <p className="py-4 text-gray-500 hidden md:block">Profile</p>
                             <Link href="/dashboard/profile" className="flex hover:underline items-center pt-4 pb-8">
-                                <FaRegUser className="mr-4 text-xl" />
-                                Profile
+                                <FaRegUser className="block mr-4 text-xl" />
+                                <span className="hidden md:inline">Profile</span>
                             </Link>
                         </li>
-                        <li>
-                            <p className="py-4 text-gray-500">Listings</p>
+                        <li className="md:block">
+                            <p className="py-4 text-gray-500 hidden md:block">Listings</p>
                             <Link href="/dashboard/myProperties" className="flex hover:underline items-center py-4">
-                                <FaHouseFlag className="mr-4 text-xl" /> My Properties
+                                <FaHouseFlag className="block mr-4 text-xl" />
+                                <span className="hidden md:inline">My Properties</span>
                             </Link>
                         </li>
-                        <li className="">
+                        <li className="md:block">
                             <Link href="/dashboard/addNewProperties" className="flex hover:underline items-center">
-                                <FaPlus className="mr-4 text-xl" /> Add New Property
+                                <FaPlus className="block mr-4 text-xl" />
+                                <span className="hidden md:inline">Add New Property</span>
                             </Link>
                         </li>
-                        <li className=" border-b-2">
+                        <li className="md:block md:border-b-2">
                             <Link href="/dashboard/favorite" className="flex hover:underline items-center pt-4 pb-8">
-                                <FaRegHeart className="mr-4 text-xl" /> Favorite(s)
+                                <FaRegHeart className="block mr-4 text-xl" />
+                                <span className="hidden md:inline">Favorite(s)</span>
                             </Link>
                         </li>
                     </ul>
                     <div className="mt-auto">
                         <button className="flex items-center py-6 hover:text-orange-500">
-                            <FaArrowAltCircleLeft className="mr-3 text-4xl" /> LogOut
+                            <FaArrowAltCircleLeft className="block mr-3 text-4xl" />
+                            <span className="hidden md:inline">LogOut</span>
                         </button>
                     </div>
                 </nav>
