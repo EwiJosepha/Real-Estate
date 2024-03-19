@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import ReactApexChart from 'react-apexcharts';
-import 'apexcharts/dist/apexcharts.css';
+import dynamic from 'next/dynamic';
+
+const ReactApexChart = dynamic(() => import('react-apexcharts'), {
+    ssr: false, // Disable server-side rendering for this component
+});
 
 const BarCharts = () => {
     const [chartOptions, setChartOptions] = useState({
@@ -21,12 +24,7 @@ const BarCharts = () => {
 
     return (
         <div>
-            <ReactApexChart
-                options={chartOptions}
-                series={chartSeries}
-                type="bar"
-                height={350}
-            />
+            <ReactApexChart options={chartOptions} series={chartSeries} type="bar" height={350} />
         </div>
     );
 };
