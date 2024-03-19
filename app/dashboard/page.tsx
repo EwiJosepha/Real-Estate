@@ -5,8 +5,7 @@ const Dashboard: React.FC = () => {
     return (
         <DdHeaderProvider header="Dashboard" only_header>
             <div>
-                <h2 className="text-2xl font-bold mb-4">Dashboard</h2>
-                <p>Welcome to the dashboard!</p>
+                <img src='' className='bg-cover object-cover w-[100%] h-1/2' />
             </div>
 
         </DdHeaderProvider>

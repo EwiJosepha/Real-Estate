@@ -52,7 +52,7 @@ const MyProperties: React.FC = () => {
 
 
     return (
-        <DdHeaderProvider header="My Properties" submit="">
+        <DdHeaderProvider header="My Properties" only_header>
             <div className="mt-4 p-6 overflow-x-scroll md:overflow-hidden">
                 <table className="container">
                     <thead className="bg-black text-white">

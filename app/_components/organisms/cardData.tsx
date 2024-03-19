@@ -1,37 +1,49 @@
 'use client'
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Card from './card';
+
 
 const properties = [
     {
         id: 1,
         image: 'card1.webp',
-        purpose: 'Apartment/Rent',
+        listing: 'Apartment/Rent',
         price: '$2000',
         agent: 'John Doe',
-        avater: 'av1.jpg',
+        avatar: 'av1.jpg',
     },
     {
         id: 2,
         image: 'card2.webp',
-        purpose: 'House/Sell',
+        listing: 'House/Sell',
         price: '$500000',
         agent: 'Jane Smith',
-        avater: 'av2.jpg',
+        avatar: 'av2.jpg',
     },
     {
         id: 2,
         image: 'card3.webp',
-        purpose: 'Studio/Sell',
+        listing: 'Studio/Sell',
         price: '$50000',
         agent: 'Jane Smith',
-        avater: 'img1.webp',
+        avatar: 'img1.webp',
     },
 ];
 
 const CardData: React.FC = () => {
+    const [favorites, setFavorites] = useState<number[]>([]);
+
+    const toggleFavorite = (id: number) => {
+        setFavorites((prevFavorites) => {
+            if (prevFavorites.includes(id)) {
+                return prevFavorites.filter((favId) => favId !== id)
+            } else {
+                return [...prevFavorites, id]
+            }
+        })
+    }
     return (
         <div className="container mx-auto py-8 mt-28 items-center justify-center md:mx-auto md:w-3/4 lg:w-2/3">
             <h1 className="text-3xl font-bold mb-6">Latest Properties</h1>
@@ -40,11 +52,14 @@ const CardData: React.FC = () => {
                     (<Link href={`/property/${property.id}`} key={property.id} legacyBehavior>
 
                         <Card
+                            id={property.id}
                             image={property.image}
-                            purpose={property.purpose}
+                            listing={property.listing}
                             price={property.price}
                             agent={property.agent}
-                            avater={property.avater}
+                            avatar={property.avatar}
+                            isFavorite={favorites.includes(property.id)}
+                            onToggleFavorite={toggleFavorite}
                         />
 
                     </Link>)
