@@ -10,7 +10,7 @@ import { FaEye, FaHeart } from 'react-icons/fa';
 const Dashboard: React.FC = () => {
     return (
         <DdHeaderProvider header="Dashboard" only_header>
-            <div className='bg-blue'>
+            <div className='bg-blue pb-20'>
                 <div className='bg-white py-7 px-8 rounded-lg mb-10'>
                     <ul className='flex justify-between items-center'>
                         <li className='text-gray-400'>All Properties <br /><span className='font-serif text-3xl font-bold text-black'>1.9K+</span></li>
@@ -48,7 +48,7 @@ const Dashboard: React.FC = () => {
                         <div className='pl-6 space-y-2'>
                             <p className='text-gray-500 text-sm pt-4'>Demian Josh. <span className='ml-60'> JAN 24</span></p>
                             <h2 className='font-mono'>Hunting Marketing Specialist</h2>
-                            <p className='text-gray-500 text-sm pb-4'>Hello, This is Demian from HuntX. We offer business solution to our client...</p>
+                            <p className='text-gray-500 text-sm pb-4'>Hello, This is Demian from HuntX. We offer the best business solution to our client...</p>
                         </div>
 
                     </div>

@@ -53,8 +53,8 @@ const MyProperties: React.FC = () => {
 
     return (
         <DdHeaderProvider header="My Properties" only_header>
-            <div className="mt-4 p-6 overflow-x-scroll md:overflow-hidden">
-                <table className="container">
+            <div className="mt-10 p-6 overflow-x-scroll md:overflow-hidden">
+                <table className="container mb-10">
                     <thead className="bg-black text-white">
                         <tr>
                             <th className="py-2">Title</th>
