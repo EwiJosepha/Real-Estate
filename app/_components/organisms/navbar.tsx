@@ -5,13 +5,14 @@ import { useState } from 'react';
 import { FaBars, FaRegUserCircle, FaTimes } from 'react-icons/fa';
 import Link from 'next/link';
 import FooterLogo from './footerLogo';
+import MobileMenu from './mobileMenu';
 
 
 const Navbar: React.FC = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const handleMobileMenuToggle = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
+        setIsMobileMenuOpen((prevIsMobileMenuOpen) => !prevIsMobileMenuOpen)
     };
 
     return (
@@ -54,8 +55,15 @@ const Navbar: React.FC = () => {
                             <button className=" hover:text-gray-300">Log In</button>
                         </div>
                     </div>
+
+
                 </div>
             </div>
+            {isMobileMenuOpen && (
+                <div className="fixed inset-0 z-50 bg-blue text-white w-[90%] h-fit p-6">
+                    <MobileMenu onClose={handleMobileMenuToggle} />
+                </div>
+            )}
         </nav>
     );
 };
