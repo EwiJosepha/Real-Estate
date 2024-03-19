@@ -25,13 +25,13 @@ const DbLayout: React.FC<Props> = ({ children }) => {
         <div className="flex-none md:flex">
 
             {/* Sidebar */}
-            <div className="md:block w-full md:w-1/5 md:h-screen fixed md:relative">
+            <div className="md:block w-full md:w-1/5 md:h-screen md:relative">
                 {/* Logo */}
                 <button className="bg-blue md:ml-[12%] my-14">
                     <FooterLogo />
                 </button>
 
-                <nav className="mt-4 text-lg flex md:flex-col font-sans pl-10">
+                <nav className="mt-1 bg-white text-lg flex md:flex-col font-sans pl-10">
                     <ul className="space-y-6 flex md:flex-col md:flex-none">
                         <li className="md:block md:border-y-2">
                             <Link href="/dashboard" className="flex items-center py-10 hover:underline">

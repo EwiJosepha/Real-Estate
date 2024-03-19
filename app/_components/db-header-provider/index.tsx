@@ -15,7 +15,7 @@ export default function DdHeaderProvider({ children, only_header, only_cta_btns,
                 {/* navbar content */}
                 <div className="text-white h-32 bg-blue z-10 justify-between flex items-center md:mx-auto md:w-[80%] top-0 fixed">
                     {only_cta_btns ? null : (
-                        <div className="text-3xl font-mono font-bold pl-28">{header}</div>
+                        <div className="text-3xl font-mono font-bold pl-1 md:pl-28">{header}</div>
                     )}
 
                     {/* Desktop Menu */}
@@ -36,7 +36,7 @@ export default function DdHeaderProvider({ children, only_header, only_cta_btns,
                 </div>
                 {/* end of navbar content  */}
                 {/* body Content */}
-                <div className="bg-white w-full md:w-[83%] flex-col mt-40 mb-10 rounded-xl flex md:mx-auto">{children}</div>
+                <div className="bg-white w-full md:w-[83%] flex-col md:mt-40 mb-10 rounded-xl flex md:mx-auto">{children}</div>
             </div>
 
             {/* dashboard body buttons it should be a function when passing props  */}
