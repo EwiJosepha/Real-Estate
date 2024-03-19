@@ -8,6 +8,30 @@ import Link from "next/link";
 const properties = [
     {
         id: 1,
+        image: 'card1.webp',
+        listing: 'Apartment/Rent',
+        price: '$2000',
+        agent: 'John Doe',
+        avatar: 'av1.jpg',
+    },
+    {
+        id: 2,
+        image: 'card2.webp',
+        listing: 'House/Sell',
+        price: '$500000',
+        agent: 'Jane Smith',
+        avatar: 'av2.jpg',
+    },
+    {
+        id: 2,
+        image: 'card3.webp',
+        listing: 'Studio/Sell',
+        price: '$50000',
+        agent: 'Jane Smith',
+        avatar: 'img1.webp',
+    },
+    {
+        id: 1,
         image: 'card4.jpg',
         listing: 'Apartment/Rent',
         price: '$35,600',
@@ -35,21 +59,22 @@ const properties = [
 const Favorite: React.FC = () => {
     return (
         <DdHeaderProvider header="Favorites" only_header>
-            <div className="py-8 px-10 mt-6">
+            <div className="py-10 px-10 bg-blue">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 object-cover">
                     {properties.map((property) => (
                         (<Link href={`/property/${property.id}`} key={property.id} legacyBehavior>
-
-                            <Card
-                                id={property.id}
-                                image={property.image}
-                                listing={property.listing}
-                                price={property.price}
-                                agent={property.agent}
-                                avatar={property.avatar}
-                                isFavorite={true}
-                                onToggleFavorite={() => { }}
-                            />
+                            <div className="bg-white p-1 rounded-lg">
+                                <Card
+                                    id={property.id}
+                                    image={property.image}
+                                    listing={property.listing}
+                                    price={property.price}
+                                    agent={property.agent}
+                                    avatar={property.avatar}
+                                    isFavorite={true}
+                                    onToggleFavorite={() => { }}
+                                />
+                            </div>
 
                         </Link>)
                     ))}
