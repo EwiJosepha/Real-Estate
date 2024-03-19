@@ -35,7 +35,7 @@ const properties = [
 const Favorite: React.FC = () => {
     return (
         <DdHeaderProvider header="Favorites" only_header>
-            <div className="container mx-auto py-8 mt-28 items-center justify-center lg:w-2/3">
+            <div className="py-8 px-10 mt-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 object-cover">
                     {properties.map((property) => (
                         (<Link href={`/property/${property.id}`} key={property.id} legacyBehavior>
