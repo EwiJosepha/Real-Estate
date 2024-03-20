@@ -34,7 +34,10 @@ const DbLayout: React.FC<Props> = ({ children }) => {
                 <nav className="mt-1 bg-white text-lg flex md:flex-col font-sans pl-10">
                     <ul className="space-y-6 flex md:flex-col md:flex-none">
                         <li className="md:block md:border-y-2">
-                            <Link href="/dashboard" className="flex items-center py-10 hover:underline">
+                            <Link
+                                href="/dashboard"
+                                className="flex items-center py-10 hover:underline"
+                                legacyBehavior>
                                 <FaPerbyte className="block mr-4 text-xl" />
                                 <span className="hidden md:inline">Dashboard</span>
                             </Link>
@@ -42,26 +45,38 @@ const DbLayout: React.FC<Props> = ({ children }) => {
 
                         <li className="md:block md:border-b-2">
                             <p className="py-4 text-gray-500 hidden md:block">Profile</p>
-                            <Link href="/dashboard/profile" className="flex hover:underline items-center pt-4 pb-8">
+                            <Link
+                                href="/dashboard/profile"
+                                className="flex hover:underline items-center pt-4 pb-8"
+                                legacyBehavior>
                                 <FaRegUser className="block mr-4 text-xl" />
                                 <span className="hidden md:inline">Profile</span>
                             </Link>
                         </li>
                         <li className="md:block">
                             <p className="py-4 text-gray-500 hidden md:block">Listings</p>
-                            <Link href="/dashboard/myProperties" className="flex hover:underline items-center py-4">
+                            <Link
+                                href="/dashboard/myProperties"
+                                className="flex hover:underline items-center py-4"
+                                legacyBehavior>
                                 <FaHouseFlag className="block mr-4 text-xl" />
                                 <span className="hidden md:inline">My Properties</span>
                             </Link>
                         </li>
                         <li className="md:block">
-                            <Link href="/dashboard/addNewProperties" className="flex hover:underline items-center">
+                            <Link
+                                href="/dashboard/addNewProperties"
+                                className="flex hover:underline items-center"
+                                legacyBehavior>
                                 <FaPlus className="block mr-4 text-xl" />
                                 <span className="hidden md:inline">Add New Property</span>
                             </Link>
                         </li>
                         <li className="md:block md:border-b-2">
-                            <Link href="/dashboard/favorite" className="flex hover:underline items-center pt-4 pb-8">
+                            <Link
+                                href="/dashboard/favorite"
+                                className="flex hover:underline items-center pt-4 pb-8"
+                                legacyBehavior>
                                 <FaRegHeart className="block mr-4 text-xl" />
                                 <span className="hidden md:inline">Favorite(s)</span>
                             </Link>
