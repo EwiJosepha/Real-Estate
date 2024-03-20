@@ -23,7 +23,7 @@ const properties = [
         avatar: 'av2.jpg',
     },
     {
-        id: 2,
+        id: 3,
         image: 'card3.webp',
         listing: 'Studio/Sell',
         price: '$50000',
@@ -31,7 +31,7 @@ const properties = [
         avatar: 'img1.webp',
     },
     {
-        id: 1,
+        id: 4,
         image: 'card4.jpg',
         listing: 'Apartment/Rent',
         price: '$35,600',
@@ -39,7 +39,7 @@ const properties = [
         avatar: 'av3.jpg',
     },
     {
-        id: 2,
+        id: 5,
         image: 'card5.jpg',
         listing: 'House/Sell',
         price: '$19,000',
@@ -47,7 +47,7 @@ const properties = [
         avatar: 'av4.jpg',
     },
     {
-        id: 2,
+        id: 6,
         image: 'card6.jpg',
         listing: 'Studio/Sell',
         price: '$980,000',
