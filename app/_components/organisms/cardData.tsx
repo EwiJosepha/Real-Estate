@@ -33,7 +33,7 @@ const CardData: React.FC<{ showLink?: boolean }> = ({ showLink = true }) => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 object-cover">
                 {displayedProperties.map((property) => (
-                    (<Link href='/details' key={property.id} passHref>
+                    (<div>
 
                         <Card
                             id={property.id}
@@ -46,7 +46,7 @@ const CardData: React.FC<{ showLink?: boolean }> = ({ showLink = true }) => {
                             onToggleFavorite={toggleFavorite}
                         />
 
-                    </Link>)
+                    </div>)
                 ))}
             </div>
         </div>
