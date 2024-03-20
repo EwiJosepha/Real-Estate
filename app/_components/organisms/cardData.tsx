@@ -46,7 +46,12 @@ const CardData: React.FC = () => {
     }
     return (
         <div className="container mx-auto py-8 mt-28 items-center justify-center md:mx-auto md:w-3/4 lg:w-2/3">
-            <h1 className="text-3xl font-bold mb-6">Latest Properties</h1>
+            <div className='flex items-center mb-7 font-bold font-serif'>
+                <h1 className="text-3xl mr-6">Latest Properties</h1>
+                <Link href={'/properties'} className='text-xl text-blue'> See All...</Link>
+            </div>
+
+
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 object-cover">
                 {properties.map((property) => (
                     (<Link href={`/property/${property.id}`} key={property.id} legacyBehavior>
