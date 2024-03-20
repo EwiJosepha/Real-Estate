@@ -23,33 +23,35 @@ const CardData: React.FC<{ showLink?: boolean }> = ({ showLink = true }) => {
     // Display only the first three properties 
 
     return (
-        <div className="container mx-auto py-8 mt-28 items-center justify-center md:mx-auto md:w-3/4 lg:w-2/3">
+        <>
+            <div className="container mx-auto py-8 mt-28 items-center justify-center md:mx-auto md:w-3/4 lg:w-2/3">
 
-            {showLink && (<div className='flex items-center mb-7 font-bold font-serif'>
-                <h1 className="text-3xl mr-6">Latest Properties</h1>
-                <Link href='/property' passHref className='text-xl text-blue'> See All...</Link>
-            </div>)}
+                {showLink && (<div className='flex items-center mb-7 font-bold font-serif'>
+                    <h1 className="text-3xl mr-6">Latest Properties</h1>
+                    <Link href='/property' passHref className='text-xl text-blue'> See All...</Link>
+                </div>)}
 
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 object-cover">
-                {displayedProperties.map((property) => (
-                    (<div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 object-cover">
+                    {displayedProperties.map((property) => (
+                        (<div>
 
-                        <Card
-                            id={property.id}
-                            image={property.image}
-                            listing={property.listing}
-                            price={property.price}
-                            agent={property.agent}
-                            avatar={property.avatar}
-                            isFavorite={favorites.includes(property.id)}
-                            onToggleFavorite={toggleFavorite}
-                        />
+                            <Card
+                                id={property.id}
+                                image={property.image}
+                                listing={property.listing}
+                                price={property.price}
+                                agent={property.agent}
+                                avatar={property.avatar}
+                                isFavorite={favorites.includes(property.id)}
+                                onToggleFavorite={toggleFavorite}
+                            />
 
-                    </div>)
-                ))}
+                        </div>)
+                    ))}
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 
