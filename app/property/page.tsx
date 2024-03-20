@@ -5,13 +5,13 @@ import CardData from "../_components/organisms/cardData";
 
 const PropertyPage: React.FC = () => {
     return (
-        <div>
+        <>
             <Navbar />
             <div className="">
                 <CardData showLink={false} />
             </div>
             <Footer />
-        </div>
+        </>
     );
 };
 

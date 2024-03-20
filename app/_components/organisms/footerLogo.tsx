@@ -1,11 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 function FooterLogo() {
   return (
     <div>
-      <div className="forlogo items-center justify-center ">
-
+      <Link href="/" passHref className="forlogo items-center justify-center ">
         <div className="flex items-center">
           <div className="line1"></div>
           <p id="footertext">THE</p>
@@ -28,7 +28,7 @@ function FooterLogo() {
           <div className="line3"></div>
 
         </div>
-      </div>
+      </Link>
     </div>
   )
 }

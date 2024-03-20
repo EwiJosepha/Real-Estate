@@ -31,7 +31,7 @@ const Card: React.FC<CardProps> = ({
         <div className="text-base">
             <div className="relative">
 
-                <Link href={`/details/${id}`}>
+                <Link href='/details'>
                     <img src={image} alt="Property" className="w-full h-72 mb-4 rounded-xl" />
                     <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                     <p className="absolute bottom-2 left-4 text-white font-extrabold text-xl">{price}</p>
@@ -55,7 +55,7 @@ const Card: React.FC<CardProps> = ({
             </div>
 
             <div>
-                <Link href={`/details/${id}`}>
+                <Link href='/details'>
                     <div className="flex items-center justify-between px-8">
                         <p className="text-sm">{agent}</p>
                         <img src={avatar} alt="Owner Avatar" className="w-9 h-8 rounded-full mr-2" />
