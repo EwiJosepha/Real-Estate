@@ -2,7 +2,6 @@
 
 import React from 'react';
 import DdHeaderProvider from '../_components/db-header-provider';
-import BarCharts from '../_components/organisms/barCharts';
 import { BsPersonCircle } from 'react-icons/bs';
 import { CiBookmarkMinus } from 'react-icons/ci';
 import { FaEye, FaHeart } from 'react-icons/fa';
@@ -27,7 +26,7 @@ const Dashboard: React.FC = () => {
 
                     <div className='bg-white p-2 rounded-lg font-bold text-xl w-full md:w-[58%] mr-10 mb-10 md:mb-0'>
                         <h1 className='py-4 pl-4'>Property Overview</h1>
-                        <BarCharts />
+                        {/* <BarCharts /> */}
                     </div>
 
                     <div className='container bg-white rounded-lg md:w-[38%] py-2 px-4'>
