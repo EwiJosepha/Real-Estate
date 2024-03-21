@@ -1,8 +1,11 @@
 'use client'
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Card from './card';
+import { useQuery } from '@tanstack/react-query';
+import { log } from 'console';
+import axios from 'axios';
 
 const properties = [
     {
@@ -31,7 +34,51 @@ const properties = [
     },
 ];
 
+type Property = {
+    id: number;
+    name: string;
+    type: string;
+    description: string;
+    rooms: string;
+    bath: number;
+    livingRooms: string;
+    location: string;
+    price: number;
+    areaInKm: string;
+    rentOrSale: string;
+    shortDescription: string;
+    images: string[];
+    agentId: number;
+}
+
+
 const CardData: React.FC = () => {
+    const [propertiess, setPropertiess] = useState<Property | null>()
+
+    const getProperties = async () => {
+        try {
+            const response = await fetch("http://localhost:4000/properties")
+
+            if (response) {
+                const { data } = await response.json()
+                if (data) {
+                    setPropertiess(data)
+                }
+            }
+            
+            
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    
+    useEffect(() => {
+        getProperties()
+    }, [])
+
+    console.log(propertiess);
+
+
     return (
         <div className="container mx-auto py-8 mt-28 items-center justify-center md:mx-auto md:w-3/4 lg:w-2/3">
             <h1 className="text-3xl font-bold mb-6">Latest Properties</h1>
