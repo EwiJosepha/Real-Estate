@@ -36,9 +36,10 @@ const DbLayout: React.FC<Props> = ({ children }) => {
                         <li className="md:block md:border-y-2">
                             <Link
                                 href="/dashboard"
-                                className="flex items-center py-10 hover:underline"
                                 legacyBehavior>
-                                <span>
+                                <span
+                                    className="flex items-center py-10 hover:underline cursor-pointer"
+                                >
                                     <FaPerbyte className="block mr-4 text-xl" />
                                     <span className="hidden md:inline">Dashboard</span>
                                 </span>
@@ -49,9 +50,10 @@ const DbLayout: React.FC<Props> = ({ children }) => {
                             <p className="py-4 text-gray-500 hidden md:block">Profile</p>
                             <Link
                                 href="/dashboard/profile"
-                                className="flex hover:underline items-center pt-4 pb-8"
                                 legacyBehavior>
-                                <span>
+                                <span
+                                    className="flex hover:underline cursor-pointer items-center pt-4 pb-8"
+                                >
                                     <FaRegUser className="block mr-4 text-xl" />
                                     <span className="hidden md:inline">Profile</span>
                                 </span>
@@ -61,9 +63,10 @@ const DbLayout: React.FC<Props> = ({ children }) => {
                             <p className="py-4 text-gray-500 hidden md:block">Listings</p>
                             <Link
                                 href="/dashboard/myProperties"
-                                className="flex hover:underline items-center py-4"
                                 legacyBehavior>
-                                <span>
+                                <span
+                                    className="flex hover:underline cursor-pointer items-center py-4"
+                                >
                                     <FaHouseFlag className="block mr-4 text-xl" />
                                     <span className="hidden md:inline">My Properties</span>
                                 </span>
@@ -72,9 +75,10 @@ const DbLayout: React.FC<Props> = ({ children }) => {
                         <li className="md:block">
                             <Link
                                 href="/dashboard/addNewProperties"
-                                className="flex hover:underline items-center"
                                 legacyBehavior>
-                                <span>
+                                <span
+                                    className="flex hover:underline cursor-pointer items-center"
+                                >
                                     <FaPlus className="block mr-4 text-xl" />
                                     <span className="hidden md:inline">Add New Property</span>
                                 </span>
@@ -83,9 +87,8 @@ const DbLayout: React.FC<Props> = ({ children }) => {
                         <li className="md:block md:border-b-2">
                             <Link
                                 href="/dashboard/favorite"
-                                className="flex hover:underline items-center pt-4 pb-8"
                                 legacyBehavior>
-                                <span>
+                                <span className="hover:underline cursor-pointer items-center pt-4 pb-8 flex">
                                     <FaRegHeart className="block mr-4 text-xl" />
                                     <span className="hidden md:inline">Favorite(s)</span>
                                 </span>

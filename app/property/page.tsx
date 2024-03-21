@@ -7,7 +7,7 @@ const PropertyPage: React.FC = () => {
     return (
         <>
             <Navbar />
-            <div className="">
+            <div>
                 <CardData showLink={false} />
             </div>
             <Footer />
