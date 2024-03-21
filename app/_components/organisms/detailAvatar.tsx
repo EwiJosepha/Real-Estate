@@ -23,7 +23,7 @@ function DetailAvatar() {
     "istockphoto-1319747564-170667a.webp",
     "istockphoto-1319747564-170667a.webp",
     "istockphoto-1319747564-170667a.webp",
- 
+
   ]
 
   const icons = [
@@ -41,10 +41,6 @@ function DetailAvatar() {
     slidesToShow: 1,
     slidesToScroll: 1
   };
-
-  
-
-
 
   return (
     <div>
@@ -79,7 +75,7 @@ function DetailAvatar() {
         </div>
 
         <div className="carousel">
-          <SimpleSlider images={images}/>
+          <SimpleSlider images={images} />
           {/* <button id="decrement" onClick={prevSlide}>&lt;</button> */}
           {/* <button id="increment" onClick={nextSlide}>&gt;</button> */}
         </div>
