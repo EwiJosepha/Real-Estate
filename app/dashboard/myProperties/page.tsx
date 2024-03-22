@@ -4,8 +4,26 @@ import DdHeaderProvider from '@/app/_components/db-header-provider';
 import DropDownCard from '@/app/_components/organisms/dropDownCard';
 import React from 'react';
 import { FiMoreVertical } from 'react-icons/fi';
+import { useEffect } from 'react';
+
+
 
 const MyProperties: React.FC = () => {
+    useEffect(() => {
+        const getCookieValue = (name: string) => {
+          const cookies = document.cookie.split(';');
+          for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.startsWith(`${name}=`)) {
+              return cookie.substring(name.length + 1);
+            }
+          }
+          return 'hey';
+        };
+    
+        const token = getCookieValue('token');
+        console.log(token);
+      }, []);
 
     const [isDropdownVisible, setIsDropdownVisible] = React.useState(false);
     const [selectedPropertyId, setSelectedPropertyId] = React.useState<number | null>(null);
