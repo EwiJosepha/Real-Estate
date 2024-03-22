@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const RegisterPage: React.FC = () => {
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+        <div className="flex flex-col items-center justify-center min-h-screen bg-blue">
             <div className="bg-white w-96 p-10 rounded shadow">
                 <h2 className="text-2xl font-bold mb-6">Register</h2>
                 <form>
@@ -39,7 +39,7 @@ const RegisterPage: React.FC = () => {
                     </div>
                     <button
                         type="submit"
-                        className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300"
+                        className="w-full bg-blue text-white py-2 px-4 rounded hover:bg-blue transition-colors duration-300"
                     >
                         Register
                     </button>
