@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { FaBars, FaHeart, FaTimes } from 'react-icons/fa';
 import { FaCodeMerge } from 'react-icons/fa6';
 
-function DetailsHero() {
+function DetailNav() {
   const [isMobileView, setIsMobileView] = useState(false);
 
   const handleMobile = () => {
@@ -15,7 +15,7 @@ function DetailsHero() {
 
   return (
     <>
-      <div className="detailspageWrapper overflow-x-visible md:px-24 px-6 relative">
+      <div className="detailspageWrapper overflow-x-visible md:px-24 px-6 absolute z-10 border-b-2 border-white w-full text-white font-extrabold text-lg">
 
         <div className="villa">
           <FooterLogo />
@@ -48,4 +48,4 @@ function DetailsHero() {
   );
 }
 
-export default DetailsHero;
+export default DetailNav;
