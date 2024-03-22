@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-20">
                         <div className="relative">
-                            <Link href="/properties" className="text-white hover:text-gray-300">
+                            <Link href="/cardData" className="text-white hover:text-gray-300">
                                 Properties
                             </Link>
                         </div>
