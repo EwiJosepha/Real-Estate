@@ -11,6 +11,9 @@ const DetailHero: React.FC = () => {
         'detail3.jpeg',
         'detail4.jpeg',
         'detail5.jpeg',
+        'detail6.jpg',
+        'detail7.jpg',
+        'detail8.jpg',
     ];
 
     const previousImage = () => {
