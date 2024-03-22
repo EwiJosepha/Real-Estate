@@ -2,16 +2,17 @@
 
 import React from 'react';
 import { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaRegUserCircle, FaTimes } from 'react-icons/fa';
 import Link from 'next/link';
 import FooterLogo from './footerLogo';
+import MobileMenu from './mobileMenu';
 
 
 const Navbar: React.FC = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const handleMobileMenuToggle = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
+        setIsMobileMenuOpen((prevIsMobileMenuOpen) => !prevIsMobileMenuOpen)
     };
 
     return (
@@ -40,32 +41,29 @@ const Navbar: React.FC = () => {
                                 Properties
                             </Link>
                         </div>
-
+                        <div className="relative">
+                            <Link href="/properties" className="text-white hover:text-gray-300">
+                                Home
+                            </Link>
+                        </div>
                         <div className="relative group">
-                            <button className="text-white hover:text-gray-300">Other Services</button>
-                            <ul
-                                className={`absolute ${isMobileMenuOpen ? 'block' : 'hidden'
-                                    } md:block bg-gray-800 text-white py-2 mt-2 rounded-md`}
-                            >
-                                <li>
-                                    <Link href="/help" className="hidden px-4 py-2 hover:bg-gray-700">
-                                        Help
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/contact" className="hidden px-4 py-2 hover:bg-gray-700">
-                                        Contact
-                                    </Link>
-                                </li>
-                            </ul>
+                            <button className="text-white hover:text-gray-300">Contact Us</button>
                         </div>
 
-                        <div className="relative">
-                            <button className="text-white hover:text-gray-300">Sign In / Sign Up</button>
+                        <div className="relative text-white flex items-center justify-center">
+                            <FaRegUserCircle className='mr-2 text-2xl' />
+                            <button className=" hover:text-gray-300">Log In</button>
                         </div>
                     </div>
+
+
                 </div>
             </div>
+            {isMobileMenuOpen && (
+                <div className="fixed inset-0 z-50 bg-blue text-white w-[90%] h-fit p-6">
+                    <MobileMenu onClose={handleMobileMenuToggle} />
+                </div>
+            )}
         </nav>
     );
 };
