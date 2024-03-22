@@ -3,13 +3,12 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { FaTimes } from 'react-icons/fa';
-import { NextResponse, } from 'next/server';
 import Cookies from 'js-cookie'
-import { cookies } from 'next/headers';
-
+import { jwtDecode } from "jwt-decode";
 
 
 const LoginPage: React.FC = () => {
+    
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -30,33 +29,24 @@ const LoginPage: React.FC = () => {
             headers: {
                 "Content-Type": "application/json"
             },
-
-
             body: JSON.stringify(formData)
-
-
         })
+        
         const badrequest = res.status === 400
         const goodreq = res.status === 201
-
         setBadreq(badrequest)
         setSuccesful(goodreq)
-
-    //     if (badreq) {
-    //         return <div className=' bg-cyan-800'>Log in succesful</div>
-    //     }
-
-    //    if(succesful) {
-    //     return <div className=' bg-cyan-800'>Log in succesful</div>
-    //    }
-
-        const res2 = res.json()
-        console.log("res", res2);
+        const res2 =  await res.json().then((data)=>(data))
+        console.log("ressS", res2)
+        const tokenn = res2
+        const decoded= jwtDecode(tokenn)
+        console.log(decoded);
+        
 
     }
 
-    const token = Cookies.get('next-auth.session-token');
-    console.log("token", token)
+
+  
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-blue">
@@ -66,10 +56,10 @@ const LoginPage: React.FC = () => {
                     <Link href='/' passHref ><FaTimes /></Link>
                 </div>
                 <form onSubmit={handleRegister}>
-                    {badreq && <div className=' color-red-800 font-medium text-red-600'>wrong credentials try again!!!</div>}<br/>
-                    <Link href="/">
-                    {succesful && <div className=' color-red-800 font-medium text-green-700'>Login succesful</div>}<br/>
-                    </Link>
+                    {badreq && <div className=' color-red-800 font-medium text-red-600'>wrong credentials try again!!!</div>}<br />
+
+                    {succesful && <Link href="/"><div className=' color-red-800 font-medium text-green-700'>Login succesful</div>  </Link>}<br />
+
                     <div className="mb-4">
                         <label htmlFor="email" className="block mb-2 font-medium">
                             Email
