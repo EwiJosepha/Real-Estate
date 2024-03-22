@@ -13,33 +13,50 @@ const LoginPage: React.FC = () => {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [badreq, setBadreq] = useState(Boolean)
+    const [succesful, setSuccesful] = useState(Boolean)
 
-    const handleRegister = async (e: any)=> {
+    const handleRegister = async (e: any) => {
         e.preventDefault()
 
-        const formData  = {
+        const formData = {
             email,
             hashpassword: password
         }
 
-        const res = await fetch("http://localhost:4000/auth/signin",{
+        const res = await fetch("http://localhost:4000/auth/signin", {
             method: "POST",
             mode: "cors",
             headers: {
                 "Content-Type": "application/json"
             },
-           
+
 
             body: JSON.stringify(formData)
-        })
 
-        const res2 =  await res.json()
-        console.log(res2);
-        
+
+        })
+        const badrequest = res.status === 400
+        const goodreq = res.status === 201
+
+        setBadreq(badrequest)
+        setSuccesful(goodreq)
+
+    //     if (badreq) {
+    //         return <div className=' bg-cyan-800'>Log in succesful</div>
+    //     }
+
+    //    if(succesful) {
+    //     return <div className=' bg-cyan-800'>Log in succesful</div>
+    //    }
+
+        const res2 = res.json()
+        console.log("res", res2);
+
     }
 
     const token = Cookies.get('next-auth.session-token');
-console.log("token", token)
+    console.log("token", token)
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-blue">
@@ -49,12 +66,16 @@ console.log("token", token)
                     <Link href='/' passHref ><FaTimes /></Link>
                 </div>
                 <form onSubmit={handleRegister}>
+                    {badreq && <div className=' color-red-800 font-medium text-red-600'>wrong credentials try again!!!</div>}<br/>
+                    <Link href="/">
+                    {succesful && <div className=' color-red-800 font-medium text-green-700'>Login succesful</div>}<br/>
+                    </Link>
                     <div className="mb-4">
                         <label htmlFor="email" className="block mb-2 font-medium">
                             Email
                         </label>
                         <input
-                        onChange={(e)=> setEmail(e.target.value)}
+                            onChange={(e) => setEmail(e.target.value)}
 
                             type="email"
                             id="email"
@@ -66,7 +87,7 @@ console.log("token", token)
                             Password
                         </label>
                         <input
-                        onChange={(e)=> setEmail(e.target.value)}
+                            onChange={(e) => setPassword(e.target.value)}
                             type="password"
                             id="password"
                             className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
