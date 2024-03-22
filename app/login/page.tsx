@@ -1,11 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
+import { FaTimes } from 'react-icons/fa';
 
 const LoginPage: React.FC = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-blue">
             <div className="bg-white w-96 p-10 rounded shadow">
-                <h2 className="text-2xl font-bold mb-6">Login</h2>
+                <div className='items-center flex justify-between mb-6'>
+                    <h2 className="text-2xl font-bold">Login</h2>
+                    <Link href='/' passHref ><FaTimes /></Link>
+                </div>
                 <form>
                     <div className="mb-4">
                         <label htmlFor="email" className="block mb-2 font-medium">
