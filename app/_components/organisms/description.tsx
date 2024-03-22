@@ -2,26 +2,27 @@
 
 import React from "react";
 
-interface DescriptionPageProps {
-  rooms: number;
-  baths: number;
-  livingRoom: number;
-  status: string;
-  area: string;
-  price: string;
-  description: string;
-}
+// interface DescriptionPageProps {
+//   rooms: number;
+//   baths: number;
+//   livingRoom: number;
+//   status: string;
+//   area: string;
+//   price: string;
+//   description: string;
+// }
 
-const DescriptionPage: React.FC<DescriptionPageProps> = ({
-  rooms,
-  baths,
-  livingRoom,
-  status,
-  area,
-  price,
-  description,
-}) => {
+// const DescriptionPage: React.FC<DescriptionPageProps> = ({
+//   rooms,
+//   baths,
+//   livingRoom,
+//   status,
+//   area,
+//   price,
+//   description,
+// }) => {
 
+const DescriptionPage: React.FC = () => {
   return (
     <div className="container mx-auto font-serif py-20">
       <div className="items-center justify-center flex flex-col">
@@ -36,32 +37,32 @@ const DescriptionPage: React.FC<DescriptionPageProps> = ({
             <div className="flex flex-wrap">
               <div className="w-full border-t border-gray-600 flex items-center sm:w-1/2 p-4">
                 <p className="mr-4">Number of Rooms:</p>
-                <p className="text-lg font-semibold">3{rooms}</p>
+                <p className="text-lg font-semibold">3rooms</p>
               </div>
               <div className="w-full border-t border-gray-600 flex items-center sm:w-1/2 p-4">
                 <p className="mr-4">Number of Baths:</p>
-                <p className="text-lg font-semibold">4{baths}</p>
+                <p className="text-lg font-semibold">4baths</p>
               </div>
               <div className="w-full border-t border-gray-600 flex items-center sm:w-1/2 p-4">
                 <p className="mr-4">Living Room:</p>
-                <p className="text-lg font-semibold">2{livingRoom}</p>
+                <p className="text-lg font-semibold">2livingRoom</p>
               </div>
               <div className="w-full border-t border-gray-600 flex items-center sm:w-1/2 p-4">
                 <p className="mr-4">Status:</p>
-                <p className="text-lg font-semibold">{status}Sale</p>
+                <p className="text-lg font-semibold">status Sale</p>
               </div>
               <div className="w-full border-t border-gray-600 flex items-center sm:w-1/2 p-4">
                 <p className="mr-4">Area:</p>
-                <p className="text-lg font-semibold">28km/m2{area}</p>
+                <p className="text-lg font-semibold">28km/m2 area</p>
               </div>
               <div className="w-full border-t border-gray-600 flex items-center sm:w-1/2 p-4">
                 <p className="mr-4">Price:</p>
-                <p className="text-lg font-semibold">${price}price na how</p>
+                <p className="text-lg font-semibold">$ price na how</p>
               </div>
             </div>
             <div className="mt-4 w-full flex justify-between items-center border-t border-gray-700 py-4">
               <p className=" mr-4">Description:</p>
-              <p>{description} hello is this description going to stay aprrt for forever because all i see is apart forever lol</p>
+              <p>description hello is this description going to stay aprrt for forever because all i see is apart forever lol</p>
             </div>
           </div>
         </div>
