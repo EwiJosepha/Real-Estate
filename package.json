@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fontsource/merriweather": "^5.0.12",
+    "@tanstack/react-query-devtools": "^5.28.6",
     "apexcharts": "^3.47.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
