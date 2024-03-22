@@ -1,85 +1,79 @@
-import React from 'react'
-import '@fontsource/merriweather';
+'use state'
 
-function Description() {
+import React from "react";
 
-  const interio = [
-    { id: 1, name: "TOTAL ROOMS", number: "4" },
-    { id: 2, name: "TOTAL BATHS", number: "4" },
-    { id: 3, name: "TOTAL LIVING", number: "4" },
-  ]
+interface DescriptionPageProps {
+  rooms: number;
+  baths: number;
+  livingRoom: number;
+  status: string;
+  area: string;
+  price: string;
+  description: string;
+}
 
-  const areaLot = [
-    { id: 4, name: "STATUS", number: "forsale" },
-    { id: 5, name: "LOT AREA", number: "0.77 ACRES" },
-    { id: 6, name: "NEIGHBORHOOD", number: "Montecito" },
-    { id: 7, name: "ELEMENTARY SCHOOL", number: "Montecito Union" },
-    { id: 8, name: "HIGH SCHOOL", number: "Santa Barbara" }
-  ]
+const DescriptionPage: React.FC<DescriptionPageProps> = ({
+  rooms,
+  baths,
+  livingRoom,
+  status,
+  area,
+  price,
+  description,
+}) => {
 
-  const styles = ` 
-    .descriptionwrapper{ 
-    fontFamily: "merriweather", sans-serif,
-    display: " flex",
-    flexDirection: " column",
-    padding: "20p",
-    backgroundColor: "#fef9f9",
-    width: "100%",
-    paddingTop:"10px"
-
-  }
-  `
   return (
-    <div>
-      <div className="descriptionwrapper">
-        <h1 id="propertyD"><i>FEATURES & AMENITIES</i></h1>
-        <div className="cardes">
-          <div className="features">
-            <h2 id="int"><i>INTERIOR</i></h2>
-            <div className="feature">
-              {interio.map((nam, index) => (
-                <div className="tbath">
-                  <div className="bname">
-                    <p key={index} id="bname">{nam.name}</p>
+    <div className="container mx-auto font-serif py-20">
+      <div className="items-center justify-center flex flex-col">
+        <h1 className="text-4xl my-4 ">Real Estate Name La Villa Loca</h1>
+        <p className="text-3xl font-thin">Location </p>
+      </div>
 
-                  </div>
-                  <div className="num">
-                    <p key={index} id="bnumber"><i>{nam.number}</i></p>
-
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="arealot">
-              <h2 id="int"><i>AREA & LOT</i></h2>
-              <div className="lot">
-                {areaLot.map((area) => (
-
-                  <div className="tlot">
-                    <div className="bname">
-                      <p id="bname" key={area.id}>{area.name}</p>
-                    </div>
-                    <div className="bnumber">
-                      <p id="bnumber" key={area.id}><i>{area.number}</i></p>
-                    </div>
-                  </div>
-                ))}
+      <div className="flex mt-16">
+        <div className="w-full flex justify-between items-center md:w-1/3 p-4">
+          <div className="bg-black text-white rounded shadow-md  p-8">
+            <h2 className="text-2xl font-bold mb-4 font-mono"> Details</h2>
+            <div className="flex flex-wrap">
+              <div className="w-full border-t border-gray-600 flex items-center sm:w-1/2 p-4">
+                <p className="mr-4">Number of Rooms:</p>
+                <p className="text-lg font-semibold">3{rooms}</p>
+              </div>
+              <div className="w-full border-t border-gray-600 flex items-center sm:w-1/2 p-4">
+                <p className="mr-4">Number of Baths:</p>
+                <p className="text-lg font-semibold">4{baths}</p>
+              </div>
+              <div className="w-full border-t border-gray-600 flex items-center sm:w-1/2 p-4">
+                <p className="mr-4">Living Room:</p>
+                <p className="text-lg font-semibold">2{livingRoom}</p>
+              </div>
+              <div className="w-full border-t border-gray-600 flex items-center sm:w-1/2 p-4">
+                <p className="mr-4">Status:</p>
+                <p className="text-lg font-semibold">{status}Sale</p>
+              </div>
+              <div className="w-full border-t border-gray-600 flex items-center sm:w-1/2 p-4">
+                <p className="mr-4">Area:</p>
+                <p className="text-lg font-semibold">28km/m2{area}</p>
+              </div>
+              <div className="w-full border-t border-gray-600 flex items-center sm:w-1/2 p-4">
+                <p className="mr-4">Price:</p>
+                <p className="text-lg font-semibold">${price}price na how</p>
               </div>
             </div>
-          </div>
-          <div className="arminities">
-            <h2 id="fin"><i>FINANCIAL</i></h2>
-            <div className="finincial">
-              <p><i>SALES PRICE</i></p>
-              <p><i>$12000</i></p>
+            <div className="mt-4 w-full flex justify-between items-center border-t border-gray-700 py-4">
+              <p className=" mr-4">Description:</p>
+              <p>{description} hello is this description going to stay aprrt for forever because all i see is apart forever lol</p>
             </div>
           </div>
         </div>
 
+        <div className="w-full items-center md:w-3/5 p-4 text-gray-700 text-base">
+          <p className="mb-20">Congratulations! You've found a beautiful property with great features. This property offers a healthy and comfortable living environment. Here are some key highlights:  Spacious rooms with plenty of natural light Modern and well-equipped kitchen Beautifully landscaped garden State-of-the-art fitness center Serene and peaceful neighborhood Proximity to parks and green spaces Easy access to hiking and biking trails Healthy and sustainable building materials Energy-efficient appliances Water-saving fixtures Don't miss the opportunity to make this property your own and enjoy a healthy lifestyle!</p>
+          <p className="mb-6">Contact Josepha and Daisy for more information and/or to schedule a showing 🥰</p>
+          <button className="border-2 border-yellow-600 text-yellow-800 py-3 hover:bg-yellow-600 hover:text-white cursor-pointer px-8"> Share Property </button>
+        </div>
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default Description
+export default DescriptionPage;
