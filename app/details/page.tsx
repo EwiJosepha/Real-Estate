@@ -1,17 +1,19 @@
 import React from "react";
-import DetailsHero from "../_components/organisms/detailsHero";
-import DetailAvatar from "../_components/organisms/detailAvatar";
 import Description from "../_components/organisms/description";
 import ContactPage from "../_components/organisms/contactAgent";
 import Footer from "../_components/organisms/footer";
+import DetailNav from "../_components/organisms/detailNav";
+import DetailHero from "../_components/organisms/detailHero";
+import DetailHero2 from "../_components/organisms/detailHero2";
 
 const LandingPage: React.FC = () => {
     return (
         <div>
-            <DetailsHero />
-            <DetailAvatar />
-            <Description />
+            <DetailNav />
+            <DetailHero />
+            <DetailHero2 />
             <ContactPage />
+            <Description />
             <Footer />
         </div>
     );
