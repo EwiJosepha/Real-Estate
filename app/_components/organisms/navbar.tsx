@@ -50,10 +50,13 @@ const Navbar: React.FC = () => {
                             <button className="text-white hover:text-gray-300">Contact Us</button>
                         </div>
 
-                        <div className="relative text-white flex items-center justify-center">
-                            <FaRegUserCircle className='mr-2 text-2xl' />
-                            <button className=" hover:text-gray-300">Log In</button>
-                        </div>
+                        <Link href='/login' >
+                            <span className="relative text-white flex items-center justify-center">
+                                <FaRegUserCircle className='mr-2 text-2xl' />
+                                <button className=" hover:text-gray-300">Log In</button>
+                            </span>
+
+                        </Link>
                     </div>
 
 
