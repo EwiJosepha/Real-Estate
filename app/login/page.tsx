@@ -36,10 +36,10 @@ const LoginPage: React.FC = () => {
         const goodreq = res.status === 201
         setBadreq(badrequest)
         setSuccesful(goodreq)
-        const res2 =  await res.json().then((data)=>(data))
+        const res2 =  await res.json().then((data)=>(data)).then((message)=> message)
         console.log("ressS", res2)
-        const tokenn = res2
-        const decoded= jwtDecode(tokenn)
+        const {tokenn }= res2
+        const decoded= jwtDecode(tokenn, {header: true})
         console.log(decoded);
         
 
