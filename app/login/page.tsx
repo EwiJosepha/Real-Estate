@@ -1,19 +1,25 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { FaTimes } from 'react-icons/fa';
-import Cookies from 'js-cookie'
-import { jwtDecode } from "jwt-decode";
+import { decodeBase64Url } from '../utils/util';
+import { loginUrl } from '../utils/util';
+import { jwtDecode } from 'jwt-decode';
+
+
 
 
 const LoginPage: React.FC = () => {
-    
+
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [badreq, setBadreq] = useState(Boolean)
     const [succesful, setSuccesful] = useState(Boolean)
+    const [token, setToken] = useState("")
+
+
 
     const handleRegister = async (e: any) => {
         e.preventDefault()
@@ -23,7 +29,7 @@ const LoginPage: React.FC = () => {
             hashpassword: password
         }
 
-        const res = await fetch("http://localhost:4000/auth/signin", {
+        const res = await fetch(loginUrl, {
             method: "POST",
             mode: "cors",
             headers: {
@@ -31,22 +37,25 @@ const LoginPage: React.FC = () => {
             },
             body: JSON.stringify(formData)
         })
-        
+
         const badrequest = res.status === 400
         const goodreq = res.status === 201
         setBadreq(badrequest)
         setSuccesful(goodreq)
-        const res2 =  await res.json().then((data)=>(data)).then((message)=> message)
-        console.log("ressS", res2)
-        const {tokenn }= res2
-        const decoded= jwtDecode(tokenn, {header: true})
-        console.log(decoded);
-        
+        // const res2 = await res.json().then((data) => (data)).then((message) => message)
+        // setToken(res2.message)
+        const [header, payload, signature] = token.split('.');
+
+        if (goodreq) {
+            const response = await res.json().then((data) => data).then((message) => message);
+            const token = response.message;
+            const decoded = jwtDecode(token);
+            console.log(decoded);
+          }
 
     }
 
-
-  
+   
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-blue">
