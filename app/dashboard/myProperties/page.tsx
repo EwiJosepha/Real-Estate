@@ -5,59 +5,71 @@ import DropDownCard from '@/app/_components/organisms/dropDownCard';
 import React from 'react';
 import { FiMoreVertical } from 'react-icons/fi';
 import { useEffect } from 'react';
+import { NextRequest } from 'next/server';
+import { Cookie } from 'next/font/google';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
+import { propertiesForAgent } from '@/app/utils/util';
 
-
+type Property = {
+    id: number;
+    name: string;
+    type: string;
+    description: string;
+    rooms: string;
+    bath: number;
+    livingRooms: string;
+    location: string;
+    price: number;
+    areaInKm: string;
+    rentOrSale: string;
+    shortDescription: string;
+    images: string[];
+    agentId: number;
+}
 
 const MyProperties: React.FC = () => {
-    useEffect(() => {
-        const getCookieValue = (name: string) => {
-          const cookies = document.cookie.split(';');
-          for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim();
-            if (cookie.startsWith(`${name}=`)) {
-              return cookie.substring(name.length + 1);
-            }
-          }
-          return 'hey';
-        };
-    
-        const token = getCookieValue('token');
-        console.log(token);
-      }, []);
-
     const [isDropdownVisible, setIsDropdownVisible] = React.useState(false);
     const [selectedPropertyId, setSelectedPropertyId] = React.useState<number | null>(null);
     const dropdownRef = React.useRef<HTMLDivElement>(null);
 
-    const properties = [
-        {
-            id: 1,
-            image: 'card1.webp',
-            title: 'House',
-            location: 'Yaounde',
-            price: '$100,000',
-            date: '2022-01-01',
-            status: 'Active',
-        },
-        {
-            id: 2,
-            image: 'card2.webp',
-            title: 'Villa',
-            location: 'Bamenda',
-            price: '$200,000',
-            date: '2023-02-01',
-            status: 'Pending',
-        },
-        {
-            id: 3,
-            image: 'card3.webp',
-            title: 'Apartment',
-            location: 'Douala',
-            price: '$50,000',
-            date: '2024-02-01',
-            status: 'Processing',
-        },
-    ];
+    const {data, isLoading, isError} = useQuery({
+        queryKey: ['propWithAgentId'],
+        queryFn: async () => {
+           const {data} = await axios.get(propertiesForAgent) 
+           return data as Property[]
+        }
+    })
+
+    // const properties = [
+    //     {
+    //         id: 1,
+    //         image: 'card1.webp',
+    //         title: 'House',
+    //         location: 'Yaounde',
+    //         price: '$100,000',
+    //         date: '2022-01-01',
+    //         status: 'Active',
+    //     },
+    //     {
+    //         id: 2,
+    //         image: 'card2.webp',
+    //         title: 'Villa',
+    //         location: 'Bamenda',
+    //         price: '$200,000',
+    //         date: '2023-02-01',
+    //         status: 'Pending',
+    //     },
+    //     {
+    //         id: 3,
+    //         image: 'card3.webp',
+    //         title: 'Apartment',
+    //         location: 'Douala',
+    //         price: '$50,000',
+    //         date: '2024-02-01',
+    //         status: 'Processing',
+    //     },
+    // ];
 
     const handleActionClick = (propertyId: number) => {
         if (selectedPropertyId === propertyId) {
@@ -83,20 +95,20 @@ const MyProperties: React.FC = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {properties.map((property) => (
+                            {data?.map((property) => (
                                 <tr key={property.id} className="border-b-2">
                                     <td className="px-4 py-6">
                                         <div className="flex">
-                                            <img src={property.image} alt="Property" className="w-20 h-20 rounded-lg mr-3" />
+                                            <img src={property.images[1]} alt="Property" className="w-20 h-20 rounded-lg mr-3" />
                                             <div className="flex flex-col space-y-2">
-                                                <span className="cursor-pointer hover:text-orange-500">{property.title}</span>
+                                                <span className="cursor-pointer hover:text-orange-500">{property.name}</span>
                                                 <span className="text-gray-400 text-sm cursor-pointer">{property.location}</span>
                                                 <span className="cursor-pointer">{property.price}</span>
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="px-4 py-2">{property.date}</td>
-                                    <td className="px-4 py-2">{property.status}</td>
+                                    <td className="px-4 py-2">{property.description}</td>
+                                    <td className="px-4 py-2">{property.rentOrSale}</td>
                                     <td className="px-4 py-2">
                                         <div className="flex items-center">
                                             <button

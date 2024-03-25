@@ -6,6 +6,7 @@ import Card from './card';
 import { properties } from '@/app/propertyData';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios'
+import { getAllProperties } from '@/app/utils/util';
 
 type Property = {
     id: number;
@@ -30,7 +31,7 @@ const CardData: React.FC<{ showLink?: boolean }> = ({ showLink = true }) => {
     const { data, isLoading, isError } = useQuery({
         queryKey: ["properties"],
         queryFn: async () => {
-            const { data } = await axios.get("http://localhost:4000/properties")
+            const { data } = await axios.get(getAllProperties)
             return data as Property[]
         }
     })

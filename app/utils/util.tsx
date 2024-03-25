@@ -13,3 +13,5 @@ import { jwtDecode } from "jwt-decode";
 }
 
 export const loginUrl = "http://localhost:4000/auth/signin"
+export const propertiesForAgent = "http://localhost:4000/properties?agentId=1"
+export const getAllProperties = "http://localhost:4000/properties"

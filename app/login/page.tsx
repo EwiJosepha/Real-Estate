@@ -44,13 +44,13 @@ const LoginPage: React.FC = () => {
         setSuccesful(goodreq)
         // const res2 = await res.json().then((data) => (data)).then((message) => message)
         // setToken(res2.message)
-        const [header, payload, signature] = token.split('.');
+        // const [header, payload, signature] = token.split('.');
 
         if (goodreq) {
             const response = await res.json().then((data) => data).then((message) => message);
             const token = response.message;
             const decoded = jwtDecode(token);
-            console.log(decoded);
+            localStorage.setItem("decoded", JSON.stringify(token))
           }
 
     }
