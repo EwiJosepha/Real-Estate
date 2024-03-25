@@ -50,8 +50,10 @@ const LoginPage: React.FC = () => {
             const response = await res.json().then((data) => data).then((message) => message);
             const token = response.message;
             const decoded = jwtDecode(token);
-            localStorage.setItem("decoded", JSON.stringify(token))
-          }
+            console.log(decoded);
+            
+            localStorage.setItem("decoded", JSON.stringify(decoded))
+        }
 
     }
 

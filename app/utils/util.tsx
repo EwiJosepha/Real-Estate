@@ -1,3 +1,6 @@
+"use client"
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 
  export function decodeBase64Url(token: string): any {
@@ -12,6 +15,27 @@ import { jwtDecode } from "jwt-decode";
   return decoded;
 }
 
+if(typeof localStorage !== undefined) {}
+
+const agentCurrentId: { id: number, email: string, iat: number, exp: number } = JSON.parse(localStorage.getItem("decoded") as string);
+const parseId = agentCurrentId.id
+console.log(parseId);
+
+
 export const loginUrl = "http://localhost:4000/auth/signin"
-export const propertiesForAgent = "http://localhost:4000/properties?agentId=1"
+export const propertiesForAgent = `http://localhost:4000/properties/agent/${parseId}`
 export const getAllProperties = "http://localhost:4000/properties"
+export const searchByRoom =`http://localhost:4000/properties/room/`
+
+export function searchRooms (searchParams: string) {
+  const {data} = useQuery({
+    queryKey: ["rooms"],
+    queryFn: async () => {
+      const {data} = await axios.get(`http://localhost:4000/properties/room/${searchParams}`)
+      return data
+    }
+  })
+
+  return {data}
+
+}

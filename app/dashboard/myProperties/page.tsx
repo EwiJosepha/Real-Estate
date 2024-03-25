@@ -80,6 +80,10 @@ const MyProperties: React.FC = () => {
         }
     };
 
+    if(data?.length === 0){
+        return <div><h1>Upload property</h1></div>
+    }
+
 
     return (
         <DdHeaderProvider header="My Properties" only_header>
@@ -97,6 +101,7 @@ const MyProperties: React.FC = () => {
                         <tbody>
                             {data?.map((property) => (
                                 <tr key={property.id} className="border-b-2">
+                                    
                                     <td className="px-4 py-6">
                                         <div className="flex">
                                             <img src={property.images[1]} alt="Property" className="w-20 h-20 rounded-lg mr-3" />
