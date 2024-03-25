@@ -2,6 +2,8 @@
 
 import DdHeaderProvider from '@/app/_components/db-header-provider';
 import { useState } from 'react';
+import { useFormState } from 'react-dom';
+import { agentdata } from '@/app/utils/util';
 
 const Profile: React.FC = () => {
     const [imageUrl, setImageUrl] = useState('');
@@ -11,6 +13,61 @@ const Profile: React.FC = () => {
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [bio, setBio] = useState('');
+
+    const {data} = agentdata()
+    const agentName = data?.name
+    console.log(agentName);
+    
+
+    //getting currentUser data from Ls
+
+    const email_Id: { id: number, email: string } = JSON.parse(localStorage.getItem('decoded') as string)
+    const agentEmaill = email_Id.email
+    const agentId = email_Id.id
+
+    //handling form data
+    function submitData() {
+        const formData = {
+            username: username,
+            firstName: firstName,
+            lastName: lastName,
+            email: agentEmaill,
+            phoneNumber: phoneNumber,
+            bio: bio
+        }
+
+        localStorage.setItem("formdata", JSON.stringify(formData))
+        console.log(formData);
+    }
+
+
+
+    const handleUsername = (e: any) => {
+        e.preventDefault
+        const name = e.target.value
+        setUsername(name)
+    }
+
+    const handleFirstName = (e: any) => {
+        e.preventDefault
+        const firstname = e.target.value
+        setFirstName(firstname)
+    }
+    const handleLastName = (e: any) => {
+        e.preventDefault
+        const lastname = e.target.value
+        setLastName(lastname)
+    }
+    const handlePhoneNumber = (e: any) => {
+        e.preventDefault
+        const phoneNumber = e.target.value
+        setPhoneNumber(phoneNumber)
+    }
+    const handleBio = (e: any) => {
+        e.preventDefault
+        const bio = e.target.value
+        setPhoneNumber(bio)
+    }
 
     const handleImageDelete = () => {
         setImageUrl('');
@@ -58,7 +115,7 @@ const Profile: React.FC = () => {
                             type="text"
                             id="username"
                             value={username}
-                            onChange={(e) => setUsername(e.target.value)}
+                            onChange={(e) => handleUsername(e)}
                             className="border border-gray-300 px-4 py-2 rounded-md w-full"
                         />
                     </div>
@@ -73,7 +130,7 @@ const Profile: React.FC = () => {
                                 type="text"
                                 id="firstName"
                                 value={firstName}
-                                onChange={(e) => setFirstName(e.target.value)}
+                                onChange={(e) => handleFirstName(e)}
                                 className="border border-gray-300 px-4 py-2 rounded-md w-full"
                             />
                         </div>
@@ -87,7 +144,7 @@ const Profile: React.FC = () => {
                                 type="text"
                                 id="lastName"
                                 value={lastName}
-                                onChange={(e) => setLastName(e.target.value)}
+                                onChange={(e) => handleLastName(e)}
                                 className="border border-gray-300 px-4 py-2 rounded-md w-full"
                             />
                         </div>
@@ -102,8 +159,7 @@ const Profile: React.FC = () => {
                             <input
                                 type="email"
                                 id="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                value={agentEmaill}
                                 className="border border-gray-300 px-4 py-2 rounded-md w-full"
                             />
                         </div>
@@ -117,7 +173,7 @@ const Profile: React.FC = () => {
                                 type="tel"
                                 id="phoneNumber"
                                 value={phoneNumber}
-                                onChange={(e) => setPhoneNumber(e.target.value)}
+                                onChange={(e) => handlePhoneNumber(e)}
                                 className="border border-gray-300 px-4 py-2 rounded-md w-full"
                             />
                         </div>
@@ -131,9 +187,10 @@ const Profile: React.FC = () => {
                         <textarea
                             id="bio"
                             value={bio}
-                            onChange={(e) => setBio(e.target.value)}
+                            onChange={(e) => handleBio(e)}
                             className="border border-gray-300 px-4 py-2 rounded-md w-full"
                         ></textarea>
+                        <button className=' bg-slate-950 text-red-500' onClick={submitData}>submi</button>
                     </div>
 
                     {/* Submit Button */}

@@ -26,6 +26,17 @@ export const loginUrl = "http://localhost:4000/auth/signin"
 export const propertiesForAgent = `http://localhost:4000/properties/agent/${parseId}`
 export const getAllProperties = "http://localhost:4000/properties"
 export const searchByRoom =`http://localhost:4000/properties/room/`
+export const agentInfo = `http://localhost:4000/api/v1/agent/${parseId}`
+
+export const agentdata = () =>{
+  return useQuery({
+    queryKey: ["agent-name"],
+    queryFn: async () => {
+      const {data} = await axios.get(`http://localhost:4000/api/v1/agent/${parseId}`)
+      return data
+    }
+  })
+}
 
 export function searchRooms (searchParams: string) {
   const {data} = useQuery({
