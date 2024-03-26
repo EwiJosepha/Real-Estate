@@ -4,6 +4,7 @@ import React from "react";
 import type { ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { logOutUrl } from "../utils/util";
 import {
     FaArrowAltCircleLeft,
     FaPerbyte,
@@ -18,8 +19,29 @@ type Props = {
     children: ReactNode;
 };
 
-const DbLayout: React.FC<Props> = ({ children }) => {
+ const DbLayout: React.FC<Props> = ({ children }) => {
     const router = useRouter();
+    
+
+    const handleLogOut = async () => {
+        const res = await fetch(logOutUrl, {
+            method: "GET",
+            mode: "cors",
+            headers: {
+                "content-type": "application/Json"
+            },
+        })
+
+        if(res.status !== 200){
+            return <div>Failed to logOut</div>
+        }
+
+        if(res.status === 200){router.push("/")}
+    
+        console.log(res);
+    }
+  
+    
 
     return (
         <div className="flex-none md:flex">
@@ -96,7 +118,7 @@ const DbLayout: React.FC<Props> = ({ children }) => {
                         </li>
                     </ul>
                     <div className="mt-auto">
-                        <button className="flex items-center py-6 hover:text-orange-500">
+                        <button className="flex items-center py-6 hover:text-orange-500" onClick={handleLogOut}>
                             <FaArrowAltCircleLeft className="block mr-3 text-4xl" />
                             <span className="hidden md:inline">LogOut</span>
                         </button>

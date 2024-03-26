@@ -27,6 +27,7 @@ export const propertiesForAgent = `http://localhost:4000/properties/agent/${pars
 export const getAllProperties = "http://localhost:4000/properties"
 export const searchByRoom =`http://localhost:4000/properties/room/`
 export const agentInfo = `http://localhost:4000/api/v1/agent/${parseId}`
+export const logOutUrl = "http://localhost:4000/auth/signout"
 
 export const agentdata = () =>{
   return useQuery({
