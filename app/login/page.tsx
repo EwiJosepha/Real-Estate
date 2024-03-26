@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { FaTimes } from 'react-icons/fa';
 import { loginUrl } from '../utils/util';
 import { jwtDecode } from 'jwt-decode';
+import { split } from 'postcss/lib/list';
 
 
 
@@ -36,6 +37,8 @@ const LoginPage: React.FC = () => {
             },
             body: JSON.stringify(formData)
         })
+
+      
 
         const badrequest = res.status === 400
         const goodreq = res.status === 201

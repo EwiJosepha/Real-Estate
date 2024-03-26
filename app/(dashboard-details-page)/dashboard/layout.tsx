@@ -4,7 +4,7 @@ import React from "react";
 import type { ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { logOutUrl } from "../utils/util";
+import { logOutUrl } from "@/app/utils/util";
 import {
     FaArrowAltCircleLeft,
     FaPerbyte,
