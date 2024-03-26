@@ -2,7 +2,6 @@ import React from 'react'
 
 import { useAppContext } from '@/store/app-context';
 
-
 interface PropertyInfo {
     //
 }

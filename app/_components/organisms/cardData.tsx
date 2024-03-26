@@ -26,9 +26,14 @@ const CardData: React.FC<{ showLink?: boolean }> = ({ showLink = true }) => {
         <>
             <div className="container mx-auto py-8 mt-28 items-center justify-center md:mx-auto md:w-3/4 lg:w-2/3">
 
-                {showLink && (<div className='flex items-center mb-7 font-bold font-serif'>
-                    <h1 className="text-3xl mr-6">Latest Properties</h1>
-                    <Link href='/property' passHref className='text-xl text-blue'> See All...</Link>
+                {showLink && (<div>
+                    <div className='flex items-center mb-7 font-bold font-serif'>
+                        <h1 className="text-3xl mr-6">Latest Properties</h1>
+                        <Link href='/property' passHref className='text-xl text-blue'> See All...</Link>
+                    </div>
+                    <input
+                        type='search'
+                        placeholder='search by baths' />
                 </div>)}
 
 
