@@ -14,13 +14,13 @@ const DescriptionPage: React.FC<DescriptionPageProps> = ({ }: DescriptionPagePro
   return (
     <div className="container mx-auto font-serif py-20">
       <div className="items-center justify-center flex flex-col">
-        <h1 className="text-4xl my-4 ">Real Estate Name La Villa Loca</h1>
+        <h1 className="text-4xl my-4 ">{propertyInfo.propertyName} La villa Lorem ipsum dolor</h1>
         <p className="text-3xl font-thin">Location </p>
       </div>
 
       <div className="flex mt-16">
-        <div className="w-full flex justify-between items-center md:w-1/3 p-4">
-          <div className="bg-black text-white rounded shadow-md  p-8">
+        <div className="w-full flex justify-between items-center md:w-1/3 p-4 mr-10">
+          <div className="bg-black text-white rounded shadow-md p-8">
             <h2 className="text-2xl font-bold mb-4 font-mono"> Details</h2>
             <div className="flex flex-wrap">
               <div className="w-full border-t border-gray-600 flex items-center sm:w-1/2 p-4">
@@ -37,7 +37,7 @@ const DescriptionPage: React.FC<DescriptionPageProps> = ({ }: DescriptionPagePro
               </div>
               <div className="w-full border-t border-gray-600 flex items-center sm:w-1/2 p-4">
                 <p className="mr-4">Status:</p>
-                <p className="text-lg font-semibold">status Sale</p>
+                <p className="text-lg font-semibold">{propertyInfo.listedIn} Sale</p>
               </div>
               <div className="w-full border-t border-gray-600 flex items-center sm:w-1/2 p-4">
                 <p className="mr-4">Area:</p>
@@ -45,12 +45,12 @@ const DescriptionPage: React.FC<DescriptionPageProps> = ({ }: DescriptionPagePro
               </div>
               <div className="w-full border-t border-gray-600 flex items-center sm:w-1/2 p-4">
                 <p className="mr-4">Price:</p>
-                <p className="text-lg font-semibold">$ price na how</p>
+                <p className="text-lg font-semibold">$ {propertyInfo.price}na how</p>
               </div>
             </div>
             <div className="mt-4 w-full flex justify-between items-center border-t border-gray-700 py-4">
               <p className=" mr-4">Description:</p>
-              <p>description hello is this description going to stay aprrt for forever because all i see is apart forever lol</p>
+              <p>{propertyInfo.description}hello is this description going to stay aprrt for forever because all i see is apart forever lol</p>
             </div>
           </div>
         </div>
