@@ -1,28 +1,16 @@
-'use state'
+'use client'
 
-import React from "react";
+import { useAppContext } from "@/store/app-context";
 
-// interface DescriptionPageProps {
-//   rooms: number;
-//   baths: number;
-//   livingRoom: number;
-//   status: string;
-//   area: string;
-//   price: string;
-//   description: string;
-// }
+interface DescriptionPageProps {
+  //
+}
 
-// const DescriptionPage: React.FC<DescriptionPageProps> = ({
-//   rooms,
-//   baths,
-//   livingRoom,
-//   status,
-//   area,
-//   price,
-//   description,
-// }) => {
+const DescriptionPage: React.FC<DescriptionPageProps> = ({ }: DescriptionPageProps) => {
 
-const DescriptionPage: React.FC = () => {
+  const { propertyInfo } = useAppContext();
+
+  // const DescriptionPage: React.FC = () => {
   return (
     <div className="container mx-auto font-serif py-20">
       <div className="items-center justify-center flex flex-col">
@@ -69,7 +57,7 @@ const DescriptionPage: React.FC = () => {
 
         <div className="w-full items-center md:w-3/5 p-4 text-gray-700 text-base">
           <p className="mb-20">Congratulations! You've found a beautiful property with great features. This property offers a healthy and comfortable living environment. Here are some key highlights:  Spacious rooms with plenty of natural light Modern and well-equipped kitchen Beautifully landscaped garden State-of-the-art fitness center Serene and peaceful neighborhood Proximity to parks and green spaces Easy access to hiking and biking trails Healthy and sustainable building materials Energy-efficient appliances Water-saving fixtures Don't miss the opportunity to make this property your own and enjoy a healthy lifestyle!</p>
-          <p className="mb-6">Contact Josepha and Daisy for more information and/or to schedule a showing 🥰</p>
+          <p className="mb-6">Contact Josepha and Daisy for more information and/or to schedule a showing of the property you interested in 🥰</p>
           <button className="border-2 border-yellow-600 text-yellow-800 py-3 hover:bg-yellow-600 hover:text-white cursor-pointer px-8"> Share Property </button>
         </div>
       </div>

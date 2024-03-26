@@ -1,5 +1,32 @@
 import React from 'react'
-const DbPropertyOverviewCard: React.FC = () => {
+
+import { useAppContext } from '@/store/app-context';
+
+
+interface PropertyInfo {
+    //
+}
+
+const DbPropertyOverviewCard: React.FC<PropertyInfo> = ({
+}) => {
+    const { setPropertyInfo } = useAppContext();
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { id, value } = e.target;
+        setPropertyInfo((prevPropertyInfo) => ({
+            ...prevPropertyInfo,
+            [id]: value,
+        }));
+    };
+
+    const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const { id, value } = e.target;
+        setPropertyInfo((prevPropertyInfo) => ({
+            ...prevPropertyInfo,
+            [id]: value,
+        }));
+    };
+
     return (
         <div className="mt-4 p-4 shadow shadow-blue rounded-lg">
             <h3 className="text-xl font-semibold mb-2">Overview</h3>
@@ -11,6 +38,7 @@ const DbPropertyOverviewCard: React.FC = () => {
                     type="text"
                     id="propertyTitle"
                     className="border border-gray-200 px-4 py-3 rounded-md w-full"
+                    onChange={handleInputChange}
                 />
             </div>
             <div className="mb-4">
@@ -29,7 +57,8 @@ const DbPropertyOverviewCard: React.FC = () => {
                     <label htmlFor="propertyCategory" className="block">
                         Property Type*
                     </label>
-                    <select className="border border-gray-200 px-4 py-3 rounded-md w-full">
+                    <select className="border border-gray-200 px-4 py-3 rounded-md w-full"
+                        onChange={handleSelectChange}>
                         <option value='apartment'>Apartment</option>
                         <option value='studios'>Studios</option>
                         <option value='house'>House</option>
@@ -41,7 +70,8 @@ const DbPropertyOverviewCard: React.FC = () => {
                     <label htmlFor="listedIn" className="block">
                         Listed in*
                     </label>
-                    <select className="border border-gray-200 px-4 py-3 rounded-md w-full">
+                    <select className="border border-gray-200 px-4 py-3 rounded-md w-full"
+                        onChange={handleSelectChange}>
                         <option value="">All Listings</option>
                         <option value="buy">Buy</option>
                         <option value="sell">Sell</option>
@@ -58,6 +88,7 @@ const DbPropertyOverviewCard: React.FC = () => {
                     type="text"
                     id="propertyPrice"
                     className="border border-gray-200 px-4 py-3 rounded-md w-full"
+                    onChange={handleInputChange}
                 />
             </div>
         </div>
