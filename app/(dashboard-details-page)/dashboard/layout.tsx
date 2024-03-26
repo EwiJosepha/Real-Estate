@@ -13,7 +13,7 @@ import {
     FaRegUser,
 } from "react-icons/fa";
 import { FaHouseFlag } from "react-icons/fa6";
-import FooterLogo from "../_components/organisms/footerLogo";
+import FooterLogo from "@/app/_components/organisms/footerLogo";
 
 type Props = {
     children: ReactNode;

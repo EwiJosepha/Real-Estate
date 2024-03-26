@@ -1,7 +1,7 @@
 'use client'
 
+import DdHeaderProvider from '@/app/_components/db-header-provider';
 import React from 'react';
-import DdHeaderProvider from '../_components/db-header-provider';
 import { BsPersonCircle } from 'react-icons/bs';
 import { CiBookmarkMinus } from 'react-icons/ci';
 import { FaEye, FaHeart } from 'react-icons/fa';
