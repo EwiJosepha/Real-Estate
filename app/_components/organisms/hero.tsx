@@ -31,6 +31,7 @@ const HeroSection: React.FC = () => {
 
     function handleClick() {
         const fun = searchRooms(searchVal)
+
     }
 
     console.log(searchVal);
