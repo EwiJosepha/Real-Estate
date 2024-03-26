@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { FaSearch } from 'react-icons/fa';
+import { searchRooms } from '@/app/utils/util';
 
 const images = [
     'REImg.webp',
@@ -11,6 +12,7 @@ const images = [
 
 const HeroSection: React.FC = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [searchVal, setSearchVal] = useState("")
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -22,8 +24,17 @@ const HeroSection: React.FC = () => {
         };
     }, []);
 
-    const handleSearch = () => { };
+    const handleSearch = (e: any) => {
+        e.preventDefault()
+        setSearchVal(e.target.value)
+    };
 
+    function handleClick() {
+        const fun = searchRooms(searchVal)
+
+    }
+
+    console.log(searchVal);
     return (
         <div className="font-serif">
             <section className="w-full max-w-full">
@@ -45,12 +56,13 @@ const HeroSection: React.FC = () => {
                     </div>
                     <div className="flex items-center bg-white border py-2 px-6 sm:w-[50%] md:w-[100%] justify-between mt-4">
                         <input
+                            onChange={(e) => handleSearch(e)}
                             type="text"
                             className="block bg-none p-2 pl-10 border-0 focus:pl-3 outline-none flex-1"
                             placeholder="Search by No of rooms, bath..."
                         />
                         <div className="p-2 cursor-pointer">
-                            <FaSearch className="text-black" />
+                            <FaSearch className="text-black" onClick={handleClick} />
                         </div>
                     </div>
                 </div>

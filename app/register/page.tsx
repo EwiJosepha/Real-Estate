@@ -1,8 +1,41 @@
-import React from 'react';
+'use client'
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { FaTimes } from 'react-icons/fa';
 
+
 const RegisterPage: React.FC = () => {
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+
+    const handleRegister = async (e: any)=> {
+        e.preventDefault()
+
+        const formData  = {
+            name,
+            email,
+            hashpassword: password
+        }
+
+        const res = await fetch("http://localhost:4000/auth/signup",{
+            method: "POST",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify(formData)
+        })
+
+        console.log("formdata",formData)
+        console.log("res",res)
+
+    }
+    
+
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-blue">
             <div className="bg-white w-96 p-10 rounded shadow">
@@ -12,12 +45,13 @@ const RegisterPage: React.FC = () => {
                     <Link href='/' passHref ><FaTimes /></Link>
                 </div>
 
-                <form>
+                <form onSubmit={handleRegister}>
                     <div className="mb-4">
                         <label htmlFor="username" className="block mb-2 font-medium">
                             Username
                         </label>
                         <input
+                        onChange={(e)=> setName(e.target.value)}
                             type="text"
                             id="username"
                             className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
@@ -28,6 +62,8 @@ const RegisterPage: React.FC = () => {
                             Email
                         </label>
                         <input
+                        onChange={(e)=> setEmail(e.target.value)}
+                        
                             type="email"
                             id="email"
                             className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
@@ -38,6 +74,8 @@ const RegisterPage: React.FC = () => {
                             Password
                         </label>
                         <input
+                        onChange={(e)=> setPassword(e.target.value)}
+
                             type="password"
                             id="password"
                             className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"

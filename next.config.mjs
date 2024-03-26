@@ -4,12 +4,12 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'www.pinterest.com',
-        pathname: '/account123/**',
+        hostname: '**',
+        port: '',
+        pathname: '**',
       },
     ],
   },
 };
-
 
 export default nextConfig;

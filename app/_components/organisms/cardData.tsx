@@ -4,10 +4,40 @@ import React, { Component, useState } from 'react';
 import Link from 'next/link';
 import Card from './card';
 import { properties } from '@/app/propertyData';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios'
+import { getAllProperties } from '@/app/utils/util';
 
+type Property = {
+    id: number;
+    name: string;
+    type: string;
+    description: string;
+    rooms: string;
+    bath: number;
+    livingRooms: string;
+    location: string;
+    price: number;
+    areaInKm: string;
+    rentOrSale: string;
+    shortDescription: string;
+    images: string[];
+    agentId: number;
+}
 
 const CardData: React.FC<{ showLink?: boolean }> = ({ showLink = true }) => {
     const [favorites, setFavorites] = useState<number[]>([]);
+
+    const { data, isLoading, isError } = useQuery({
+        queryKey: ["properties"],
+        queryFn: async () => {
+            const { data } = await axios.get(getAllProperties)
+            return data as Property[]
+        }
+    })
+
+    if (isLoading) return <div>Loading ...</div>
+    if (isError) return <div>please try again</div>
 
     const toggleFavorite = (id: number) => {
         setFavorites((prevFavorites) => {
@@ -38,21 +68,27 @@ const CardData: React.FC<{ showLink?: boolean }> = ({ showLink = true }) => {
 
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 object-cover">
-                    {displayedProperties.map((property) => (
-                        (<div>
-
+                    {data?.map((prop, i) => (
+                        <div key={i}>
                             <Card
-                                id={property.id}
-                                image={property.image}
-                                listing={property.listing}
-                                price={property.price}
-                                agent={property.agent}
-                                avatar={property.avatar}
-                                isFavorite={favorites.includes(property.id)}
-                                onToggleFavorite={toggleFavorite}
+                                key={i}
+                                id={prop.id}
+                                name={prop.name}
+                                type={prop.type}
+                                rooms={prop.rooms}
+                                description={prop.description}
+                                bath={prop.bath}
+                                livingRooms={prop.livingRooms}
+                                location={prop.location}
+                                price={prop.price}
+                                areaInKm={prop.areaInKm}
+                                rentOrSale={prop.rentOrSale}
+                                shortDescription={prop.shortDescription}
+                                images={prop.images}
+                                agentId={prop.agentId}
+                            // onToggleFavorite={toggleFavorite}
                             />
-
-                        </div>)
+                        </div>
                     ))}
                 </div>
             </div>

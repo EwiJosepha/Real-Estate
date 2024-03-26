@@ -1,8 +1,64 @@
-import React from 'react';
+"use client"
+
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { FaTimes } from 'react-icons/fa';
+import { loginUrl } from '../utils/util';
+import { jwtDecode } from 'jwt-decode';
+import { split } from 'postcss/lib/list';
+
+
+
 
 const LoginPage: React.FC = () => {
+
+
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [badreq, setBadreq] = useState(Boolean)
+    const [succesful, setSuccesful] = useState(Boolean)
+    const [token, setToken] = useState("")
+
+
+
+    const handleRegister = async (e: any) => {
+        e.preventDefault()
+
+        const formData = {
+            email,
+            hashpassword: password
+        }
+
+        const res = await fetch(loginUrl, {
+            method: "POST",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        })
+
+      
+
+        const badrequest = res.status === 400
+        const goodreq = res.status === 201
+        setBadreq(badrequest)
+        setSuccesful(goodreq)
+        // const res2 = await res.json().then((data) => (data)).then((message) => message)
+        // setToken(res2.message)
+        // const [header, payload, signature] = token.split('.');
+
+        if (goodreq) {
+            const response = await res.json().then((data) => data).then((message) => message);
+            const token = response.message;
+            const decoded = jwtDecode(token);
+            console.log(decoded);
+            if (typeof localStorage !== "undefined") {
+                localStorage.setItem("decoded", JSON.stringify(decoded))
+            }
+        }
+
+    }
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-blue">
             <div className="bg-white w-96 p-10 rounded shadow">
@@ -10,12 +66,18 @@ const LoginPage: React.FC = () => {
                     <h2 className="text-2xl font-bold">Login</h2>
                     <Link href='/' passHref ><FaTimes /></Link>
                 </div>
-                <form>
+                <form onSubmit={handleRegister}>
+                    {badreq && <div className=' color-red-800 font-medium text-red-600'>wrong credentials try again!!!</div>}<br />
+
+                    {succesful && <Link href="/"><div className=' color-red-800 font-medium text-green-700'>Login succesful</div>  </Link>}<br />
+
                     <div className="mb-4">
                         <label htmlFor="email" className="block mb-2 font-medium">
                             Email
                         </label>
                         <input
+                            onChange={(e) => setEmail(e.target.value)}
+
                             type="email"
                             id="email"
                             className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
@@ -26,6 +88,7 @@ const LoginPage: React.FC = () => {
                             Password
                         </label>
                         <input
+                            onChange={(e) => setPassword(e.target.value)}
                             type="password"
                             id="password"
                             className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
