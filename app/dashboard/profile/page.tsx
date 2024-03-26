@@ -27,24 +27,16 @@ const Profile: React.FC = () => {
     if (localStorage.length === 0) {
         setCreatProfile(true)
     }
+   //getting currentUser data from Ls
 
-
-
-    if (localStorage.length! == 0) {
-        setShowProfile(true)
-    }
-
-
-
-    //getting currentUser data from Ls
-
-    const email_Id: { id: number, email: string } = JSON.parse(localStorage.getItem('decoded') as string)
-    const agentEmaill = email_Id.email
-    const agentId = email_Id.id
+    const email_Id: { id?: number, email?: string } = JSON.parse(localStorage.getItem('decoded') as string)
+    const agentEmaill = email_Id?.email
+    const agentId = email_Id?.id
 
     //handling form data
     function submitData() {
         const formData = {
+            agentId:agentId,
             username: username,
             firstName: firstName,
             lastName: lastName,
@@ -57,7 +49,7 @@ const Profile: React.FC = () => {
         console.log(formData);
     }
 
-    const datafromLocalStorage: { username: string, firstName: string, lastName: string, email: string, phoneNumber: number, bio: string } = JSON.parse(localStorage.getItem("formdata") as string)
+   const datafromLocalStorage: {agentId?:number, username?: string, firstName?: string, lastName?: string, email?: string, phoneNumber?: number, bio?: string } = JSON.parse(localStorage.getItem("formdata") as string)
 
 
 
@@ -209,10 +201,10 @@ const Profile: React.FC = () => {
                             onChange={(e) => handleBio(e)}
                             className="border border-gray-300 px-4 py-2 rounded-md w-full"
                         ></textarea>
-                        <Link href={"/dashboard"}>
-                        <button className=' bg-slate-950 text-red-500' onClick={submitData}>submi</button>
-                        </Link>
                     </div>
+                        <Link href={"/dashboard"}>
+                            <button className=' bg-slate-950 text-red-500' onClick={submitData}>submit</button>
+                        </Link>
 
                     {/* Submit Button */}
                     {/* have use props to pass the data between components  */}
@@ -242,7 +234,7 @@ const Profile: React.FC = () => {
                             <input
                                 type="text"
                                 id="username"
-                                value={datafromLocalStorage.username}
+                                value={datafromLocalStorage?.username}
                                 // onChange={(e) => handleUsername(e)}
                                 className="border border-gray-300 px-4 py-2 rounded-md w-full"
                             />
@@ -257,7 +249,7 @@ const Profile: React.FC = () => {
                                 <input
                                     type="text"
                                     id="firstName"
-                                    value={datafromLocalStorage.firstName}
+                                    value={datafromLocalStorage?.firstName}
                                     // onChange={(e) => handleFirstName(e)}
                                     className="border border-gray-300 px-4 py-2 rounded-md w-full"
                                 />
@@ -271,7 +263,7 @@ const Profile: React.FC = () => {
                                 <input
                                     type="text"
                                     id="lastName"
-                                    value={datafromLocalStorage.lastName}
+                                    value={datafromLocalStorage?.lastName}
                                     // onChange={(e) => handleLastName(e)}
                                     className="border border-gray-300 px-4 py-2 rounded-md w-full"
                                 />
@@ -287,7 +279,7 @@ const Profile: React.FC = () => {
                                 <input
                                     type="email"
                                     id="email"
-                                    value={datafromLocalStorage.email}
+                                    value={datafromLocalStorage?.email}
                                     className="border border-gray-300 px-4 py-2 rounded-md w-full"
                                 />
                             </div>
@@ -300,7 +292,7 @@ const Profile: React.FC = () => {
                                 <input
                                     type="tel"
                                     id="phoneNumber"
-                                    value={datafromLocalStorage.phoneNumber}
+                                    value={datafromLocalStorage?.phoneNumber}
                                     // onChange={(e) => handlePhoneNumber(e)}
                                     className="border border-gray-300 px-4 py-2 rounded-md w-full"
                                 />
@@ -314,7 +306,7 @@ const Profile: React.FC = () => {
                             </label>
                             <textarea
                                 id="bio"
-                                value={datafromLocalStorage.bio}
+                                value={datafromLocalStorage?.bio}
                                 // onChange={(e) => handleBio(e)}
                                 className="border border-gray-300 px-4 py-2 rounded-md w-full"
                             ></textarea>

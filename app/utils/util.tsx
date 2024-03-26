@@ -17,8 +17,8 @@ import { jwtDecode } from "jwt-decode";
 
 if(typeof localStorage !== undefined) {}
 
-const agentCurrentId: { id: number, email: string, iat: number, exp: number } = JSON.parse(localStorage.getItem("decoded") as string);
-const parseId = agentCurrentId.id
+const agentCurrentId: { id?: number, email?: string, iat?: number, exp?: number } = JSON.parse(localStorage.getItem("decoded") as string);
+const parseId = agentCurrentId?.id
 console.log(parseId);
 
 

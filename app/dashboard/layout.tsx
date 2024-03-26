@@ -36,7 +36,10 @@ type Props = {
             return <div>Failed to logOut</div>
         }
 
-        if(res.status === 200){router.push("/")}
+        if(res.status === 200){
+            router.push("/")
+            localStorage.removeItem("decoded")
+        }
     
         console.log(res);
     }
