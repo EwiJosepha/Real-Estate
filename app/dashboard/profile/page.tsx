@@ -1,7 +1,7 @@
 'use client'
 
 import DdHeaderProvider from '@/app/_components/db-header-provider';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useFormState } from 'react-dom';
 import { agentdata } from '@/app/utils/util';
 import Link from 'next/link';
@@ -16,27 +16,31 @@ const Profile: React.FC = () => {
     const [bio, setBio] = useState('');
     const [showProfile, setShowProfile] = useState(Boolean)
     const [createProfile, setCreatProfile] = useState(Boolean)
+    const [agentEmaill, setAgentEmaill] = useState<string | undefined>()
+    const [agentId, setAgentId] = useState<number | undefined>()
+    const [datafromLocalStorage, setDatafromLocalStorage] = useState<string | any>()
 
     const { data } = agentdata()
     const agentName = data?.name
     console.log(agentName);
 
     //handle profiles(create and view)
-
-
-    if (localStorage.length === 0) {
+    if (typeof localStorage !== "undefined" && localStorage.length === 0) {
         setCreatProfile(true)
     }
-   //getting currentUser data from Ls
+    //getting currentUser data from Ls
 
-    const email_Id: { id?: number, email?: string } = JSON.parse(localStorage.getItem('decoded') as string)
-    const agentEmaill = email_Id?.email
-    const agentId = email_Id?.id
+    if (typeof localStorage !== "undefined") {
+        const email_Id: { id?: number, email?: string } = JSON.parse(localStorage.getItem('decoded') as string)
+        setAgentEmaill(email_Id?.email)
+        setAgentId(agentId)
+    }
+
 
     //handling form data
     function submitData() {
         const formData = {
-            agentId:agentId,
+            agentId: agentId,
             username: username,
             firstName: firstName,
             lastName: lastName,
@@ -45,13 +49,18 @@ const Profile: React.FC = () => {
             bio: bio
         }
 
-        localStorage.setItem("formdata", JSON.stringify(formData))
-        console.log(formData);
+        if (typeof localStorage !== "undefined") {
+            localStorage.setItem("formdata", JSON.stringify(formData))
+            console.log(formData);
+        }
+
+
     }
 
-   const datafromLocalStorage: {agentId?:number, username?: string, firstName?: string, lastName?: string, email?: string, phoneNumber?: number, bio?: string } = JSON.parse(localStorage.getItem("formdata") as string)
-
-
+    if (typeof localStorage !== "undefined") {
+        const datafromLocalStorage: { agentId?: number, username?: string, firstName?: string, lastName?: string, email?: string, phoneNumber?: number, bio?: string } = JSON.parse(localStorage.getItem("formdata") as string)
+        setDatafromLocalStorage(setDatafromLocalStorage)
+    }
 
     const handleUsername = (e: any) => {
         e.preventDefault
@@ -202,9 +211,9 @@ const Profile: React.FC = () => {
                             className="border border-gray-300 px-4 py-2 rounded-md w-full"
                         ></textarea>
                     </div>
-                        <Link href={"/dashboard"}>
-                            <button className=' bg-slate-950 text-red-500' onClick={submitData}>submit</button>
-                        </Link>
+                    <Link href={"/dashboard"}>
+                        <button className=' bg-slate-950 text-red-500' onClick={submitData}>submit</button>
+                    </Link>
 
                     {/* Submit Button */}
                     {/* have use props to pass the data between components  */}

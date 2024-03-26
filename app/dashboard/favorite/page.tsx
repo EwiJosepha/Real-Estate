@@ -64,7 +64,7 @@ const Favorite: React.FC = () => {
                     {properties.map((property) => (
                         (<Link href={`/property/${property.id}`} key={property.id} legacyBehavior>
                             <div className="bg-white p-1 rounded-lg">
-                                <Card
+                                {/* <Card
                                     id={property.id}
                                     image={property.image}
                                     listing={property.listing}
@@ -73,7 +73,7 @@ const Favorite: React.FC = () => {
                                     avatar={property.avatar}
                                     isFavorite={true}
                                     onToggleFavorite={() => { }}
-                                />
+                                /> */}
                             </div>
 
                         </Link>)

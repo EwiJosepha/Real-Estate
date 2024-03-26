@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { FaTimes } from 'react-icons/fa';
-import { decodeBase64Url } from '../utils/util';
 import { loginUrl } from '../utils/util';
 import { jwtDecode } from 'jwt-decode';
 
@@ -51,14 +50,12 @@ const LoginPage: React.FC = () => {
             const token = response.message;
             const decoded = jwtDecode(token);
             console.log(decoded);
-            
-            localStorage.setItem("decoded", JSON.stringify(decoded))
+            if (typeof localStorage !== "undefined") {
+                localStorage.setItem("decoded", JSON.stringify(decoded))
+            }
         }
 
     }
-
-   
-
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-blue">
             <div className="bg-white w-96 p-10 rounded shadow">
