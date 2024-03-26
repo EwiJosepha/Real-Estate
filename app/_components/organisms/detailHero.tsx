@@ -11,6 +11,9 @@ const DetailHero: React.FC = () => {
         'detail3.jpeg',
         'detail4.jpeg',
         'detail5.jpeg',
+        'detail6.jpg',
+        'detail7.jpg',
+        'detail8.jpg',
     ];
 
     const previousImage = () => {
@@ -45,11 +48,11 @@ const DetailHero: React.FC = () => {
                 <GrNext className="text-white" />
             </button>
 
-            <div className="mt-4 flex justify-center">
+            <div className="mt-3 flex justify-center">
                 {images.map((image, index) => (
                     <img
                         key={index}
-                        className={`w-full h-20 object-cover mx-2 cursor-pointer ${index === currentImage ? 'border-2' : ''
+                        className={`w-full h-24 object-cover mx-2 cursor-pointer ${index === currentImage ? 'border-2' : ''
                             }`}
                         src={image}
                         alt="Thumbnail"
