@@ -24,17 +24,20 @@ const Profile: React.FC = () => {
     const agentName = data?.name
     console.log(agentName);
 
-    //handle profiles(create and view)
-    if (typeof localStorage !== "undefined" && localStorage.length === 0) {
-        setCreatProfile(true)
-    }
+
+    // handle profiles(create and view)
+    // if (typeof localStorage !== "undefined" && localStorage.length === 0) {
+    //     setCreatProfile(true)
+    // }else{
+    //     setCreatProfile(false)
+    // }
     //getting currentUser data from Ls
 
     if (typeof localStorage !== "undefined") {
         const email_Id: { id?: number, email?: string } = JSON.parse(localStorage.getItem('decoded') as string)
         setAgentEmaill(email_Id?.email)
         setAgentId(agentId)
-    }
+    }    
 
 
     //handling form data
@@ -59,7 +62,7 @@ const Profile: React.FC = () => {
 
     if (typeof localStorage !== "undefined") {
         const datafromLocalStorage: { agentId?: number, username?: string, firstName?: string, lastName?: string, email?: string, phoneNumber?: number, bio?: string } = JSON.parse(localStorage.getItem("formdata") as string)
-        setDatafromLocalStorage(setDatafromLocalStorage)
+        // setDatafromLocalStorage(datafromLocalStorage)
     }
 
     const handleUsername = (e: any) => {
@@ -109,7 +112,7 @@ const Profile: React.FC = () => {
     return (
         <DdHeaderProvider header="Profile" submit=''>
             <>
-                {createProfile ? (<><div className="mx-auto container py-10 px-20 mb-16">
+                <div className="mx-auto container py-10 px-20 mb-16">
                     {/* Profile Image */}
                     {imageUrl && (
                         <div className="mb-4 flex items-center">
@@ -134,7 +137,7 @@ const Profile: React.FC = () => {
                         <input
                             type="text"
                             id="username"
-                            value={username}
+                            // value={username}
                             onChange={(e) => handleUsername(e)}
                             className="border border-gray-300 px-4 py-2 rounded-md w-full"
                         />
@@ -149,7 +152,7 @@ const Profile: React.FC = () => {
                             <input
                                 type="text"
                                 id="firstName"
-                                value={firstName}
+                                // value={firstName}
                                 onChange={(e) => handleFirstName(e)}
                                 className="border border-gray-300 px-4 py-2 rounded-md w-full"
                             />
@@ -163,7 +166,7 @@ const Profile: React.FC = () => {
                             <input
                                 type="text"
                                 id="lastName"
-                                value={lastName}
+                                // value={lastName}
                                 onChange={(e) => handleLastName(e)}
                                 className="border border-gray-300 px-4 py-2 rounded-md w-full"
                             />
@@ -179,7 +182,7 @@ const Profile: React.FC = () => {
                             <input
                                 type="email"
                                 id="email"
-                                value={agentEmaill}
+                                // value={agentEmaill}
                                 className="border border-gray-300 px-4 py-2 rounded-md w-full"
                             />
                         </div>
@@ -192,7 +195,7 @@ const Profile: React.FC = () => {
                             <input
                                 type="tel"
                                 id="phoneNumber"
-                                value={phoneNumber}
+                                // value={phoneNumber}
                                 onChange={(e) => handlePhoneNumber(e)}
                                 className="border border-gray-300 px-4 py-2 rounded-md w-full"
                             />
@@ -206,7 +209,7 @@ const Profile: React.FC = () => {
                         </label>
                         <textarea
                             id="bio"
-                            value={bio}
+                            // value={bio}
                             onChange={(e) => handleBio(e)}
                             className="border border-gray-300 px-4 py-2 rounded-md w-full"
                         ></textarea>
@@ -217,115 +220,9 @@ const Profile: React.FC = () => {
 
                     {/* Submit Button */}
                     {/* have use props to pass the data between components  */}
-                </div></>) : (<>
-                    <div className="mx-auto container py-10 px-20 mb-16">
-                        {/* Profile Image */}
-                        {imageUrl && (
-                            <div className="mb-4 flex items-center">
-                                <img src={imageUrl} alt="Profile" className=" h-16 w-16 rounded-full" />
-
-                                <button className="text-red-500 ml-2" onClick={handleImageDelete}>
-                                    Delete
-                                </button>
-                            </div>
-                        )}
-
-                        <div className="mb-4">
-                            <input type="file" id="image" accept="image/*" onChange={handleImageChange} />
-                        </div>
-
-
-                        {/* Username */}
-                        <div className="mb-4">
-                            <label htmlFor="username" className="block font-medium">
-                                Username*
-                            </label>
-                            <input
-                                type="text"
-                                id="username"
-                                value={datafromLocalStorage?.username}
-                                // onChange={(e) => handleUsername(e)}
-                                className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                            />
-                        </div>
-
-                        <div className='flex justify-between'>
-                            {/* First Name */}
-                            <div className="mb-4 w-[45%]">
-                                <label htmlFor="firstName" className="block font-medium">
-                                    First Name*
-                                </label>
-                                <input
-                                    type="text"
-                                    id="firstName"
-                                    value={datafromLocalStorage?.firstName}
-                                    // onChange={(e) => handleFirstName(e)}
-                                    className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                                />
-                            </div>
-
-                            {/* Last Name */}
-                            <div className="mb-4 w-[45%]">
-                                <label htmlFor="lastName" className="block font-medium">
-                                    Last Name*
-                                </label>
-                                <input
-                                    type="text"
-                                    id="lastName"
-                                    value={datafromLocalStorage?.lastName}
-                                    // onChange={(e) => handleLastName(e)}
-                                    className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                                />
-                            </div>
-                        </div>
-
-                        <div className='flex justify-between'>
-                            {/* Email */}
-                            <div className="mb-4 w-[45%]">
-                                <label htmlFor="email" className="block font-medium">
-                                    Email*
-                                </label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    value={datafromLocalStorage?.email}
-                                    className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                                />
-                            </div>
-
-                            {/* Phone Number */}
-                            <div className="mb-4 w-[45%]">
-                                <label htmlFor="phoneNumber" className="block font-medium">
-                                    Phone Number*
-                                </label>
-                                <input
-                                    type="tel"
-                                    id="phoneNumber"
-                                    value={datafromLocalStorage?.phoneNumber}
-                                    // onChange={(e) => handlePhoneNumber(e)}
-                                    className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                                />
-                            </div>
-                        </div>
-
-                        {/* Bio */}
-                        <div className="mb-4">
-                            <label htmlFor="bio" className="block font-medium">
-                                Bio*
-                            </label>
-                            <textarea
-                                id="bio"
-                                value={datafromLocalStorage?.bio}
-                                // onChange={(e) => handleBio(e)}
-                                className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                            ></textarea>
-                            {/* <button className=' bg-slate-950 text-red-500' onClick={submitData}>submi</button> */}
-                        </div>
-
-                        {/* Submit Button */}
-                        {/* have use props to pass the data between components  */}
-                    </div>
-                </>)}
+                </div> 
+                   
+                
             </>
         </DdHeaderProvider>
     );
