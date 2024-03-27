@@ -9,3 +9,16 @@ interface IPropertyInfo {
 export type {
     IPropertyInfo,
 }
+
+interface IProfileInfo  {
+    username: string,
+    firstName: string,
+    lastName: string,
+    email: string,
+    phoneNumber: string,
+    bio: string
+}
+
+export type {
+    IProfileInfo
+}
