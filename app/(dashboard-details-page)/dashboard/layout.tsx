@@ -88,6 +88,17 @@ type Props = {
                                     <span className="hidden md:inline">Profile</span>
                                 </span>
                             </Link>
+                       
+                            <Link
+                                href="/dashboard/edit"
+                                legacyBehavior>
+                                <span
+                                    className="flex hover:underline cursor-pointer items-center pt-4 pb-8"
+                                >
+                                    <FaRegUser className="block mr-4 text-xl" />
+                                    <span className="hidden md:inline">View Profile</span>
+                                </span>
+                            </Link>
                         </li>
                         <li className="md:block">
                             <p className="py-4 text-gray-500 hidden md:block">Listings</p>

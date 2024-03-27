@@ -48,10 +48,16 @@ const Profile: React.FC = () => {
             phoneNumber: phoneNumber,
             bio: bio
         }
-        setProfileInfo(formData)
         localStorage.setItem("agentData", JSON.stringify(formData))
+        setProfileInfo(formData)
 
         console.log(formData);
+        // if(username !== ""){
+        //     setProfileInfo((prevProfileInfo) => ({
+        //         ...prevProfileInfo,
+        //         username: username
+        //     }));
+        // }
 
     }
 
@@ -59,14 +65,7 @@ const Profile: React.FC = () => {
     console.log("check", checkk);
 
 
-    useEffect(() => {
-        const formRetrieve: { email?: string } = JSON.parse(localStorage.getItem("agentData") as string)
-        if (!formRetrieve?.email) {
-            setCreatProfile(true)
-        }
-        console.log("email", formRetrieve?.email);
 
-    }, [])
 
     const handleUsername = (e: any) => {
         e.preventDefault
@@ -136,188 +135,97 @@ const Profile: React.FC = () => {
                         <input type="file" id="image" accept="image/*" onChange={handleImageChange} />
                     </div>
 
-                    {createProfile ? (<>
 
-                        {/* Username */}
-                        < div className="mb-4">
-                            <label htmlFor="username" className="block font-medium">
-                                Username*
+
+                    {/* Username */}
+                    < div className="mb-4">
+                        <label htmlFor="username" className="block font-medium">
+                            Username*
+                        </label>
+                        <input
+                            type="text"
+                            id="username"
+                            value={username}
+                            onChange={(e) => handleUsername(e)}
+                            className="border border-gray-300 px-4 py-2 rounded-md w-full"
+                            required />
+                    </div>
+
+                    <div className='flex justify-between'>
+                        {/* First Name */}
+                        <div className="mb-4 w-[45%]">
+                            <label htmlFor="firstName" className="block font-medium">
+                                First Name*
                             </label>
                             <input
                                 type="text"
-                                id="username"
-                                value={username}
-                                onChange={(e) => handleUsername(e)}
+                                id="firstName"
+                                value={firstName}
+                                onChange={(e) => handleFirstName(e)}
                                 className="border border-gray-300 px-4 py-2 rounded-md w-full"
                                 required />
                         </div>
 
-                        <div className='flex justify-between'>
-                            {/* First Name */}
-                            <div className="mb-4 w-[45%]">
-                                <label htmlFor="firstName" className="block font-medium">
-                                    First Name*
-                                </label>
-                                <input
-                                    type="text"
-                                    id="firstName"
-                                    value={firstName}
-                                    onChange={(e) => handleFirstName(e)}
-                                    className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                                    required />
-                            </div>
-
-                            {/* Last Name */}
-                            <div className="mb-4 w-[45%]">
-                                <label htmlFor="lastName" className="block font-medium">
-                                    Last Name*
-                                </label>
-                                <input
-                                    type="text"
-                                    id="lastName"
-                                    value={lastName}
-                                    onChange={(e) => handleLastName(e)}
-                                    className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                                />
-                            </div>
-                        </div>
-
-                        <div className='flex justify-between'>
-                            {/* Email */}
-                            <div className="mb-4 w-[45%]">
-                                <label htmlFor="email" className="block font-medium">
-                                    Email*
-                                </label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    value={email}
-                                    onChange={(e) => handleEmail(e)}
-                                    className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                                />
-                            </div>
-
-                            {/* Phone Number */}
-                            <div className="mb-4 w-[45%]">
-                                <label htmlFor="phoneNumber" className="block font-medium">
-                                    Phone Number*
-                                </label>
-                                <input
-                                    type="tel"
-                                    id="phoneNumber"
-                                    value={phoneNumber}
-                                    onChange={(e) => handlePhoneNumber(e)}
-                                    className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                                    required />
-                            </div>
-                        </div>
-
-                        {/* Bio */}
-                        <div className="mb-4">
-                            <label htmlFor="bio" className="block font-medium">
-                                Bio*
-                            </label>
-                            <textarea
-                                id="bio"
-                                value={bio}
-                                onChange={(e) => handleBio(e)}
-                                className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                                required></textarea>
-                        </div>
-                        <Link href={"/dashboard"}>
-                            <button className=' bg-slate-950 text-red-500' onClick={submitData}>submit</button>
-                        </Link>
-                    </>) : (<>
-                        {/* Username */}
-                        <div className="mb-4">
-                            <label htmlFor="username" className="block font-medium">
-                                Username*
+                        {/* Last Name */}
+                        <div className="mb-4 w-[45%]">
+                            <label htmlFor="lastName" className="block font-medium">
+                                Last Name*
                             </label>
                             <input
                                 type="text"
-                                id="username"
-                                value={profileInfo.username}
-                                onChange={(e) => handleUsername(e)}
+                                id="lastName"
+                                value={lastName}
+                                onChange={(e) => handleLastName(e)}
+                                className="border border-gray-300 px-4 py-2 rounded-md w-full"
+                            />
+                        </div>
+                    </div>
+
+                    <div className='flex justify-between'>
+                        {/* Email */}
+                        <div className="mb-4 w-[45%]">
+                            <label htmlFor="email" className="block font-medium">
+                                Email*
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                value={email}
+                                onChange={(e) => handleEmail(e)}
+                                className="border border-gray-300 px-4 py-2 rounded-md w-full"
+                            />
+                        </div>
+
+                        {/* Phone Number */}
+                        <div className="mb-4 w-[45%]">
+                            <label htmlFor="phoneNumber" className="block font-medium">
+                                Phone Number*
+                            </label>
+                            <input
+                                type="tel"
+                                id="phoneNumber"
+                                value={phoneNumber}
+                                onChange={(e) => handlePhoneNumber(e)}
                                 className="border border-gray-300 px-4 py-2 rounded-md w-full"
                                 required />
                         </div>
+                    </div>
 
-                        <div className='flex justify-between'>
-                            {/* First Name */}
-                            <div className="mb-4 w-[45%]">
-                                <label htmlFor="firstName" className="block font-medium">
-                                    First Name*
-                                </label>
-                                <input
-                                    type="text"
-                                    id="firstName"
-                                    value={profileInfo.firstName}
-                                    onChange={(e) => handleFirstName(e)}
-                                    className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                                    required />
-                            </div>
-
-                            {/* Last Name */}
-                            <div className="mb-4 w-[45%]">
-                                <label htmlFor="lastName" className="block font-medium">
-                                    Last Name*
-                                </label>
-                                <input
-                                    type="text"
-                                    id="lastName"
-                                    value={profileInfo.lastName}
-                                    onChange={(e) => handleLastName(e)}
-                                    className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                                />
-                            </div>
-                        </div>
-
-                        <div className='flex justify-between'>
-                            {/* Email */}
-                            <div className="mb-4 w-[45%]">
-                                <label htmlFor="email" className="block font-medium">
-                                    Email*
-                                </label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    value={profileInfo.email}
-                                    onChange={(e) => handleEmail(e)}
-                                    className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                                />
-                            </div>
-
-                            {/* Phone Number */}
-                            <div className="mb-4 w-[45%]">
-                                <label htmlFor="phoneNumber" className="block font-medium">
-                                    Phone Number*
-                                </label>
-                                <input
-                                    type="tel"
-                                    id="phoneNumber"
-                                    value={profileInfo.phoneNumber}
-                                    onChange={(e) => handlePhoneNumber(e)}
-                                    className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                                    required />
-                            </div>
-                        </div>
-
-                        {/* Bio */}
-                        <div className="mb-4">
-                            <label htmlFor="bio" className="block font-medium">
-                                Bio*
-                            </label>
-                            <textarea
-                                id="bio"
-                                value={profileInfo.bio}
-                                onChange={(e) => handleBio(e)}
-                                className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                                required></textarea>
-                        </div>
-                        <Link href={"/dashboard"}>
-                            <button className=' bg-slate-950 text-red-500' onClick={submitData}>submit</button>
-                        </Link>
-                    </>)}
+                    {/* Bio */}
+                    <div className="mb-4">
+                        <label htmlFor="bio" className="block font-medium">
+                            Bio*
+                        </label>
+                        <textarea
+                            id="bio"
+                            value={bio}
+                            onChange={(e) => handleBio(e)}
+                            className="border border-gray-300 px-4 py-2 rounded-md w-full"
+                            required></textarea>
+                    </div>
+                    <Link href={"/dashboard"}>
+                        <button className=' bg-slate-950 text-red-500' onClick={submitData}>submit</button>
+                    </Link>
 
                     {/* Submit Button */}
                     {/* have use props to pass the data between components  */}
