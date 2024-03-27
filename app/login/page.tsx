@@ -6,6 +6,8 @@ import { FaTimes } from 'react-icons/fa';
 import { loginUrl } from '../utils/util';
 import { jwtDecode } from 'jwt-decode';
 import { useRouter } from 'next/navigation';
+import cookieSet from '../utils/handle-search';
+import { NextRequest } from 'next/server';
 
 
 
@@ -20,7 +22,7 @@ const LoginPage: React.FC = () => {
 
 
 
-    const handleRegister = async (e: any) => {
+    const handleRegister = async (e: any,) => {
         e.preventDefault()
 
         const formData = {
@@ -36,7 +38,6 @@ const LoginPage: React.FC = () => {
             },
             body: JSON.stringify(formData)
         })
-
       const badrequest = res.status === 400
         const goodreq = res.status === 201
         setBadreq(badrequest)
@@ -47,6 +48,8 @@ const LoginPage: React.FC = () => {
             const response = await res.json().then((data) => data).then((message) => message);
             const token = response.message;
             const decoded = jwtDecode(token);
+            const cokie = cookieSet(token)
+
             console.log(decoded);
             if (typeof localStorage !== "undefined") {
                 localStorage.setItem("decoded", JSON.stringify(decoded))
