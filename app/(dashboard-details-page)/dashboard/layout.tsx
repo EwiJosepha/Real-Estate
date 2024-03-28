@@ -90,13 +90,23 @@ type Props = {
                             </Link>
                        
                             <Link
-                                href="/dashboard/edit"
+                                href="/dashboard/vieww"
                                 legacyBehavior>
                                 <span
                                     className="flex hover:underline cursor-pointer items-center pt-4 pb-8"
                                 >
                                     <FaRegUser className="block mr-4 text-xl" />
                                     <span className="hidden md:inline">View Profile</span>
+                                </span>
+                            </Link>
+                            <Link
+                                href="/dashboard/edit"
+                                legacyBehavior>
+                                <span
+                                    className="flex hover:underline cursor-pointer items-center pt-4 pb-8"
+                                >
+                                    <FaRegUser className="block mr-4 text-xl" />
+                                    <span className="hidden md:inline">Edit Profile</span>
                                 </span>
                             </Link>
                         </li>

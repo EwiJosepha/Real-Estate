@@ -4,7 +4,7 @@ import React, { ReactNode, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useAppContext } from '@/app/_core/store/app-context'
 
-const EditProfile: React.FC<{}> = (): JSX.Element | null  => {
+const ViewProfile: React.FC<{}> = (): JSX.Element | null  => {
 
   const { profileInfo, setProfileInfo } = useAppContext()
   const [localVal, setLocalVal] = useState<{
@@ -31,7 +31,7 @@ const EditProfile: React.FC<{}> = (): JSX.Element | null  => {
 
   return (
     <div>
-      <DdHeaderProvider header="Edit Page" submit=''>
+      <DdHeaderProvider header="View Page" submit=''>
         <div className="mx-auto container py-10 px-20 mb-16">
           {/* Username */}
           < div className="mb-4">
@@ -122,7 +122,7 @@ const EditProfile: React.FC<{}> = (): JSX.Element | null  => {
               required></textarea>
           </div>
           <Link href={"/dashboard"}>
-            <button className=' bg-slate-950 text-red-500' >Save</button>
+            <button className=' bg-slate-950 text-red-500' >Edit Profil</button>
           </Link>
 
           {/* Submit Button */}
@@ -133,4 +133,4 @@ const EditProfile: React.FC<{}> = (): JSX.Element | null  => {
   )
 }
 
-export default EditProfile
+export default ViewProfile
