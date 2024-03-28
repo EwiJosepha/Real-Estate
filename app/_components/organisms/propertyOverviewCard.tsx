@@ -4,16 +4,8 @@ type Prop = {
     name: string;
     type: string;
     description: string;
-    rooms: string;
-    bath: number;
-    livingRooms: string;
-    location: string;
     price: number;
-    areaInKm: string;
     rentOrSale: string;
-    shortDescription: string;
-    images: string[];
-    agentId: number;
 }
 
 const DbPropertyOverviewCard: React.FC = ({ }) => {
@@ -22,30 +14,25 @@ const DbPropertyOverviewCard: React.FC = ({ }) => {
         name: "",
         type: "",
         description: "",
-        rooms: "",
-        bath: 0,
-        livingRooms: "",
-        location: "",
         price: 0,
-        areaInKm: "",
         rentOrSale: "",
-        shortDescription: "",
-        images: [],
-        agentId: 0
     })
+
+
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target;
         setPropertyInfo((prevPropertyInfo) => ({
             ...prevPropertyInfo,
             name: value,
-
-            price: parseFloat(value),
-
-
         }));
-
-
+    };
+    const handleInputChangePrice = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { value } = e.target;
+        setPropertyInfo((prevPropertyInfo) => ({
+            ...prevPropertyInfo,
+            price: parseFloat(value),
+        }));
     };
 
     console.log(propertyInfo);
@@ -65,6 +52,9 @@ const DbPropertyOverviewCard: React.FC = ({ }) => {
             const prop = localStorage.setItem("properties", JSON.stringify(propertyInfo))
             console.log(prop);
         }
+
+        console.log("hey");
+        
     }
 
 
@@ -72,8 +62,15 @@ const DbPropertyOverviewCard: React.FC = ({ }) => {
         const { value } = e.target;
         setPropertyInfo((prevPropertyInfo) => ({
             ...prevPropertyInfo,
-            rentOrSale: value,
             type: value,
+
+        }));
+    };
+    const handleSelectChangeRent = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const { value } = e.target;
+        setPropertyInfo((prevPropertyInfo) => ({
+            ...prevPropertyInfo,
+            rentOrSale: value,
 
         }));
     };
@@ -97,7 +94,7 @@ const DbPropertyOverviewCard: React.FC = ({ }) => {
                     Description*
                 </label>
                 <textarea
-                onChange={handleTexarea}
+                    onChange={handleTexarea}
                     id="propertyDescription"
                     className="border border-gray-200 px-4 py-3 rounded-md w-full"
                 ></textarea>
@@ -123,7 +120,7 @@ const DbPropertyOverviewCard: React.FC = ({ }) => {
                         Listed in*
                     </label>
                     <select className="border border-gray-200 px-4 py-3 rounded-md w-full"
-                        onChange={handleSelectChange}>
+                        onChange={handleSelectChangeRent}>
                         <option value="">All Listings</option>
                         <option value="buy">Buy</option>
                         <option value="sell">Sell</option>
@@ -140,7 +137,7 @@ const DbPropertyOverviewCard: React.FC = ({ }) => {
                     type="text"
                     id="propertyPrice"
                     className="border border-gray-200 px-4 py-3 rounded-md w-full"
-                    onChange={handleInputChange}
+                    onChange={handleInputChangePrice}
                 />
             </div>
             <button onClick={save}>save</button>

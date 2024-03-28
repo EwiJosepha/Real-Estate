@@ -1,33 +1,21 @@
 import React, { useState } from "react";
 type Prop = {
-    id: number;
-    name: string;
-    type: string;
-    description: string;
     rooms: string;
     bath: number;
     livingRooms: string;
     location: string;
-    price: number;
     areaInKm: string;
-    rentOrSale: string;
     shortDescription: string;
     images: string[];
     agentId: number;
 }
 const PropertyListingDetailCard: React.FC = () => {
     const [propertyInfo, setPropertyInfo] = useState<Prop>({
-        id: 0,
-        name: "",
-        type: "",
-        description: "",
         rooms: "",
         bath: 0,
         livingRooms: "",
         location: "",
-        price: 0,
         areaInKm: "",
-        rentOrSale: "",
         shortDescription: "",
         images: [],
         agentId: 0
@@ -44,12 +32,6 @@ const PropertyListingDetailCard: React.FC = () => {
         }));
     };
 
-    // const handleTexarea = (e:React.ChangeEvent<HTMLTextAreaElement>)=> {
-    //     setPropertyInfo((prevPropertyInfo)=>({
-    //         ...prevPropertyInfo,
-
-    //     }))
-    // }
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target;
