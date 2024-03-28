@@ -1,13 +1,37 @@
-import React from "react";
-
-import { useAppContext } from '@/store/app-context';
-
-interface PropertyInfo {
-    //
+import React, { useState } from "react";
+type Prop = {
+    id: number;
+    name: string;
+    type: string;
+    description: string;
+    rooms: string;
+    bath: number;
+    livingRooms: string;
+    location: string;
+    price: number;
+    areaInKm: string;
+    rentOrSale: string;
+    shortDescription: string;
+    images: string[];
+    agentId: number;
 }
-
 const PropertyListingDetailCard: React.FC = () => {
-    const { propertyInfo, setPropertyInfo } = useAppContext();
+    const [propertyInfo, setPropertyInfo] = useState<Prop>({
+        id: 0,
+        name: "",
+        type: "",
+        description: "",
+        rooms: "",
+        bath: 0,
+        livingRooms: "",
+        location: "",
+        price: 0,
+        areaInKm: "",
+        rentOrSale: "",
+        shortDescription: "",
+        images: [],
+        agentId: 0
+    })
 
     const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const { value } = e.target;
@@ -32,7 +56,7 @@ const PropertyListingDetailCard: React.FC = () => {
         setPropertyInfo((prevPropertyInfo) => ({
             ...prevPropertyInfo,
             areaInKm: value,
-            location:value
+            location: value
         }));
     };
 

@@ -1,30 +1,70 @@
-import React from 'react'
-
-import { useAppContext } from '@/store/app-context';
-
-interface PropertyInfo {
-    //
+"use-client"
+import React, { useState } from 'react'
+type Prop = {
+    name: string;
+    type: string;
+    description: string;
+    rooms: string;
+    bath: number;
+    livingRooms: string;
+    location: string;
+    price: number;
+    areaInKm: string;
+    rentOrSale: string;
+    shortDescription: string;
+    images: string[];
+    agentId: number;
 }
 
-const DbPropertyOverviewCard: React.FC<PropertyInfo> = ({}) => {
-    const { propertyInfo, setPropertyInfo } = useAppContext();
+const DbPropertyOverviewCard: React.FC = ({ }) => {
+    // const { propertyInfo, setPropertyInfo } = useAppContext();
+    const [propertyInfo, setPropertyInfo] = useState<Prop>({
+        name: "",
+        type: "",
+        description: "",
+        rooms: "",
+        bath: 0,
+        livingRooms: "",
+        location: "",
+        price: 0,
+        areaInKm: "",
+        rentOrSale: "",
+        shortDescription: "",
+        images: [],
+        agentId: 0
+    })
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target;
         setPropertyInfo((prevPropertyInfo) => ({
             ...prevPropertyInfo,
             name: value,
-            description: value,
+
             price: parseFloat(value),
+
+
         }));
 
-     
+
     };
 
-    function save () {
-        const prop = localStorage.setItem("properties", JSON.stringify(propertyInfo))
-        console.log(prop);
-        
+    console.log(propertyInfo);
+
+    const handleTexarea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        const { value } = e.target;
+        setPropertyInfo((prevPropertyInfo) => ({
+            ...prevPropertyInfo,
+            description: value,
+        }))
+    }
+
+
+
+    function save() {
+        if (typeof localStorage !== "undefined") {
+            const prop = localStorage.setItem("properties", JSON.stringify(propertyInfo))
+            console.log(prop);
+        }
     }
 
 
@@ -57,6 +97,7 @@ const DbPropertyOverviewCard: React.FC<PropertyInfo> = ({}) => {
                     Description*
                 </label>
                 <textarea
+                onChange={handleTexarea}
                     id="propertyDescription"
                     className="border border-gray-200 px-4 py-3 rounded-md w-full"
                 ></textarea>
