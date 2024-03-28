@@ -6,23 +6,35 @@ interface PropertyInfo {
     //
 }
 
-const DbPropertyOverviewCard: React.FC<PropertyInfo> = ({
-}) => {
-    const { setPropertyInfo } = useAppContext();
+const DbPropertyOverviewCard: React.FC<PropertyInfo> = ({}) => {
+    const { propertyInfo, setPropertyInfo } = useAppContext();
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { id, value } = e.target;
+        const { value } = e.target;
         setPropertyInfo((prevPropertyInfo) => ({
             ...prevPropertyInfo,
-            [id]: value,
+            name: value,
+            description: value,
+            price: parseFloat(value),
         }));
+
+     
     };
 
+    function save () {
+        const prop = localStorage.setItem("properties", JSON.stringify(propertyInfo))
+        console.log(prop);
+        
+    }
+
+
     const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const { id, value } = e.target;
+        const { value } = e.target;
         setPropertyInfo((prevPropertyInfo) => ({
             ...prevPropertyInfo,
-            [id]: value,
+            rentOrSale: value,
+            type: value,
+
         }));
     };
 
@@ -90,6 +102,7 @@ const DbPropertyOverviewCard: React.FC<PropertyInfo> = ({
                     onChange={handleInputChange}
                 />
             </div>
+            <button onClick={save}>save</button>
         </div>
     );
 };

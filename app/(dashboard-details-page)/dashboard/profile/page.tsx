@@ -4,63 +4,68 @@ import DdHeaderProvider from '@/app/_components/db-header-provider';
 import { useEffect, useState } from 'react';
 import { useFormState } from 'react-dom';
 import { agentdata } from '@/app/utils/util';
+import { useAppContext } from '@/app/_core/store/app-context';
 import Link from 'next/link';
 
+
 const Profile: React.FC = () => {
+    const { profileInfo, setProfileInfo } = useAppContext()
     const [imageUrl, setImageUrl] = useState('');
     const [username, setUsername] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
+    const [email, setEmail] = useState('')
     const [bio, setBio] = useState('');
-    const [showProfile, setShowProfile] = useState(Boolean)
+    // const [showProfile, setShowProfile] = useState(Boolean)
     const [createProfile, setCreatProfile] = useState(Boolean)
-    const [agentEmaill, setAgentEmaill] = useState<string | undefined>()
-    const [agentId, setAgentId] = useState<number | undefined>()
-    const [datafromLocalStorage, setDatafromLocalStorage] = useState<string | any>()
+    // const [agentEmaill, setAgentEmaill] = useState<string | undefined>()
+    // const [agentId, setAgentId] = useState<number | undefined>()
+    // const [datafromLocalStorage, setDatafromLocalStorage] = useState<string | any>()
 
     const { data } = agentdata()
-    const agentName = data?.name
-    console.log(agentName);
+    const agentIdd = data?.id
+    const agents_email = data?.email
 
-    //handle profiles(create and view)
-    if (typeof localStorage !== "undefined" && localStorage.length === 0) {
-        setCreatProfile(true)
-    }
-    //getting currentUser data from Ls
 
-    if (typeof localStorage !== "undefined") {
-        const email_Id: { id?: number, email?: string } = JSON.parse(localStorage.getItem('decoded') as string)
-        setAgentEmaill(email_Id?.email)
-        setAgentId(agentId)
-    }
 
+
+    //    targeting currentUser data from Ls
+
+    // if (typeof localStorage !== "undefined") {
+    //     const email_Id: { id?: number, email?: string } = JSON.parse(localStorage.getItem('decoded') as string)
+    //     setAgentEmaill(email)
+    //     setAgentId(agentId)
+    // }
 
     //handling form data
     function submitData() {
         const formData = {
-            agentId: agentId,
             username: username,
             firstName: firstName,
             lastName: lastName,
-            email: agentEmaill,
+            email: email,
             phoneNumber: phoneNumber,
             bio: bio
         }
+        localStorage.setItem("agentData", JSON.stringify(formData))
+        setProfileInfo(formData)
 
-        if (typeof localStorage !== "undefined") {
-            localStorage.setItem("formdata", JSON.stringify(formData))
-            console.log(formData);
-        }
-
+        console.log(formData);
+        // if(username !== ""){
+        //     setProfileInfo((prevProfileInfo) => ({
+        //         ...prevProfileInfo,
+        //         username: username
+        //     }));
+        // }
 
     }
 
-    if (typeof localStorage !== "undefined") {
-        const datafromLocalStorage: { agentId?: number, username?: string, firstName?: string, lastName?: string, email?: string, phoneNumber?: number, bio?: string } = JSON.parse(localStorage.getItem("formdata") as string)
-        setDatafromLocalStorage(setDatafromLocalStorage)
-    }
+    const checkk = profileInfo.bio
+    console.log("check", checkk);
+
+
+
 
     const handleUsername = (e: any) => {
         e.preventDefault
@@ -78,6 +83,11 @@ const Profile: React.FC = () => {
         const lastname = e.target.value
         setLastName(lastname)
     }
+    const handleEmail = (e: any) => {
+        e.preventDefault
+        const email = e.target.value
+        setEmail(email)
+    }
     const handlePhoneNumber = (e: any) => {
         e.preventDefault
         const phoneNumber = e.target.value
@@ -86,7 +96,7 @@ const Profile: React.FC = () => {
     const handleBio = (e: any) => {
         e.preventDefault
         const bio = e.target.value
-        setPhoneNumber(bio)
+        setBio(bio)
     }
 
     const handleImageDelete = () => {
@@ -109,7 +119,7 @@ const Profile: React.FC = () => {
     return (
         <DdHeaderProvider header="Profile" submit=''>
             <>
-                {createProfile ? (<><div className="mx-auto container py-10 px-20 mb-16">
+                <div className="mx-auto container py-10 px-20 mb-16">
                     {/* Profile Image */}
                     {imageUrl && (
                         <div className="mb-4 flex items-center">
@@ -126,8 +136,9 @@ const Profile: React.FC = () => {
                     </div>
 
 
+
                     {/* Username */}
-                    <div className="mb-4">
+                    < div className="mb-4">
                         <label htmlFor="username" className="block font-medium">
                             Username*
                         </label>
@@ -137,7 +148,7 @@ const Profile: React.FC = () => {
                             value={username}
                             onChange={(e) => handleUsername(e)}
                             className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                        />
+                            required />
                     </div>
 
                     <div className='flex justify-between'>
@@ -152,7 +163,7 @@ const Profile: React.FC = () => {
                                 value={firstName}
                                 onChange={(e) => handleFirstName(e)}
                                 className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                            />
+                                required />
                         </div>
 
                         {/* Last Name */}
@@ -179,7 +190,8 @@ const Profile: React.FC = () => {
                             <input
                                 type="email"
                                 id="email"
-                                value={agentEmaill}
+                                value={email}
+                                onChange={(e) => handleEmail(e)}
                                 className="border border-gray-300 px-4 py-2 rounded-md w-full"
                             />
                         </div>
@@ -195,7 +207,7 @@ const Profile: React.FC = () => {
                                 value={phoneNumber}
                                 onChange={(e) => handlePhoneNumber(e)}
                                 className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                            />
+                                required />
                         </div>
                     </div>
 
@@ -209,7 +221,7 @@ const Profile: React.FC = () => {
                             value={bio}
                             onChange={(e) => handleBio(e)}
                             className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                        ></textarea>
+                            required></textarea>
                     </div>
                     <Link href={"/dashboard"}>
                         <button className=' bg-slate-950 text-red-500' onClick={submitData}>submit</button>
@@ -217,117 +229,11 @@ const Profile: React.FC = () => {
 
                     {/* Submit Button */}
                     {/* have use props to pass the data between components  */}
-                </div></>) : (<>
-                    <div className="mx-auto container py-10 px-20 mb-16">
-                        {/* Profile Image */}
-                        {imageUrl && (
-                            <div className="mb-4 flex items-center">
-                                <img src={imageUrl} alt="Profile" className=" h-16 w-16 rounded-full" />
-
-                                <button className="text-red-500 ml-2" onClick={handleImageDelete}>
-                                    Delete
-                                </button>
-                            </div>
-                        )}
-
-                        <div className="mb-4">
-                            <input type="file" id="image" accept="image/*" onChange={handleImageChange} />
-                        </div>
+                </div>
 
 
-                        {/* Username */}
-                        <div className="mb-4">
-                            <label htmlFor="username" className="block font-medium">
-                                Username*
-                            </label>
-                            <input
-                                type="text"
-                                id="username"
-                                value={datafromLocalStorage?.username}
-                                // onChange={(e) => handleUsername(e)}
-                                className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                            />
-                        </div>
-
-                        <div className='flex justify-between'>
-                            {/* First Name */}
-                            <div className="mb-4 w-[45%]">
-                                <label htmlFor="firstName" className="block font-medium">
-                                    First Name*
-                                </label>
-                                <input
-                                    type="text"
-                                    id="firstName"
-                                    value={datafromLocalStorage?.firstName}
-                                    // onChange={(e) => handleFirstName(e)}
-                                    className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                                />
-                            </div>
-
-                            {/* Last Name */}
-                            <div className="mb-4 w-[45%]">
-                                <label htmlFor="lastName" className="block font-medium">
-                                    Last Name*
-                                </label>
-                                <input
-                                    type="text"
-                                    id="lastName"
-                                    value={datafromLocalStorage?.lastName}
-                                    // onChange={(e) => handleLastName(e)}
-                                    className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                                />
-                            </div>
-                        </div>
-
-                        <div className='flex justify-between'>
-                            {/* Email */}
-                            <div className="mb-4 w-[45%]">
-                                <label htmlFor="email" className="block font-medium">
-                                    Email*
-                                </label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    value={datafromLocalStorage?.email}
-                                    className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                                />
-                            </div>
-
-                            {/* Phone Number */}
-                            <div className="mb-4 w-[45%]">
-                                <label htmlFor="phoneNumber" className="block font-medium">
-                                    Phone Number*
-                                </label>
-                                <input
-                                    type="tel"
-                                    id="phoneNumber"
-                                    value={datafromLocalStorage?.phoneNumber}
-                                    // onChange={(e) => handlePhoneNumber(e)}
-                                    className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                                />
-                            </div>
-                        </div>
-
-                        {/* Bio */}
-                        <div className="mb-4">
-                            <label htmlFor="bio" className="block font-medium">
-                                Bio*
-                            </label>
-                            <textarea
-                                id="bio"
-                                value={datafromLocalStorage?.bio}
-                                // onChange={(e) => handleBio(e)}
-                                className="border border-gray-300 px-4 py-2 rounded-md w-full"
-                            ></textarea>
-                            {/* <button className=' bg-slate-950 text-red-500' onClick={submitData}>submi</button> */}
-                        </div>
-
-                        {/* Submit Button */}
-                        {/* have use props to pass the data between components  */}
-                    </div>
-                </>)}
             </>
-        </DdHeaderProvider>
+        </DdHeaderProvider >
     );
 };
 

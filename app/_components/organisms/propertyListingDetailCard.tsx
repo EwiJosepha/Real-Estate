@@ -1,6 +1,41 @@
 import React from "react";
 
+import { useAppContext } from '@/store/app-context';
+
+interface PropertyInfo {
+    //
+}
+
 const PropertyListingDetailCard: React.FC = () => {
+    const { propertyInfo, setPropertyInfo } = useAppContext();
+
+    const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const { value } = e.target;
+        setPropertyInfo((prevPropertyInfo) => ({
+            ...prevPropertyInfo,
+            bath: parseFloat(value),
+            livingRooms: value,
+            rooms: value,
+
+        }));
+    };
+
+    // const handleTexarea = (e:React.ChangeEvent<HTMLTextAreaElement>)=> {
+    //     setPropertyInfo((prevPropertyInfo)=>({
+    //         ...prevPropertyInfo,
+
+    //     }))
+    // }
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { value } = e.target;
+        setPropertyInfo((prevPropertyInfo) => ({
+            ...prevPropertyInfo,
+            areaInKm: value,
+            location:value
+        }));
+    };
+
     return (
         <div className="p-4 shadow shadow-blue rounded-lg">
             <h3 className="text-xl font-semibold mb-2">Listing Details</h3>
@@ -14,13 +49,14 @@ const PropertyListingDetailCard: React.FC = () => {
                         type="text"
                         id="propertySize"
                         className="border border-gray-200 px-4 py-3 rounded-md w-full"
+                        onChange={handleInputChange}
                     />
                 </div>
                 <div className="mb-4 w-[45%]">
                     <label htmlFor="bedrooms" className="block">
                         Bedrooms*
                     </label>
-                    <select className="border border-gray-200 px-4 py-3 rounded-md w-full">
+                    <select className="border border-gray-200 px-4 py-3 rounded-md w-full" onChange={handleSelectChange}>
                         <option value="">0</option>
                         <option value="number">1</option>
                         <option value="number">2</option>
@@ -35,7 +71,7 @@ const PropertyListingDetailCard: React.FC = () => {
                     <label htmlFor="bathrooms" className="block">
                         Bathrooms*
                     </label>
-                    <select className="border border-gray-200 px-4 py-3 rounded-md w-full">
+                    <select className="border border-gray-200 px-4 py-3 rounded-md w-full" onChange={handleSelectChange}>
                         <option value="">0</option>
                         <option value="number">1</option>
                         <option value="number">2</option>
@@ -48,7 +84,7 @@ const PropertyListingDetailCard: React.FC = () => {
                     <label htmlFor="bathrooms" className="block">
                         Livingrooms*
                     </label>
-                    <select className="border border-gray-200 px-4 py-3 rounded-md w-full">
+                    <select className="border border-gray-200 px-4 py-3 rounded-md w-full" onChange={handleSelectChange}>
                         <option value="">0</option>
                         <option value="number">1</option>
                         <option value="number">2</option>
@@ -64,6 +100,7 @@ const PropertyListingDetailCard: React.FC = () => {
                 </label>
                 <textarea
                     id="kitchenDescription"
+                    // onChange={handleTexarea}
                     className="border border-gray-200 px-4 py-3 rounded-md w-full"
                 ></textarea>
             </div>
@@ -75,6 +112,7 @@ const PropertyListingDetailCard: React.FC = () => {
                     type="text"
                     id="propertyLocation"
                     className="border border-gray-200 px-4 py-3 rounded-md w-full"
+                    onChange={handleInputChange}
                 />
             </div>
 
